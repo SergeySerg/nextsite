@@ -2,7 +2,7 @@
 @section('breadcrumbs')
 <li>
     <i class="icon-home home-icon"></i>
-    <a href="/admin30x5/">Головна</a>
+    <a href="/adminSha4/">Головна</a>
 
                                     <span class="divider">
                                         <i class="icon-angle-right arrow-icon"></i>
@@ -21,7 +21,7 @@
 
                 <div class="table-header">
                     Список записів в тестових полях
-                    <a href="/admin30x5/texts/create">
+                    <a href="/adminSha4/texts/create">
                         <button class="btn btn-warning">
                             <i class="icon-plus"></i>
                             Додати елемент
@@ -62,17 +62,17 @@
                                 <span class="lbl">{{ $admin_text->id }}</span>
                             </label>
                         </td>
-                        <td><a href="/admin30x5/texts/{{$admin_text->id}}">{{ $admin_text->getTranslate('title') }}</a></td>
+                        <td><a href="/adminSha4/texts/{{$admin_text->id}}">{{ $admin_text->getTranslate('title') }}</a></td>
                         <td>{{ str_limit($admin_text->getTranslate('description'), 80, '...') }}</td>
                         <td>{{ $admin_text->type }}</td>
                         <td>{{ $admin_text->name }}</td>
                         <td class="center">{{ $admin_text->priority }}</td>
                         <td class="td-actions">
                             <div class="visible-phone visible-desktop action-buttons">
-                                <a class="green" href="/admin30x5/texts/{{$admin_text->id}}">
+                                <a class="green" href="/adminSha4/texts/{{$admin_text->id}}">
                                     <i class="icon-pencil bigger-130"></i>
                                 </a>
-                                <a href='/admin30x5/texts/{{$admin_text->id}}' data-id='{{$admin_text->id}}' class='resource-delete'>
+                                <a href='/adminSha4/texts/{{$admin_text->id}}' data-id='{{$admin_text->id}}' class='resource-delete'>
                                 <i class="icon-trash bigger-130"></i>
                                 </a>
                             </div>

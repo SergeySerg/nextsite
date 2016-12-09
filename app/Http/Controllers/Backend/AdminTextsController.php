@@ -71,7 +71,7 @@ class AdminTextsController extends Controller {
 		return response()->json([
 			"status" => 'success',
 			"message" => 'Успішно збережено',
-			"redirect" => URL::to('/admin30x5/texts')
+			"redirect" => URL::to('/adminSha4/texts')
 		]);
 	}
 
@@ -127,7 +127,7 @@ class AdminTextsController extends Controller {
 		return response()->json([
 			"status" => 'success',
 			"message" => 'Успішно збережено',
-			"redirect" => URL::to('/admin30x5/texts')
+			"redirect" => URL::to('/adminSha4/texts')
 		]);
 	}
 

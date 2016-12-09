@@ -3,14 +3,14 @@
 @section('breadcrumbs')
 <li>
     <i class="icon-home home-icon"></i>
-    <a href="/admin30x5/">Головна</a>
+    <a href="/adminSha4/">Головна</a>
         <span class="divider">
             <i class="icon-angle-right arrow-icon"></i>
         </span>
 </li>
 
 <li>
-    <a href="/admin30x5/texts">Текстові блоки</a>
+    <a href="/adminSha4/texts">Текстові блоки</a>
 
         <span class="divider">
             <i class="icon-angle-right arrow-icon"></i>

@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eurostandard | Панель керування</title>
+    <title>Nextsite | Панель керування</title>
 
     <link rel="shortcut icon" href="{{ asset('/img/favicon/favicon.ico') }}" type="image/x-icon">
     <link rel="apple-touch-icon" href="{{ asset('/img/favicon/apple-touch-icon.png') }}">
@@ -68,9 +68,9 @@
     <div class="categoty-admin">
         <h3>Категории админки</h3>
         <ul class="list-admin">
-            <li><a href="/admin30x5/articles/rooms">Комнаты</a></li>
-            <li><a href="/admin30x5/articles/services">Услуги</a></li>
-            <li><a href="/admin30x5/articles/events">События</a></li>
+            <li><a href="/adminSha4/articles/rooms">Комнаты</a></li>
+            <li><a href="/adminSha4/articles/services">Услуги</a></li>
+            <li><a href="/adminSha4/articles/events">События</a></li>
         </ul>
     </div>-->
 
@@ -80,9 +80,9 @@
             <a href="#" class="brand">
                 <img style="display: block;
     position: absolute;
-    margin-top: -3px;" width="30px" src="{{ asset('/img/backend/logo.png') }}" alt="Eurostandard" />
+    margin-top: -3px;" width="30px" src="{{ asset('/img/backend/logo.png') }}" alt="{{$_SERVER['HTTP_HOST']}}" />
                 <small style="margin-left: 40px;">
-                    Eurostandard
+                    {{$_SERVER['HTTP_HOST']}}
                 </small>
             </a><!--/.brand-->
 
@@ -179,7 +179,7 @@
             </a>
             </li>
 
-            {{-- <li @if(Request::is('admin30x5/article/events'))class="active"@endif>
+            {{-- <li @if(Request::is('adminSha4/article/events'))class="active"@endif>
             <a href="{{ $url }}/articles/events">
                 <i class="icon-hospital"></i>
                 <span class="menu-text"> Події </span>
@@ -218,9 +218,9 @@
             </li>
         </ul><!--/.nav-list-->
 
-       <!-- <div class="sidebar-collapse" id="sidebar-collapse">
+        <div class="sidebar-collapse" id="sidebar-collapse">
             <i class="icon-double-angle-left"></i>
-        </div>-->
+        </div>
     </div>
 
     <div class="main-content">

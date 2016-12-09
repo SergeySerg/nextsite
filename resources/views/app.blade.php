@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Eurostandard | Панель керування</title>
+	<title>Nextsite | Панель керування</title>
 
 	<link rel="shortcut icon" href="{{ asset('/img/favicon/favicon.ico') }}" type="image/x-icon">
 	<link rel="apple-touch-icon" href="{{ asset('/img/favicon/apple-touch-icon.png') }}">
@@ -107,7 +107,7 @@
 					<div class="row-fluid">
 						<div class="center">
 							<h1>
-								<span class="red">Eurostandard</span>
+								<span class="red">{{$_SERVER['HTTP_HOST']}}</span>
 								<span class="white"></span>
 							</h1>
 						</div>

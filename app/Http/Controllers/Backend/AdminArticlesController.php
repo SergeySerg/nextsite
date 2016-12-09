@@ -117,7 +117,7 @@ class AdminArticlesController extends Controller {
 		return response()->json([
 			"status" => 'success',
 			"message" => 'Успішно збережено',
-			"redirect" => URL::to('/admin30x5/articles/'.$type)
+			"redirect" => URL::to('/adminSha4/articles/'.$type)
 		]);
 		//return back()->with('message', 'Успішно змінено');
 	}
@@ -225,7 +225,7 @@ class AdminArticlesController extends Controller {
 		return response()->json([
 			"status" => 'success',
 			"message" => 'Успішно збережено',
-			"redirect" => URL::to('/admin30x5/articles/'.$type)
+			"redirect" => URL::to('/adminSha4/articles/'.$type)
 		]);
 	}
 	//Функция формирования массива типа (ua|ru|en)
