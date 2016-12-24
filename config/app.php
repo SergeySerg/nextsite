@@ -146,8 +146,10 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
-
-
+		/*
+		 * laravel spec provides
+		 */
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider'
 	],
 
 	/*
