@@ -23,35 +23,35 @@ Route::group(['prefix'=>'adminSha4', 'middleware' => ['auth', 'backend.init']], 
 	Route::get('/','Backend\AdminDashboardController@index');
 
 	Route::get('/articles/fileoptimize/{id?}','Backend\AdminArticlesController@fileoptimize');
-	Route::get('/articles/{type}','Backend\AdminArticlesController@index');//Вывод списка элементов
-	Route::get('/articles/{type}/create','Backend\AdminArticlesController@create');//Вывод формы создания элемента
-	Route::post('/articles/{type}/create','Backend\AdminArticlesController@store');//Сохранение элемента
-	Route::get('/articles/{type}/{id}','Backend\AdminArticlesController@edit');//Вывод формы редакторирование элемента
-	Route::put('/articles/{type}/{id}','Backend\AdminArticlesController@update');//Сохранение элемента после редактирования
-	Route::delete('/articles/{type}/{id}','Backend\AdminArticlesController@destroy');//Удаление элемента
+	Route::get('/articles/{type}',['uses' => 'Backend\AdminArticlesController@index','as' => 'admin_index']);//Вывод списка элементов
+	Route::get('/articles/{type}/create',['uses' => 'Backend\AdminArticlesController@create','as' => 'admin_create']);//Вывод формы создания элемента
+	Route::post('/articles/{type}/create',['uses' => 'Backend\AdminArticlesController@store','as' => 'admin_store']);//Сохранение элемента
+	Route::get('/articles/{type}/{id}',['uses' => 'Backend\AdminArticlesController@edit','as' => 'admin_edit']);//Вывод формы редакторирование элемента
+	Route::put('/articles/{type}/{id}',['uses' =>'Backend\AdminArticlesController@update','as' => 'admin_update']);//Сохранение элемента после редактирования
+	Route::delete('/articles/{type}/{id}',['uses' => 'Backend\AdminArticlesController@destroy','as' => 'admin_delete']);//Удаление элемента
 
-	Route::get('/texts','Backend\AdminTextsController@index');//Вывод списка
-	Route::get('/texts/create','Backend\AdminTextsController@create');//Вывод формы создания элемента
-	Route::post('/texts/create','Backend\AdminTextsController@store');//Сохранение элемента
-	Route::delete('/texts/{id}','Backend\AdminTextsController@destroy');//Удаление элемента
-	Route::get('/texts/{id}','Backend\AdminTextsController@edit');//Вывод формы редакторирование
-	Route::put('/texts/{id}','Backend\AdminTextsController@update');//Сохранение после редактирования
+	Route::get('/texts',['uses' => 'Backend\AdminTextsController@index','as' => 'text_index']);//Вывод списка
+	Route::get('/texts/create',['uses' => 'Backend\AdminTextsController@create','as' => 'text_create']);//Вывод формы создания элемента
+	Route::post('/texts/create',['uses' =>'Backend\AdminTextsController@store','as' => 'text_store']);//Сохранение элемента
+	Route::delete('/texts/{id}',['uses' =>'Backend\AdminTextsController@destroy','as' => 'text_delete']);//Удаление элемента
+	Route::get('/texts/{id}',['uses' =>'Backend\AdminTextsController@edit','as' => 'text_edit']);//Вывод формы редакторирование
+	Route::put('/texts/{id}',['uses' =>'Backend\AdminTextsController@update','as' => 'text_supdate']);//Сохранение после редактирования
 
-	Route::get('/resume','Backend\AdminResumeController@index');//Вывод списка..
+	Route::get('/resume',['uses' => 'Backend\AdminResumeController@index','as' => 'resume_index']);//Вывод списка..
 	//Route::get('/comments/{article_id}/create','Backend\AdminResumeController@create');//Вывод формы создания элемента..
 	//Route::post('/comments/{article_id}/create','Backend\AdminResumeController@store');//Сохранение элемента
-	Route::delete('/resume/{id}','Backend\AdminResumeController@destroy');//Удаление элемента
-	Route::get('/resume/{id}','Backend\AdminResumeController@show');//Вывод формы редакторирование..
+	Route::delete('/resume/{id}',['uses' => 'Backend\AdminResumeController@destroy','as' => 'resume_delete']);//Удаление элемента
+	Route::get('/resume/{id}',['uses'=> 'Backend\AdminResumeController@show','as' => 'resume_show']);//Вывод формы редакторирование..
 	//Route::put('/comments/{article_id}/{id}','Backend\AdminResumeController@update');//Сохранение после редактирования..
 
 });
 
 Route::group(['middleware' => 'frontend.init'], function(){
-	Route::get('/{lang}/{type?}', 'Frontend\ArticleController@index')->where('type', 'main|company|news|works|events|gallery|contact');
-	Route::get('/{lang}/resume', 'Frontend\ResumeController@index');
-	Route::post('/{lang}/resume','Frontend\ResumeController@store');//Сохранение полного резюме
-	Route::post('/{lang}/upload', 'Frontend\ResumeController@upload');//Сохранение вложенного резюме
-	Route::get('/{lang}/{type}/article-{id}', 'Frontend\ArticleController@show')->where('type', 'news|works');
+	Route::get('/{lang}/{type?}', ['uses' => 'Frontend\ArticleController@index','as' => 'article_index'])->where('type', 'main|company|news|works|events|gallery|contact');
+	Route::get('/{lang}/resume', ['uses' => 'Frontend\ResumeController@index','as' => 'resume']);
+	Route::post('/{lang}/resume',['uses' => 'Frontend\ResumeController@store','as' => 'resume_store']);//Сохранение полного резюме
+	Route::post('/{lang}/upload', ['uses' => 'Frontend\ResumeController@upload','as' => 'upload']);//Сохранение вложенного резюме
+	Route::get('/{lang}/{type}/article-{id}', ['uses' => 'Frontend\ArticleController@show','as' => 'article_show'])->where('type', 'news|works');
 
 
 });
