@@ -31,9 +31,13 @@ class AdminTextsController extends Controller {
 
 		$admin_texts = Text::all()
 			->sortByDesc("priority");
-
+		$admin_texts_deleted = Text::onlyTrashed()->get();
+		//$count_text_deleted = Text::onlyTrashed()->count();
+		//dd($admin_texts_deleted);
 		return view('backend.texts.list',[
-			'admin_texts' => $admin_texts
+			'admin_texts' => $admin_texts,
+			'admin_texts_deleted' => $admin_texts_deleted,
+		//	'count_text_deleted' => $count_text_deleted
 		]);
 	}
 
@@ -180,6 +184,16 @@ class AdminTextsController extends Controller {
 		}
 
 
+	}
+	public function recovery(){
+		$texts_recovery = Text::onlyTrashed()
+			->restore();
+		return redirect(route('text_index'));
+	}
+	public function delete(){
+		$texts_delete = Text::onlyTrashed();
+		$texts_delete->forceDelete();
+		return redirect(route('text_index'));
 	}
 
 }

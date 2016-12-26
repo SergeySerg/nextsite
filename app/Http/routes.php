@@ -35,7 +35,9 @@ Route::group(['prefix'=>'adminSha4', 'middleware' => ['auth', 'backend.init']], 
 	Route::post('/texts/create',['uses' =>'Backend\AdminTextsController@store','as' => 'text_store']);//Сохранение элемента
 	Route::delete('/texts/{id}',['uses' =>'Backend\AdminTextsController@destroy','as' => 'text_delete']);//Удаление элемента
 	Route::get('/texts/{id}',['uses' =>'Backend\AdminTextsController@edit','as' => 'text_edit']);//Вывод формы редакторирование
-	Route::put('/texts/{id}',['uses' =>'Backend\AdminTextsController@update','as' => 'text_supdate']);//Сохранение после редактирования
+	Route::put('/texts/{id}',['uses' =>'Backend\AdminTextsController@update','as' => 'text_update']);//Сохранение после редактирования
+	Route::get('/texts_recovery',['uses' => 'Backend\AdminTextsController@recovery','as' => 'text_recovery']);//Востановление записей после удаления
+	Route::get('/texts_delete',['uses' => 'Backend\AdminTextsController@delete','as' => 'texts_delete']);
 
 	Route::get('/resume',['uses' => 'Backend\AdminResumeController@index','as' => 'resume_index']);//Вывод списка..
 	//Route::get('/comments/{article_id}/create','Backend\AdminResumeController@create');//Вывод формы создания элемента..

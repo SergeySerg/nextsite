@@ -1,9 +1,10 @@
 <?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Text extends Translate {
-
+    use SoftDeletes;
     protected $table = "texts";
 
     protected $fields = [];
@@ -17,6 +18,7 @@ class Text extends Translate {
         'description',
         'lang_active'
     ];
+    protected $dates = ['deleted_at'];
 
     public function init(){
         $textsArray = $this->all();
