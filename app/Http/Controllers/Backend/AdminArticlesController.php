@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend;
 //use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 //use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\URL;
 use App\Models\Article;
 use App\Models\Category;
