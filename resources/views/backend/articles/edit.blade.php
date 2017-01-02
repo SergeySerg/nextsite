@@ -3,15 +3,14 @@
 @section('breadcrumbs')
     <li>
         <i class="icon-home home-icon"></i>
-        <a href="/{{ $url }}/">Головна</a>
+        <a href="{{ $url }}/">Головна</a>
         <span class="divider">
             <i class="icon-angle-right arrow-icon"></i>
         </span>
     </li>
     @if(isset($type))
     <li>
-        <a href="#">{{$type}}</a>
-
+        <a href="{{ $url }}/articles/{{$type}}">{{$type}}</a>
         <span class="divider">
             <i class="icon-angle-right arrow-icon"></i>
         </span>
@@ -45,10 +44,17 @@
             <form class="form-horizontal" id="resource-form" method="POST" action="" />
                 @if($admin_category->hasField('price'))
                     <div class="control-group">
-                        <label class="control-label" for="form-field-1">Заробітня плата</label>
-
+                        <label class="control-label" for="form-field-1">Вартість</label>
                         <div class="controls">
                             <input type="text" id="form-field-1" name="price" @if(isset($admin_article)) value='{{$admin_article->price}}'@endif  />
+                        </div>
+                    </div>
+                @endif
+                @if($admin_category->hasField('term'))
+                    <div class="control-group">
+                        <label class="control-label" for="form-field-1">Термін виконання</label>
+                        <div class="controls">
+                            <input type="text" id="form-field-1" name="price" @if(isset($admin_article)) value='{{$admin_article->term}}'@endif  />
                         </div>
                     </div>
                 @endif
@@ -62,13 +68,13 @@
                     </div>
                 @endif
                 @if($admin_category->hasField('priority'))
-                <div class="control-group">
-                    <label class="control-label" for="form-field-2">Пріоритет</label>
+                    <div class="control-group">
+                        <label class="control-label" for="form-field-2">Пріоритет</label>
 
-                    <div class="controls">
-                        <input type="number" id="form-field-2" name="priority" @if(isset($admin_article)) value='{{$admin_article->priority}}' @endif  />
+                        <div class="controls">
+                            <input type="number" id="form-field-2" name="priority" @if(isset($admin_article)) value='{{$admin_article->priority}}' @endif  />
+                        </div>
                     </div>
-                </div>
                 @endif
                 @if($admin_category->hasField('active'))
                     <div class="control-group">

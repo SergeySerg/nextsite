@@ -56,13 +56,13 @@ class CategoriesSeeder extends Seeder {
         Category::create([
             'id' => "2",
             'name' => 'Візи',
-            'link' => 'visa',
+            'link' => 'visas',
             'fields' => '["title","price","short_description","description","gallery","priority","active"]',
         ]);
         Category::create([
             'id' => "3",
             'name' => 'Візові центри',
-            'link' => 'visa_center',
+            'link' => 'visas_center',
             'fields' => '["title","price","short_description","description","priority","active","term"]',
         ]);
         Category::create([
@@ -153,7 +153,7 @@ class LangsSeeder extends Seeder {
         ]);
 
         Lang::create([
-            'lang' => 'pl',
+            'lang' => 'ru',
         ]);
 
         /*Lang::create([

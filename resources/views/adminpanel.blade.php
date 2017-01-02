@@ -90,7 +90,7 @@
 
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="{{ asset('/img/backend/avatar.jpg') }}" alt="Jason's Photo" />
+                        <img class="nav-user-photo" src="{{ asset('/img/backend/avatar.jpg') }}" alt="Admin" />
 								<span class="user-info">
 									<small>Вітаю,</small>
 									{{ Auth::user()->name }}
@@ -106,7 +106,6 @@
                                  Перейти на сайт
                              </a>
                          </li>
-
                         <!--  <li>
                              <a href="#">
                                  <i class="icon-user"></i>
@@ -158,64 +157,54 @@
                     <span class="menu-text"> Головна </span>
                 </a>
             </li>
-            <li @if(Request::is('*/company'))class="active"@endif>
-            <a href="{{ $url }}/articles/company">
-                <i class="icon-text-width"></i>
-                <span class="menu-text"> Про компанію </span>
-            </a>
+            <li @if(Request::is('*/visas'))class="active"@endif>
+                <a href="{{ $url }}/articles/visas">
+                    <i class="icon-envelope"></i>
+                    <span class="menu-text"> Візи </span>
+                </a>
+            </li>
+
+            <li @if(Request::is('*/visas_center'))class="active"@endif>
+                <a href="{{ $url }}/articles/visas_center">
+                    <i class="icon-home"></i>
+                    <span class="menu-text"> Візові центри </span>
+                </a>
             </li>
 
             <li @if(Request::is('*/news'))class="active"@endif>
-            <a href="{{ $url }}/articles/news">
-                <i class="icon-hospital"></i>
-                <span class="menu-text"> Новини </span>
-            </a>
-            </li>
-
-            <li @if(Request::is('*/works'))class="active"@endif>
-            <a href="{{ $url }}/articles/works">
-                <i class="icon-list"></i>
-                <span class="menu-text"> Вакансії </span>
-            </a>
-            </li>
-
-            {{-- <li @if(Request::is('adminSha4/article/events'))class="active"@endif>
-            <a href="{{ $url }}/articles/events">
-                <i class="icon-hospital"></i>
-                <span class="menu-text"> Події </span>
-            </a>
-            </li> --}}
-            <li @if(Request::is('*/gallery'))class="active"@endif>
-            <a href="{{ $url }}/articles/gallery">
-                <i class="icon-picture"></i>
-                <span class="menu-text"> Галерея </span>
-            </a>
-            </li>
-            <li @if(Request::is('*/slider'))class="active"@endif>
-            <a href="{{ $url }}/articles/slider">
-                <i class="icon-picture"></i>
-                <span class="menu-text"> Слайдер </span>
-            </a>
-            </li>
-            <li @if(Request::is('*/seo'))class="active"@endif>
-            <a href="{{ $url }}/articles/seo">
-
-                <i class="icon-file-alt"></i>
-                <span class="menu-text"> SEO </span>
-            </a>
-            </li>
-            <li @if(Request::is('*/texts'))class="active"@endif>
-            <a href="{{ $url }}/texts">
-                <i class="icon-hospital"></i>
-                <span class="menu-text"> Текстові блоки </span>
-            </a>
-            </li>
-            <li @if(Request::is('*/resume'))class="active"@endif>
-                <a href="{{ $url }}/resume">
-                    <i class="icon-list"></i>
-                    <span class="menu-text"> Резюме </span>
+                <a href="{{ $url }}/articles/news">
+                    <i class="icon-hospital"></i>
+                    <span class="menu-text"> Новини </span>
                 </a>
             </li>
+
+            <li @if(Request::is('*/services'))class="active"@endif>
+                <a href="{{ $url }}/articles/services">
+                    <i class="icon-list"></i>
+                    <span class="menu-text"> Послуги </span>
+                </a>
+            </li>
+
+            <li @if(Request::is('*/advices'))class="active"@endif>
+                <a href="{{ $url }}/articles/advices">
+                    <i class="icon-bullhorn"></i>
+                    <span class="menu-text"> Поради </span>
+                </a>
+            </li>
+            <li @if(Request::is('*/texts'))class="active"@endif>
+                <a href="{{ $url }}/texts">
+                    <i class="icon-hospital"></i>
+                    <span class="menu-text"> Текстові блоки </span>
+                </a>
+            </li>
+            <li @if(Request::is('*/seo'))class="active"@endif>
+                <a href="{{ $url }}/articles/seo">
+                    <i class="icon-file-alt"></i>
+                    <span class="menu-text"> SEO </span>
+                </a>
+            </li>
+
+
         </ul><!--/.nav-list-->
 
         <div class="sidebar-collapse" id="sidebar-collapse">

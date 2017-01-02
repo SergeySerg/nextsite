@@ -153,7 +153,7 @@ class AdminTextsController extends Controller {
 			if($all['lang_active'] == 0){
 				$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '');
 			}else{
-				$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '') .'|';
+				$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '') .'@|;';
 			}
 			unset($all["description_{$lang['lang']}"]);
 
