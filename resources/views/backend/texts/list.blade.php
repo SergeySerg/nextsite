@@ -85,8 +85,10 @@
                 </table>
                 @if (count($admin_texts_deleted))
                     <h4 class="pink">
-                        <i class="icon-hand-right icon-animated-hand-pointer blue"></i>
-                        <a href="#modal-table" role="button" class="green" data-toggle="modal"> Видалені значення  </a>
+
+                        <a href="#modal-table" role="button" class="green" data-toggle="modal">
+                            <i class="icon-trash icon icon-only"></i> Видалені значення
+                        </a>
                         <div id="modal-table" class="modal hide fade" tabindex="-1">
                             <div class="modal-header no-padding">
                                 <div class="table-header">

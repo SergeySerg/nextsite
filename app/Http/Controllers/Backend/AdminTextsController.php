@@ -186,14 +186,14 @@ class AdminTextsController extends Controller {
 
 	}
 	public function recovery(){
-		$texts_recovery = Text::onlyTrashed()
+		Text::onlyTrashed()
 			->restore();
-		return redirect(route('text_index'));
+		return redirect()->route('text_index');
 	}
 	public function delete(){
 		$texts_delete = Text::onlyTrashed();
 		$texts_delete->forceDelete();
-		return redirect(route('text_index'));
+		return redirect()->route('text_index');
 	}
 
 }
