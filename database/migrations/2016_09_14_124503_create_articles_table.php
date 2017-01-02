@@ -21,6 +21,7 @@ class CreateArticlesTable extends Migration {
 			$table->text('short_description');
 			$table->text('description');
 			$table->text('price');
+			$table->text('term');
 			$table->integer('quantity');
 			$table->text('imgs');
 			$table->text('files');
