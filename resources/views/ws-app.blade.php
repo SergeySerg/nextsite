@@ -5,7 +5,8 @@
 	<title>
 		@if($meta ->getTranslate('meta_title'))
 			{{ $meta ->getTranslate('meta_title') }}
-		@else Eurostandard
+		@else
+			Візи в Польщу
 		@endif
 	</title>
 
@@ -40,7 +41,7 @@
 
 			<div class="col-xs-6 resume-block">
 
-				<a class="main-resume" href="/{{ App::getLocale() }}/resume">{{ trans('base.resume') }}</a>
+
 
 			</div>
 
@@ -60,190 +61,16 @@
 
 			<div class="col-md-12 fix-height">
 
-				<nav class="navbar navbar-default">
 
-					<div class="container-fluid">
-
-						{{-- Brand and toggle get grouped for better mobile display --}}
-						<div class="navbar-header">
-
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-
-							<a class="navbar-brand" href="/{{ App::getLocale() }}">
-								<img alt="Brand" src="/img/frontend/logo.jpg">
-							</a>
-
-							<p class="navbar-text"><a href="/{{ App::getLocale() }}">EUROSTANDARD sp. z o.o.</a></p>
-
-						</div>
-
-						{{-- Collect the nav links, forms, and other content for toggling --}}
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-							<ul class="nav navbar-nav navbar-right r-menu">
-
-								<li @if(Request::is(App::getLocale())) class="active"@endif>
-									<a href="/{{ App::getLocale() }}">
-										<i class="fa fa-home"></i><br>
-										{{ trans('base.home') }}
-									</a>
-								</li>
-
-								<li @if(Request::is('*/company'))class="active"@endif>
-									<a href="/{{ App::getLocale() }}/company">
-										<i class="fa fa-paperclip"></i><br>
-										{{ trans('base.company') }}
-									</a>
-								</li>
-
-								<li @if(Request::is('*/news'))class="active"@endif>
-									<a href="/{{ App::getLocale() }}/news"><i class="fa fa-newspaper-o"></i><br>
-										{{ trans('base.news') }}
-									</a>
-								</li>
-
-								<li @if(Request::is('*/works'))class="active"@endif>
-									<a href="/{{ App::getLocale() }}/works"><i class="fa fa-user"></i><br>
-										{{ trans('base.works') }}
-									</a>
-								</li>
-
-								<li @if(Request::is('*/gallery'))class="active"@endif>
-									<a href="/{{ App::getLocale() }}/gallery"><i class="fa fa-camera"></i><br>
-										{{ trans('base.gallery') }}
-									</a>
-								</li>
-
-								<li @if(Request::is('*/contacts'))class="active"@endif>
-									<a href="/{{ App::getLocale() }}/contact"><i class="fa fa-envelope"></i><br>
-										{{ trans('base.contacts') }}
-									</a>
-								</li>
-
-							</ul>
-
-						</div>{{-- /.navbar-collapse --}}
-
-					</div>{{-- /.container-fluid --}}
-
-				</nav>
 			</div>
 
 		</div>
 
 		<div class="row" style="min-height: 600px;">
 
-			@yield('content')
 
-			@if(!(Request::is(App::getLocale())))
 
-				<div class="col-md-4">
 
-					@if(!(Request::is('*/works')) and !(Request::is('*/news/article-*')) )
-
-						<div class="panel panel-default wow fadeInDown">
-
-						<div class="panel-heading">{{ trans('base.latest_jobs') }}</div>
-
-						<div class="panel-body">
-
-							<div class="row">
-
-								@foreach($last_works as $last_work)
-
-									<div class="r-block-item">
-
-										<div class="col-md-12">
-
-											<h4 class="col-sm-6 col-md-6 text-left r-prof">{{ $last_work->getTranslate('title') }}</h4>
-
-											<h4 class="col-sm-6 col-md-6 text-right r-price">{!! $last_work->getTranslate('price') !!}</h4>
-
-											<p>{!! str_limit($last_work->getTranslate('short_description'), 215) !!}</p>
-
-											<a href="/{{ App::getLocale() }}/works/article-{{ $last_work -> id }}" class="pull-right">{{ trans('base.more') }}<i class="fa fa-angle-right fa-lg"></i></a>
-
-										</div>
-
-										<hr>
-
-									</div>
-
-								@endforeach
-
-							</div>
-
-							<p><a class="btn btn-primary btn-lg" style="width: 100%;" href="/{{ App::getLocale() }}/works" role="button">{{ trans('base.all_jobs') }}</a></p>
-
-						</div>
-
-					</div>
-
-					@endif
-
-					@if(!(Request::is('*/news')) and !(Request::is('*/works/article-*')) )
-
-						<div class="panel panel-default wow fadeInUp">
-
-						<div class="panel-heading">{{ trans('base.latest_news') }}</div>
-
-						<div class="panel-body">
-
-							<div class="row">
-
-								@foreach($last_news as $last_new)
-
-									<div class="r-block-item">
-
-										<div class="col-md-12"><h4>{{ $last_new->getTranslate('title') }}</h4></div>
-
-										@if(count($last_new->getImages()) > 0)
-
-											<div class="col-md-4">
-
-													<a href="/{{ App::getLocale() }}/news/article-{{ $last_new -> id }}" class="thumbnail">
-														<img src="/{{$last_new->getImages()[0]['min']}}" alt="...">
-													</a>
-
-											</div>
-
-											<div class="col-md-8">
-
-										@else
-
-											<div class="col-md-12">
-
-										@endif
-
-											{!! str_limit($last_new->getTranslate('short_description'), 140) !!}
-
-											<a href="/{{ App::getLocale() }}/news/article-{{ $last_new -> id }}" class="pull-right">{{ trans('base.read_full_news') }}<i class="fa fa-angle-right fa-lg"></i></a>
-
-										</div>
-
-										<hr>
-
-									</div>
-
-								@endforeach
-							</div>
-
-							<p><a class="btn btn-primary btn-lg" style="width: 100%;" href="/{{ App::getLocale() }}/news" role="button">{{ trans('base.all_news') }}</a></p>
-
-						</div>
-
-					</div>
-
-					@endif
-
-				</div>
-
-			@endif
 
 		</div>
 
@@ -256,35 +83,7 @@
 
 			<div class="row">
 
-				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 wow fadeInUp min-center">
 
-					<a class="navbar-brand" href="/{{ App::getLocale() }}">
-						<img alt="Brand" src="/img/frontend/logo.jpg">
-					</a>
-
-					<p class="navbar-text"><a href="/{{ App::getLocale() }}">EUROSTANDARD sp. z o.o.</a></p>
-
-				</div>
-
-				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-6 text-center wow fadeInDown min-center">
-
-					<i class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
-					<p>	{{  $texts->get('header.address') }}<br>
-						{{  $texts->get('header.address_poland') }}
-					</p>
-
-				</div>
-
-				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 text-right wow fadeInLeft min-center">
-
-					<i class="fa fa-phone fa-3x" aria-hidden="true"></i>
-
-					<ul class="phone">
-						<li>{{  $texts->get('header.tel1') }}</li>
-						<li>{{  $texts->get('header.tel2') }}</li>
-					</ul>
-
-				</div>
 
 			</div>
 

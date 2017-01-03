@@ -34,7 +34,10 @@
 <body>
 <div class="container">
     <div class="content">
-        <div class="title">Такой страницы не существует.</div>
+        <div class="title">404 Page Not Found</div>
+        <div style="font-size: 32px">
+            <a href=" {{ url() }} "> Перейти на Главную </a>
+        </div>
     </div>
 </div>
 </body>

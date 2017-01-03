@@ -1,6 +1,7 @@
 <?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Article extends Translate {
     protected $fillable=[
@@ -41,5 +42,17 @@ class Article extends Translate {
         else{
             return [];
         }
+    }
+    public function scopeActiveArticles($query){
+        $query->where ('active',1)
+              ->orderBy('priority','desc');
+    }
+    public function scopeSortDateArticles($query){
+        $query->latest('date')
+            ->where ('active',1);
+    }
+    //Change format of date
+    public function getDateAttribute($date){
+        return Carbon::createFromFormat('Y-m-d H:i:s',$date)->toDateString();
     }
 }

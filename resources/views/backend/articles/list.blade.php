@@ -51,7 +51,14 @@
                             <i class="icon-time bigger-110 hidden-phone"></i>
                             Update
                         </th>-->
-                        <th class="hidden-480">Ціна</th>
+                        @if (Request::is('*/news'))
+                            <th class="hidden-480">
+                                <i class="icon-time bigger-110 hidden-phone"></i>
+                                Дата публікації
+                            </th>
+                        @else
+                            <th class="hidden-480">Ціна</th>
+                        @endif
                         <th>Статус</th>
                         <th>Пріоритет</th>
                         <th></th>
@@ -72,8 +79,11 @@
                                 </td>
                                 <td>{{ $admin_article->created_at }}</td>
                                 <td class="hidden-480">{{ $admin_article->updated_at }}</td>
-                                <td class="hidden-phone">{{ $admin_article->price }}</td>
-
+                                @if (Request::is('*/news'))
+                                    <td class="hidden-phone">{{ $admin_article->date }}</td>
+                                @else
+                                    <td class="hidden-phone">{{ $admin_article->price }}</td>
+                                @endif
                                 <td class="hidden-480">
                                     @if($admin_article->active)
                                         <span class="label label-success">Активно</span>
