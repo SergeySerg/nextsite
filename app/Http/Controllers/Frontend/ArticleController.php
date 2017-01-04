@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers\Frontend;
 
 use App\Http\Requests;
+use App\Http\Requests\ContactRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Frontend;
 //use Illuminate\Contracts\Routing\ResponseFactory;
@@ -10,9 +11,11 @@ use App\Models\Article;
 use App\Models\Category;
 use App\Models\Lang;
 use App\Models\Order;
+use App\Models\Text;
 use App;
 use Illuminate\Support\Facades\Response;
 //use Illuminate\Contracts\View\View;
+use Mail;
 
 class ArticleController extends Controller {
 
@@ -48,7 +51,7 @@ class ArticleController extends Controller {
 			->articles()
 			->activearticles() // use scopeActiveArticles in Article Model
 			->get();
-		dump($news);
+		//dump($news);
 		return view('ws-app', [
 			'visas' => $visas,
 			'visas_center' => $visas_center,
@@ -122,5 +125,24 @@ class ArticleController extends Controller {
 	{
 		//
 	}
-
+	public function contact(ContactRequest $request)
+	{
+		if ($request ->isMethod('post')){
+			$all = $request->all();
+			Order::create($all);
+			//Отправка уведомления про добавления нового отзыва на email
+			Mail::send('emails.contact', $all, function($message){
+				$email = $this->getEmail();
+				$message->to($email, 'Example')->subject('Повідомлення про зворотній зв\'язок з сайту "Візи в Польщу" ');
+			});
+			return response()->json([
+				'success' => 'true'
+			]);
+		}
+	}
+	private function getEmail(){
+		$email = Text::where("name","=","config.email")->first();
+		$email = $email['description'];
+		return $email;
+	}
 }

@@ -190,3 +190,61 @@ $(function(){
         });
     });
 /* END Скрипт для отправки резюме с сайта */
+
+// Форма для виз
+
+    $('.show-popup').on('click', function () {
+        var title = $(this).attr('data-title');
+        if( title == undefined || title == ''){
+            var title = $(this).text();
+            $('#popup input[name="type"]').attr('value',title);
+        }
+        else{
+            $('#popup input[name="type"]').attr('value',title);
+        }
+
+
+    });
+// Форма для услуг
+$('.show-popup').on('click', function () {
+    var title = $(this).attr('data-title');
+    if( title == undefined || title == ''){
+        var title = $(this).text();
+        $('#popup-services input[name="type"]').attr('value',title);
+    }
+    else{
+        $('#popup-services input[name="type"]').attr('value',title);
+    }
+});
+//отправка формы
+$('#submit-send').on('click', function(event){
+    $('#submit-send').attr('disabled', true);
+    var data = $('form#popup').serialize();
+    $.ajax({
+        url: '/contact',
+        method: "POST",
+        data: data,
+        dataType : "json",
+        success: function(data){
+            console.info('Server response: ', data);
+            if(data.success){
+                swal(trans['base.success'], "", "success");
+                jQuery("#resume-form").trigger("reset");
+                $("#resume-send").attr('disabled', false);
+            }
+            else{
+                swal(trans['base.error'], data.message, "error");
+                $("#resume-send").attr('disabled', false);
+            }
+
+        },
+        error:function(data){
+            swal(trans['base.error']);
+            $("#resume-send").attr('disabled', false);
+            //  jQuery("#resume-form").trigger("reset");
+        }
+
+    },"json");
+    event.preventDefault();
+
+});
