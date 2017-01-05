@@ -50,12 +50,6 @@ Route::group(['prefix'=>'adminSha4', 'middleware' => ['auth', 'backend.init']], 
 
 Route::group(['middleware' => 'frontend.init'], function(){
 	Route::get('/{lang}', ['uses' => 'Frontend\ArticleController@index','as' => 'article_index']);
-
-	//Route::get('/{lang}/{type?}', ['uses' => 'Frontend\ArticleController@index','as' => 'article_index'])->where('type', 'main|company|news|works|events|gallery|contact');
-	//Route::get('/{lang}/resume', ['uses' => 'Frontend\ResumeController@index','as' => 'resume']);
-	//Route::post('/{lang}/resume',['uses' => 'Frontend\ResumeController@store','as' => 'resume_store']);//Сохранение полного резюме
-	//Route::post('/{lang}/upload', ['uses' => 'Frontend\ResumeController@upload','as' => 'upload']);//Сохранение вложенного резюме
-	//Route::get('/{lang}/{type}/article-{id}', ['uses' => 'Frontend\ArticleController@show','as' => 'article_show'])->where('type', 'news|works');
 });
 
 

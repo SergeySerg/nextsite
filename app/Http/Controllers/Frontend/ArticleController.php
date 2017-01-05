@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers\Frontend;
 
 use App\Http\Requests;
-use App\Http\Requests\ContactRequest;
+//use App\Http\Requests\ContactRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Frontend;
 //use Illuminate\Contracts\Routing\ResponseFactory;
@@ -16,6 +16,7 @@ use App;
 use Illuminate\Support\Facades\Response;
 //use Illuminate\Contracts\View\View;
 use Mail;
+use Illuminate\Support\Facades\Validator;
 
 class ArticleController extends Controller {
 
@@ -125,12 +126,33 @@ class ArticleController extends Controller {
 	{
 		//
 	}
-	public function contact(ContactRequest $request)
+	public function contact(Request $request)
 	{
 		if ($request ->isMethod('post')){
+			/*get [] from request*/
 			$all = $request->all();
+
+			/*make rules for validation*/
+			$rules = [
+				'name' => 'required|max:50',
+				'phone' => 'required|max:15',
+			];
+
+			/*validation [] according to rules*/
+			$validator = Validator::make($all, $rules);
+
+			/*send error message after validation*/
+			if ($validator->fails()) {
+				return response()->json(array(
+					'success' => false,
+					'message' => $validator->messages()->first()
+				));
+			}
+
+			/*create new item in DB*/
 			Order::create($all);
-			//Отправка уведомления про добавления нового отзыва на email
+
+			//Send item on admin email address
 			Mail::send('emails.contact', $all, function($message){
 				$email = $this->getEmail();
 				$message->to($email, 'Example')->subject('Повідомлення про зворотній зв\'язок з сайту "Візи в Польщу" ');
@@ -140,6 +162,7 @@ class ArticleController extends Controller {
 			]);
 		}
 	}
+	/*get  var email from DB TEXT for send email*/
 	private function getEmail(){
 		$email = Text::where("name","=","config.email")->first();
 		$email = $email['description'];

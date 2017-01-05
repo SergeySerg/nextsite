@@ -35,7 +35,7 @@ return [
 	"digits"               => "The :attribute must be :digits digits.",
 	"digits_between"       => "The :attribute must be between :min and :max digits.",
 	"email"                => " :attribute повинен бути дійсна адреса електронної пошти.",
-	"filled"               => " :attribute поле обовя'язкове для заповнення .",
+	"filled"               => " :attribute поле обязательно для заполнения.",
 	"exists"               => "The selected :attribute is invalid.",
 	"image"                => "The :attribute must be an image.",
 	"in"                   => "The selected :attribute is invalid.",
@@ -44,7 +44,7 @@ return [
 	"max"                  => [
 		"numeric" => "The :attribute may not be greater than :max.",
 		"file"    => "Розмір прикріпленого файлу (:attribute) повинен бути не більше :max кілобайт.",
-		"string"  => ":attribute не може бути більше, ніж :max символів.",
+		"string"  => ":attribute не может біть больше :max символов.",
 		"array"   => "The :attribute may not have more than :max items.",
 	],
 	"mimes"                => "Поле :attribute повинен бути з наступним розширенням :values.",
@@ -103,7 +103,7 @@ return [
 	*/
 
 	'attributes' => [
-		'name' => 'ПІБ',
+		'name' => 'ФИО',
 		'phone' => 'Телефон',
 		'date_birthday' => 'Дата народження',
 		'home' => 'Адреса проживання',

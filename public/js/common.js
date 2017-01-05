@@ -205,6 +205,7 @@ $(function(){
 
 
     });
+/*Castom JS*/
 // Форма для услуг
 $('.show-popup').on('click', function () {
     var title = $(this).attr('data-title');
@@ -226,21 +227,20 @@ $('#submit-send').on('click', function(event){
         data: data,
         dataType : "json",
         success: function(data){
-            console.info('Server response: ', data);
+            //console.info('Server response: ', data);
             if(data.success){
                 swal(trans['base.success'], "", "success");
-                jQuery("#resume-form").trigger("reset");
-                $("#resume-send").attr('disabled', false);
+                jQuery("#popup").trigger("reset");
+                $("#submit-send").attr('disabled', false);
             }
             else{
                 swal(trans['base.error'], data.message, "error");
-                $("#resume-send").attr('disabled', false);
+                $("#submit-send").attr('disabled', false);
             }
-
         },
         error:function(data){
             swal(trans['base.error']);
-            $("#resume-send").attr('disabled', false);
+            $("#submit-send").attr('disabled', false);
             //  jQuery("#resume-form").trigger("reset");
         }
 

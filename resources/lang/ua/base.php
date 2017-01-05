@@ -61,9 +61,8 @@ return [
 	/* Footer*/
 	'send' => 'Надіслати',
 	/* End Footer */
-	/* Script Resume*/
-	'success_send_resume' => 'Ваше резюме успішно відправлено!',
-	'error_send_resume' => 'Помилка при відправці резюме!',
-	'error_upload' => 'При завантаженні файла виникла помилка',
-	/* /Script Resume*/
+	/* Script Contact*/
+	'success_send_contact' => 'Ваша заявка успішно відправлена!',
+	'error_send_contact' => 'Виникла помилка при відправці заявки!',
+	/* /Script Contact*/
 ];
