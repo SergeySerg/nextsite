@@ -191,6 +191,14 @@
                     <span class="menu-text"> Поради </span>
                 </a>
             </li>
+
+            <li @if(Request::is('*/orders'))class="active"@endif>
+                <a href="{{ $url }}/orders">
+                    <i class="icon-bullhorn"></i>
+                    <span class="menu-text"> Повідомлення зворотнього зв'язку </span>
+                </a>
+            </li>
+
             <li @if(Request::is('*/texts'))class="active"@endif>
                 <a href="{{ $url }}/texts">
                     <i class="icon-hospital"></i>

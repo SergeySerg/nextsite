@@ -9,5 +9,8 @@ class Order extends Model {
         'name',
         'phone'
     ];
+    public function getDateAttribute($created_at){
+        return Carbon::createFromFormat('Y-m-d H:i:s',$created_at)->toDateString();
+    }
 
 }
