@@ -34,6 +34,8 @@ return [
 	'put_phone' => 'Ввеlbnt Ваш телефон:',
 	'message' => 'Сообщение',
 	'send' => 'Отправить',
+	'days' => 'дней',
+	"from" => 'от',
 	/* Script Contact*/
 	'success_send_contact' => 'Ваша заявка успешно отправлена !',
 	'error_send_contact' => 'Возникла ошибка при передачи заявки!',

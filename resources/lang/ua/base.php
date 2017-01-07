@@ -35,6 +35,9 @@ return [
 	'put_phone' => 'Введіть Ваш телефон:',
 	'message' => 'Повідомлення',
 	'send' => 'Відправити',
+	'days' => 'днів',
+	"from" => 'від',
+
 
 	/* End Footer */
 	/* Script Contact*/

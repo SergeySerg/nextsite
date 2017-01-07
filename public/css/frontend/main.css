@@ -247,17 +247,17 @@ body {
   background-color: #e6e6e6;
   cursor: pointer; }
 
-.visa-type_item:hover .visa-type_img__flag {
+.visa-type_item:hover .visa-type_img__1 {
   background-image: url("../../img/frontend/imgForSprite/flag_pl_grey.png"); }
 
-.visa-type_item:hover .visa-type_img__bag {
+.visa-type_item:hover .visa-type_img__2 {
   background-image: url("../../img/frontend/imgForSprite/bag_grey.png"); }
 
-.visa-type_item:hover .visa-type_img__plane {
-  background-image: url("../../img/frontend/imgForSprite/plane_grey.png"); }
-
-.visa-type_item:hover .visa-type_img__diplom {
+.visa-type_item:hover .visa-type_img__3 {
   background-image: url("../../img/frontend/imgForSprite/diplom_grey.png"); }
+
+.visa-type_item:hover .visa-type_img__4 {
+  background-image: url("../../img/frontend/imgForSprite/plane_grey.png"); }
 
 .visa-type_item:hover .visa-type_price {
   border-top: 2px solid #ffffff; }
@@ -265,16 +265,16 @@ body {
 .visa-type_item:first-child {
   margin-left: 0; }
 
-.visa-type_img__flag {
+.visa-type_img__1 {
   background-image: url("../../img/frontend/imgForSprite/flag_pl.png"); }
 
-.visa-type_img__bag {
+.visa-type_img__2 {
   background-image: url("../../img/frontend/imgForSprite/bag.png"); }
 
-.visa-type_img__diplom {
+.visa-type_img__3 {
   background-image: url("../../img/frontend/imgForSprite/diplom.png"); }
 
-.visa-type_img__plane {
+.visa-type_img__4 {
   background-image: url("../../img/frontend/imgForSprite/plane.png"); }
 
 .visa-type_img {

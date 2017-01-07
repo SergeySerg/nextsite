@@ -64,14 +64,14 @@
 	</div>
 	<div class="wrapper wrapper_section-1 clearfix">
 		<ul class="visa-type clearfix">
-			@foreach($visas as $visa)
+			@for($i=0; $i < count($visas); $i++)
 				<li class="visa-type_item">
-					<div class="visa-type_img visa-type_img__flag"></div>
-					{!! $visa->getTranslate('title') !!}
-					<div class="visa-type_price">{{ $visa->price }}<span class="visa-type_price-value">{{ $texts->get('symbol-price') }}</span></div>
+					<div class="visa-type_img visa-type_img__{{$i+1}}"></div>
+					{!! $visas[$i]->getTranslate('title') !!}
+					<div class="visa-type_price">{{ $visas[$i]->price }}<span class="visa-type_price-value">{{ $texts->get('symbol-price') }}</span></div>
 					<button class="button_red">{{ trans('base.check_visa') }}</button>
 				</li>
-			@endforeach
+			@endfor
 		</ul>
 		<div class="info">
 			<div class="info-text">{{ trans('base.info') }}</div>
@@ -90,8 +90,8 @@
 				<div class="region-block">
 					<div class="region-name">{{ $visa_center->getTranslate('title') }}</div>
 					<div class="region-include">{!! $visa_center->getTranslate('short_description') !!}</div>
-					<div class="region-term"><span class="number">{{ $visa_center->term }}</span> днів</div>
-					<div class="region-price">від <span class="number">{{ $visa_center->price }}</span> грн.</div>
+					<div class="region-term"><span class="number">{{ $visa_center->term }}</span> {{ trans('base.days') }}</div>
+					<div class="region-price">{{ trans('base.from') }} <span class="number">{{ $visa_center->price }}</span> грн.</div>
 				</div>
 
 				<div class="map">
@@ -117,38 +117,16 @@
 			</ul>
 		</div>
 		<ul class="news-block clearfix">
-			<li class="news-block_item">
-				<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news1.jpg') }}');"></div>
-				<div class="news-text-wrap">
-					<h3 class="news-block_title">ЗАГЛОВОК НОВИНИ макс. ДВІ СТРОКИ</h3>
-					<p class="news-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
-					<button class="button_red">{{ trans('base.more') }}</button>
-				</div>
-			</li>
-			<li class="news-block_item">
-				<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news2.jpg') }}');"></div>
-				<div class="news-text-wrap">
-					<h3 class="news-block_title">ЗАГЛОВОК НОВИНИ макс. ДВІ СТРОКИ</h3>
-					<p class="news-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
-					<button class="button_red">Детальніше</button>
-				</div>
-			</li>
-			<li class="news-block_item">
-				<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news3.jpg') }}');"></div>
-				<div class="news-text-wrap">
-					<h3 class="news-block_title">ЗАГЛОВОК НОВИНИ макс. ДВІ СТРОКИ</h3>
-					<p class="news-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
-					<button class="button_red">Детальніше</button>
-				</div>
-			</li>
-			<li class="news-block_item">
-				<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news4.jpg') }}');"></div>
-				<div class="news-text-wrap">
-					<h3 class="news-block_title">ЗАГЛОВОК НОВИНИ макс. ДВІ СТРОКИ</h3>
-					<p class="news-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
-					<button class="button_red">Детальніше</button>
-				</div>
-			</li>
+			@foreach($news as $new)
+				<li class="news-block_item">
+					<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news1.jpg') }}');"></div>
+					<div class="news-text-wrap">
+						<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 20, '...') !!}</h3>
+						<p class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 80, '...') !!}</p>
+						<button class="button_red">{{ trans('base.more') }}</button>
+					</div>
+				</li>
+			@endforeach
 		</ul>
 		<div class="subscribe-news">{{ trans('base.subscribe_news') }}</div>
 	</div>
@@ -214,34 +192,12 @@
 		<div class="advice-block">
 			<h2 class="section-name section-name_advice">{{ trans('base.advices') }}</h2>
 			<ul class="advice-list">
-				<li class="advice-list_item clearfix">
-					<div class="advice-list_item-number">1</div>
-					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
-				</li>
-				<li class="advice-list_item clearfix">
-					<div class="advice-list_item-number">2</div>
-					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
-				</li>
-				<li class="advice-list_item clearfix">
-					<div class="advice-list_item-number">3</div>
-					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
-				</li>
-				<li class="advice-list_item clearfix">
-					<div class="advice-list_item-number">4</div>
-					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
-				</li>
-				<li class="advice-list_item clearfix">
-					<div class="advice-list_item-number">5</div>
-					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
-				</li>
-				<li class="advice-list_item clearfix">
-					<div class="advice-list_item-number">6</div>
-					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
-				</li>
-				<li class="advice-list_item clearfix">
-					<div class="advice-list_item-number">7</div>
-					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
-				</li>
+				@for($i = 0; $i < count($advices); $i++)
+					<li class="advice-list_item clearfix">
+						<div class="advice-list_item-number">{{  $i+1 }}</div>
+						<p class="advice-list_item-text">{!! $advices[$i]->getTranslate('short_description') !!}</p>
+					</li>
+				@endfor
 			</ul>
 			<button class="button_red button_section-6">{{ trans('base.learn_more') }}</button>
 		</div>
