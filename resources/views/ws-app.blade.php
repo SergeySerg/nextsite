@@ -121,8 +121,8 @@
 				<li class="news-block_item">
 					<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news1.jpg') }}');"></div>
 					<div class="news-text-wrap">
-						<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 20, '...') !!}</h3>
-						<p class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 80, '...') !!}</p>
+						<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 30, '...') !!}</h3>
+						<p class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 120, '...') !!}</p>
 						<button class="button_red">{{ trans('base.more') }}</button>
 					</div>
 				</li>
