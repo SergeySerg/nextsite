@@ -54,7 +54,7 @@
                     <div class="control-group">
                         <label class="control-label" for="form-field-1">Термін виконання</label>
                         <div class="controls">
-                            <input type="text" id="form-field-1" name="price" @if(isset($admin_article)) value='{{$admin_article->term}}'@endif  />
+                            <input type="text" id="form-field-1" name="term" @if(isset($admin_article)) value='{{$admin_article->term}}'@endif  />
                         </div>
                     </div>
                 @endif

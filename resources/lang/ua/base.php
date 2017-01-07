@@ -13,53 +13,29 @@ return [
 	|
 	*/
 
-	/* Header */
-	'home' => 'Головна',
-	'company' => 'Про компанію',
-	'news' => 'Новини',
-	'works' => 'Вакансії',
-	'gallery' => 'Галерея',
-	'contacts' => 'Контакти',
-	'resume' => 'Вислати резюме',
+	'social' => 'в соцмережах',
+	'check_visa' => 'Замовити візу',
+	'info' => 'додаткова інформація',
+	'registry_visa_center' => 'реєстрація у візові центри',
+	'registry' => 'Зареєструватись',
+	'news' => 'новини',
+	'news_soc' => 'слідкуйте за нашими новинами у соц мережах:',
 	'more' => 'Детальніше',
-	'latest_jobs' => 'Останні вакансії',
-	'latest_news' => 'Останні новини',
-	'all_news' => 'Всі новини',
-	'all_jobs' => 'Всі вакансії',
-	'read_full_news' => 'Читати повну новину',
-	/* End Header */
-	/* Gallery Page */
-	'gallery_empty' => 'Відсутні фото',
-	/* End Gallery Page */
-	/* News Page */
-	'date' => 'Дата',
-	/* End News Page */
-	/* Works Page */
-	'salary' => 'Заробітна плата',
-	/* End Works Page */
-	/* Resume*/
-	'resume.makeresume' => 'Сформувати і відправити резюме',
-	'resume.sendresume' => 'Відправити готове резюме',
-	'resume.name' => 'ПІБ',
-	'resume.birth' => 'Дата народження',
-	'resume.address' => 'Адреса проживання',
-	'resume.mobile' => 'Телефон мобільний',
-	'resume.homephone' => 'Телефон домашній',
-	'resume.education' => 'Освіта',
-	'resume.profession' => 'Спеціальність',
-	'resume.experience' => 'Досвід роботи',
-	'resume.experiencedescribe' => '(останнє місце роботи, посада, обов\'язки)',
-	'resume.tool' => 'Володіння електроінструментом',
-	'resume.salary' => 'Бажаний рівень зп',
-	'resume.file' => 'Прикріпити файл резюме',
-	/* End Resume*/
-	/* Contact*/
-	'ukraine_office' => 'Офіс в Укрвїні',
-	'poland_office_1' => 'Офіс в Польщі №1',
-	'poland_office_2' => 'Офіс в Польщі №2',
-	/* End Contact */
-	/* Footer*/
-	'send' => 'Надіслати',
+	'subscribe_news' => 'підписатись на новини',
+	'insurance' => 'Страхування',
+	'order_insurance' => 'Замовити страхівку',
+	'services' => 'інші послуги',
+	'callback' => 'Зворотній зв\'язок',
+	'advices' => 'Корисні поради',
+	'learn_more' => 'Дізнатися більше',
+	'want' => 'як нас знайти?',
+	'contact' => 'Контакти',
+	'put_name' => 'Введіть Ваше ім\'я:',
+	'put_email' => 'Введіть Ваш e-mail:',
+	'put_phone' => 'Введіть Ваш телефон:',
+	'message' => 'Повідомлення',
+	'send' => 'Відправити',
+
 	/* End Footer */
 	/* Script Contact*/
 	'success_send_contact' => 'Ваша заявка успішно відправлена!',

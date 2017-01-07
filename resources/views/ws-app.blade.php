@@ -23,270 +23,271 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('img/favicon/apple-touch-icon-72x72.png') }}">
 	<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('/img/favicon/apple-touch-icon-114x114.png') }}">
 
-	{{-- Bootstrap core CSS --}}
-	<link href="{{ asset('/css/frontend/bootstrap.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/frontend/flex-light-theme.css') }}?ver={{ $version }}" rel="stylesheet">
-	<link href="{{ asset('/css/frontend/main.css') }}?ver={{ $version }}" rel="stylesheet">
-	<link href="{{ asset('/css/frontend/font-awesome.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('/libs/unitegallery/dist/css/unite-gallery.css') }}" rel="stylesheet">
+	{{-- CSS --}}
+
+	<link rel="stylesheet" href="{{ asset('/libs/normalize.css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ asset('/libs/bootstrap-grid-only/css/grid12.css') }}">
+	<link rel="stylesheet" href="{{ asset('/css/frontend/fonts.css') }}">
+	<link href="{{ asset('/css/frontend/main.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/plugins/sweetalert.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
+<div class="header-line">
+	<div class="wrapper wrapper_header-line clearfix">
+		<img src="{{ asset('/img/frontend/flags.jpg') }}" alt="" class="logo" width="42" height="48">
+		<div class="logo-text">
+			{!! $texts->get('header.name') !!}
+		</div>
+		<ul class="phones">
+			<li class="phones_item">{{ $texts->get('header.tel1') }}</li>
+			<li class="phones_item phones_item__bg">{{ $texts->get('header.tel2') }}</li>
+		</ul>
+	</div>
+</div>
 
-	<div class="container">
-
-		<div class="row">
-
-			<div class="col-xs-6 resume-block">
-
-
-
+<div class="section_1">
+	<div class="wrapper wrapper_section-1 clearfix">
+		<div class="women"></div>
+		<div class="section-1_wrapper-text">
+			<div class="social">
+				<span class="soc-name">{{ trans('base.social') }}</span>
+				<ul class="soc-list clearfix">
+					<li class="soc-item"><a class="soc-item_vk" href="{{ $texts->get('social_vk') }}"></a></li>
+					<li class="soc-item"><a class="soc-item_fb" href="{{ $texts->get('social_fb') }}"></a></li>
+				</ul>
 			</div>
+			<div class="section-1_text"></div>
+			<button class="button button_section-1">{{ trans('base.check_visa') }}</button>
+		</div>
+	</div>
+	<div class="wrapper wrapper_section-1 clearfix">
+		<ul class="visa-type clearfix">
+			@foreach($visas as $visa)
+				<li class="visa-type_item">
+					<div class="visa-type_img visa-type_img__flag"></div>
+					{!! $visa->getTranslate('title') !!}
+					<div class="visa-type_price">{{ $visa->price }}<span class="visa-type_price-value">{{ $texts->get('symbol-price') }}</span></div>
+					<button class="button_red">{{ trans('base.check_visa') }}</button>
+				</li>
+			@endforeach
+		</ul>
+		<div class="info">
+			<div class="info-text">{{ trans('base.info') }}</div>
+			<div class="info-phone">{{ $texts->get('header.tel1') }}</div>
+		</div>
+	</div>
+	<div class="arrow-top"></div>
+</div>
 
-			<ul class="col-xs-6 text-right lang">
+<div class="section-1_bg"></div>
 
-				@foreach($langs as $lang)
+<div class="section_2">
+	<div class="wrapper wrapper_section-2 clearfix">
+		<h2 class="section-name section-name_registration">{{ trans('base.registry_visa_center') }}</h2>
+			@foreach($visas_center as $visa_center)
+				<div class="region-block">
+					<div class="region-name">{{ $visa_center->getTranslate('title') }}</div>
+					<div class="region-include">{!! $visa_center->getTranslate('short_description') !!}</div>
+					<div class="region-term"><span class="number">{{ $visa_center->term }}</span> днів</div>
+					<div class="region-price">від <span class="number">{{ $visa_center->price }}</span> грн.</div>
+				</div>
 
-					<li><a href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a></li>
+				<div class="map">
+					<div class="map_1"></div>
+				</div>
+				<button class="button button_section-2">{{ trans('base.registry') }}</button>
+		@endforeach
+		<div class="info_section-2">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</div>
+	</div>
+	<div class="arrow-top arrow-top_section-2"></div>
+</div>
 
-				@endforeach
+<div class="section-2_bg"></div>
 
+<div class="section_3">
+	<div class="wrapper wrapper_section-3 clearfix">
+		<h2 class="section-name section-name_news">{{ trans('base.news') }}</h2>
+		<div class="social_section-3">
+			<div class="soc-name_section-3">{{ trans('base.news_soc') }}</div>
+			<ul class="left clearfix">
+				<li class="soc-item"><a class="soc-item_vk" href="{{ $texts->get('social_vk') }}"></a></li>
+				<li class="soc-item"><a class="soc-item_fb" href="{{ $texts->get('social_fb') }}"></a></li>
 			</ul>
-
 		</div>
-
-		<div class="row">
-
-			<div class="col-md-12 fix-height">
-				@if (!$visas->isEmpty())
-					@foreach($visas as $visa)
-						<div style="float: left;border:1px red solid;margin-right: 10px">
-							<div style="font-size: 14px">{{ $visa->getTranslate('title') }}</div>
-							<div>{{ $visa->getTranslate('price') }}</div>
-							<button type="button" data-title="{{ $visa->getTranslate('title') }}" class="show-popup" data-toggle="modal" data-target="#myModal">
-								Зворотній зв'язок
-							</button>
-						</div>
-					@endforeach
-				@endif
-			</div>
-			<div class="col-md-12 fix-height">
-				@if (!$visas_center->isEmpty())
-					@foreach($visas_center as $visa_center)
-						<div style="float: left;border:1px red solid;margin-right: 10px">
-							<div style="font-size: 14px">{{ $visa_center->getTranslate('title') }}</div>
-							<div>{{ $visa_center->getTranslate('price') }}</div>
-							<button type="button" data-title="{{ $visa_center->getTranslate('title') }}" class="show-popup" data-toggle="modal" data-target="#myModal">
-								Зворотній зв'язок
-							</button>
-						</div>
-					@endforeach
-				@endif
-			</div>
-				{{-- Modal --}}
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-
-					<div class="modal-dialog" role="document">
-
-						<form id="popup" method="post">
-
-							<div class="modal-content">
-
-								<div class="modal-header">
-
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-									<h4 class="modal-title" id="myModalLabel" style="text-align: center">Зворотній звязок</h4>
-
-								</div>
-
-								<div class="modal-body">
-
-									<div class="row-fluid">
-
-										<div class="span6">
-
-											<div class="control-group">
-
-												<div class="input-group input-group-sm">
-													<input type="hidden" name="type">
-												</div>
-
-												<div class="input-group input-group-sm">
-
-													<input type="number" required  name="phone"  id="phone" class="form-control span12" placeholder="Тел" aria-describedby="sizing-addon3">
-
-												</div>
-
-												<div class="input-group input-group-sm">
-
-													<input type="text" name="name" id="name" class="form-control span12" placeholder="ПІБ" aria-describedby="sizing-addon3">
-
-												</div>
-
-												<input type="hidden" name="_token" value="{{csrf_token()}}"/>
-
-											</div>
-
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="modal-footer" style="text-align: center">
-
-									<input name="submit" class="btn btn-primary" id="submit-send" tabindex="5" value="Заказать" type="submit">
-
-								</div>
-
-								<div id="token" style="display: none">{{csrf_token()}}</div>
-
-							</div>
-
-						</form>
-
-					</div>
-
+		<ul class="news-block clearfix">
+			<li class="news-block_item">
+				<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news1.jpg') }}');"></div>
+				<div class="news-text-wrap">
+					<h3 class="news-block_title">ЗАГЛОВОК НОВИНИ макс. ДВІ СТРОКИ</h3>
+					<p class="news-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
+					<button class="button_red">{{ trans('base.more') }}</button>
 				</div>
-				{{-- /Modal --}}
-
-			</div>
-
-		</div>
-
-		<div class="row" style="min-height: 600px;">
-			<div class="col-md-12 fix-height">
-				@if (!$services->isEmpty())
-					@foreach($services as $service)
-						<div style="float: left;border:1px red solid;margin-right: 10px">
-							<div style="font-size: 14px">{{ $service->getTranslate('title') }}</div>
-							<div>{{ $service->getTranslate('price') }}</div>
-							<button type="button" data-title="{{ $service->getTranslate('title') }}" class="show-popup" data-toggle="modal" data-target="#myModal">
-								Зворотній зв'язок
-							</button>
-						</div>
-					@endforeach
-				@endif
-			</div>
-			<button type="button" class="show-popup" data-toggle="modal" data-target="#myModal_forService">
-				Зворотній зв'язок для послуг
-			</button>
-			{{-- Modal --}}
-			<div class="modal fade" id="myModal_forService" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-
-				<div class="modal-dialog" role="document">
-
-					<form id="popup-services" method="post">
-
-						<div class="modal-content">
-
-							<div class="modal-header">
-
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-								<h4 class="modal-title" id="myModalLabel" style="text-align: center">Зворотній звязок для послуг</h4>
-
-							</div>
-
-							<div class="modal-body">
-
-								<div class="row-fluid">
-
-									<div class="span6">
-
-										<div class="control-group">
-
-											<div class="input-group input-group-sm">
-
-												<input type="hidden" name="type">
-
-											</div>
-
-											<div class="input-group input-group-sm">
-
-												<input type="number" required  name="phone"  id="phone" class="form-control span12" placeholder="Тел" aria-describedby="sizing-addon3">
-
-											</div>
-
-											<div class="input-group input-group-sm">
-
-												<input type="text" name="name" id="name" class="form-control span12" placeholder="ПІБ" aria-describedby="sizing-addon3">
-
-											</div>
-
-												<input type="hidden" name="_token" value="{{csrf_token()}}"/>
-
-										</div>
-
-									</div>
-
-								</div>
-
-							</div>
-
-							<div class="modal-footer" style="text-align: center">
-
-								<input name="submit" class="btn btn-primary" id="submit" tabindex="5" value="Отправить" type="submit">
-
-							</div>
-
-							<div id="token" style="display: none">{{csrf_token()}}</div>
-
-						</div>
-
-					</form>
-
+			</li>
+			<li class="news-block_item">
+				<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news2.jpg') }}');"></div>
+				<div class="news-text-wrap">
+					<h3 class="news-block_title">ЗАГЛОВОК НОВИНИ макс. ДВІ СТРОКИ</h3>
+					<p class="news-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
+					<button class="button_red">Детальніше</button>
 				</div>
+			</li>
+			<li class="news-block_item">
+				<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news3.jpg') }}');"></div>
+				<div class="news-text-wrap">
+					<h3 class="news-block_title">ЗАГЛОВОК НОВИНИ макс. ДВІ СТРОКИ</h3>
+					<p class="news-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
+					<button class="button_red">Детальніше</button>
+				</div>
+			</li>
+			<li class="news-block_item">
+				<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news4.jpg') }}');"></div>
+				<div class="news-text-wrap">
+					<h3 class="news-block_title">ЗАГЛОВОК НОВИНИ макс. ДВІ СТРОКИ</h3>
+					<p class="news-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
+					<button class="button_red">Детальніше</button>
+				</div>
+			</li>
+		</ul>
+		<div class="subscribe-news">{{ trans('base.subscribe_news') }}</div>
+	</div>
+	<div class="arrow-top arrow-top_section-3"></div>
+</div>
 
-			</div>
-			{{-- /Modal --}}
+<div class="section-3_bg"></div>
 
-
-
+<div class="section_4">
+	<div class="wrapper wrapper_section-4 clearfix">
+		<div class="insurance-block">
+			<h2 class="section-name section-name_insurance">{{ trans('base.insurance') }}</h2>
+			{!! $texts->get('insurance') !!}
+			<button class="button button_section-4">{{ trans('base.order_insurance') }}</button>
 		</div>
+		<div class="hands"></div>
+		<div class="info_section info_section-4">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник:</div>
+	</div>
+	<div class="arrow-top"></div>
+</div>
 
-	</div> {{-- /container --}}
-	{{--Файл переводов--}}
-	<script>
-		var trans = {
-			'base.success': '{{ trans('base.success_send_contact') }}',
-			'base.error': '{{ trans('base.error_send_contact') }}',
-		};
-	</script>
-	{{--Файл переводов--}}
+<div class="section-4_bg"></div>
 
-	{{-- Site footer --}}
-	<footer>
-
-		<div class="container">
-
-			<div class="row">
-
-
-
-			</div>
-
+<div class="section_5">
+	<div class="wrapper wrapper_section-5 clearfix">
+		<h2 class="section-name section-name_services">{{ trans('base.services') }}</h2>
+		<div class="info info_services">
+			<div class="info-text">{{ trans('base.info') }}</div>
+			<div class="info-phone">{{ $texts->get('header.tel1') }}</div>
 		</div>
+		<ul class="news-block clearfix">
+			<li class="services-block_item">
+				<div class="services-block_img services-block_img__passport"></div>
+				<h3 class="services-block_title">Термінові Загран Паспорта</h3>
+				<p class="services-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
+			</li>
+			<li class="services-block_item">
+				<div class="services-block_img services-block_img__map"></div>
+				<h3 class="services-block_title">Карта Поляка</h3>
+				<p class="services-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
+			</li>
+			<li class="services-block_item">
+				<div class="services-block_img services-block_img__education"></div>
+				<h3 class="services-block_title">Освіта в Польщі</h3>
+				<p class="services-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
+			</li>
+			<li class="services-block_item">
+				<div class="services-block_img services-block_img__house"></div>
+				<h3 class="services-block_title">Реєстрація	Фірми в	Польщі</h3>
+				<p class="services-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
+			</li>
+		</ul>
+		<div class="info_section info_section-5">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник:</div>
+		<button class="button button_section-5">{{ trans('base.callback') }}</button>
+	</div>
+	<div class="arrow-top"></div>
+</div>
 
-	</footer>
+<div class="section-5_bg"></div>
 
+<div class="section_6">
+	<div class="wrapper wrapper_section-6 clearfix">
+		<div class="advice-block">
+			<h2 class="section-name section-name_advice">{{ trans('base.advices') }}</h2>
+			<ul class="advice-list">
+				<li class="advice-list_item clearfix">
+					<div class="advice-list_item-number">1</div>
+					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
+				</li>
+				<li class="advice-list_item clearfix">
+					<div class="advice-list_item-number">2</div>
+					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
+				</li>
+				<li class="advice-list_item clearfix">
+					<div class="advice-list_item-number">3</div>
+					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
+				</li>
+				<li class="advice-list_item clearfix">
+					<div class="advice-list_item-number">4</div>
+					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
+				</li>
+				<li class="advice-list_item clearfix">
+					<div class="advice-list_item-number">5</div>
+					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
+				</li>
+				<li class="advice-list_item clearfix">
+					<div class="advice-list_item-number">6</div>
+					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
+				</li>
+				<li class="advice-list_item clearfix">
+					<div class="advice-list_item-number">7</div>
+					<p class="advice-list_item-text">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
+				</li>
+			</ul>
+			<button class="button_red button_section-6">{{ trans('base.learn_more') }}</button>
+		</div>
+		<div class="men"></div>
+	</div>
+	<div class="arrow-top"></div>
+</div>
 
-<script src="{{ asset('/js/frontend/jquery-11.0.min.js') }}"></script>
-<script src="{{ asset('/js/frontend/bootstrap.js') }}"></script>
-<script src="{{ asset('/libs/unitegallery/dist/js/unitegallery.js') }}"></script>
-<script src="{{ asset('/libs/unitegallery/dist/themes/slider/ug-theme-slider.js') }}"></script>
-<script src="{{ asset('/libs/unitegallery/dist/themes/carousel/ug-theme-carousel.js') }}"></script>
-<script src="{{ asset('/libs/unitegallery/dist/themes/tilesgrid/ug-theme-tilesgrid.js') }}"></script>
+<div class="section-6_bg"></div>
+
+<div class="section_7">
+	<div class="wrapper wrapper_section-7 clearfix">
+		<h2 class="section-name section-name_contact">{{ trans('base.want') }}</h2>
+		<div class="contact-map">
+			{!! $texts->get('footer.maps') !!}}
+		</div>
+		<div class="contact-data">
+			<div class="contact-data_address">
+				<div class="section-name_contact-title">{{ trans('base.contact') }}</div>
+				<div class="contact-data_text">Маіл: {{ $texts->get('header.mail') }} <br>
+					Tel {{ $texts->get('header.tel1') }} <br>
+					Tel {{ $texts->get('header.tel2') }} <br>
+					{{ $texts->get('footer.address_1') }} <br>
+					{{ $texts->get('header.address_2') }}
+				</div>
+			</div>
+			<form action="POST" class="callback">
+				<div class="section-name_contact-title">{{ trans('base.callback') }}</div>
+				<input class="callback-item" type="text" name="name" placeholder="{{ trans('base.put_name') }}">
+				<input class="callback-item" type="text" name="e-mail" placeholder="{{ trans('base.put_email') }}">
+				<textarea class="callback-item" name="text" cols="30" rows="10" placeholder="{{ trans('base.message') }}"></textarea>
+				<button class="button button_callback-section">{{ trans('base.send') }}</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<footer class="footer">© ООО "IP-home", 2017 г. Все права защищены.</footer>
+
+{{-- JS --}}
+<script src="{{ asset('/libs/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('/js/plugins/sweetalert.min.js') }}"></script>
-<script src="{{ asset('/js/common.js') }}?ver={{ $version }}"></script>
+<script src="{{ asset('/js/common.js') }}"></script>
 
-<script src="http://azmind.com/demo/andia-agency/v2-1/assets/js/wow.min.js" type="application/javascript"></script>
-<link href="http://azmind.com/demo/andia-agency/v2-1/assets/css/animate.css" rel="stylesheet">
-<script>
-	new WOW().init();
-</script>
+<!--<script src="http://azmind.com/demo/andia-agency/v2-1/assets/js/wow.min.js" type="application/javascript"></script>
+<link href="http://azmind.com/demo/andia-agency/v2-1/assets/css/animate.css" rel="stylesheet">-->
+
 </body>
 </html>

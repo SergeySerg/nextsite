@@ -75,7 +75,7 @@
                                 </td>
 
                                 <td>
-                                    <a href="{{ $url }}/articles/{{$type}}/{{$admin_article->id}}">{{ $admin_article->getTranslate('title') }}</a>
+                                    <a href="{{ $url }}/articles/{{$type}}/{{$admin_article->id}}">{!! $admin_article->getTranslate('title') !!}</a>
                                 </td>
                                 <td>{{ $admin_article->created_at }}</td>
                                 <td class="hidden-480">{{ $admin_article->updated_at }}</td>
