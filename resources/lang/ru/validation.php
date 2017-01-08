@@ -57,7 +57,7 @@ return [
 	"not_in"               => "The selected :attribute is invalid.",
 	"numeric"              => "The :attribute must be a number.",
 	"regex"                => "The :attribute format is invalid.",
-	"required"             => "Поле :attribute об'язкове для заповнення.",
+	"required"             => "Поле :attribute обязательно для заполнения",
 	"required_if"          => "The :attribute field is required when :other is :value.",
 	"required_with"        => "The :attribute field is required when :values is present.",
 	"required_with_all"    => "The :attribute field is required when :values is present.",
@@ -103,18 +103,8 @@ return [
 	*/
 
 	'attributes' => [
-		'name' => 'ФИО',
-		'phone' => 'Телефон',
-		'date_birthday' => 'Дата народження',
-		'home' => 'Адреса проживання',
-		'telephone' => 'Телефон мобільний',
-		'home_telephone' => 'Телефон домашній',
-		'education' => 'Освіта',
-		'specialty' => 'Спеціальність',
-		'experience' => 'Досвід роботи',
-		'possession' => 'Володіння електроінструментом',
-		'salary' => 'Бажаний рівень зп',
-		'file' => 'Прикріпити файл резюме',
+		'name' => 'Ваше имя',
+		'phone' => 'Ваш телефон'
 	],
 
 ];

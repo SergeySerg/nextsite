@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
 Route::get('home', 'HomeController@index');//Для відображення результата після логування
 
 Route::controllers([
@@ -17,8 +18,9 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::post('/contact', ['uses' => 'Frontend\ArticleController@contact','as' => 'contact']);//Обработчик Обратной связи
+
 Route::get('/', 'Frontend\HomeController@index');
+Route::post('/contact', ['uses' => 'Frontend\ArticleController@contact','as' => 'contact']);//Обработчик Обратной связи
 Route::group(['prefix'=>'adminSha4', 'middleware' => ['auth', 'backend.init']], function(){
 	Route::get('/','Backend\AdminDashboardController@index');
 
@@ -50,7 +52,6 @@ Route::group(['prefix'=>'adminSha4', 'middleware' => ['auth', 'backend.init']], 
 	//Route::put('/comments/{article_id}/{id}','Backend\AdminResumeController@update');//Сохранение после редактирования..
 
 });
-
 Route::group(['middleware' => 'frontend.init'], function(){
 	Route::get('/{lang}', ['uses' => 'Frontend\ArticleController@index','as' => 'article_index']);
 });

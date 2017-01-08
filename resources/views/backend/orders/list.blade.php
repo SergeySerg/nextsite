@@ -59,7 +59,7 @@
                                 </td>
                                 <td>{{ $admin_order->name }}</td>
                                 <td>{{ $admin_order->phone }}</td>
-                                <td>{{ $admin_order->type }}</td>
+                                <td>{!! $admin_order->type !!}</td>
                                 <td>{{ $admin_order->created_at }}</td>
                                 <td class="td-actions">
                                     <div class="visible-phone visible-desktop action-buttons">

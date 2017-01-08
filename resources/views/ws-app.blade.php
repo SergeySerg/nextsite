@@ -29,8 +29,10 @@
 	<link rel="stylesheet" href="{{ asset('/libs/bootstrap-grid-only/css/grid12.css') }}">
 	<link rel="stylesheet" href="{{ asset('/css/frontend/fonts.css') }}">
 	<link href="{{ asset('/css/frontend/main.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/plugins/sweetalert.css') }}" rel="stylesheet">
 
+	<link href="{{ asset('/css/plugins/sweetalert.css') }}" rel="stylesheet">
+	<link href="{{ asset('/libs/owlcarousel/dist/assets/owl.carousel.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/libs/owlcarousel/dist/assets/owl.theme.default.min.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -44,6 +46,9 @@
 			<li class="phones_item">{{ $texts->get('header.tel1') }}</li>
 			<li class="phones_item phones_item__bg">{{ $texts->get('header.tel2') }}</li>
 		</ul>
+		@foreach($langs as $lang)
+			<a style="color: black;" href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a>
+		@endforeach
 	</div>
 </div>
 
@@ -59,7 +64,7 @@
 				</ul>
 			</div>
 			<div class="section-1_text"></div>
-			<button class="button button_section-1">{{ trans('base.check_visa') }}</button>
+			<button class="button button_section-1 show-popup">{{ trans('base.check_visa') }}</button>
 		</div>
 	</div>
 	<div class="wrapper wrapper_section-1 clearfix">
@@ -69,7 +74,7 @@
 					<div class="visa-type_img visa-type_img__{{$i+1}}"></div>
 					{!! $visas[$i]->getTranslate('title') !!}
 					<div class="visa-type_price">{{ $visas[$i]->price }}<span class="visa-type_price-value">{{ $texts->get('symbol-price') }}</span></div>
-					<button class="button_red">{{ trans('base.check_visa') }}</button>
+					<button class="button_red show-popup" data-title="{{ $visas[$i]->getTranslate('title') }}">{{ trans('base.check_visa') }}</button>
 				</li>
 			@endfor
 		</ul>
@@ -97,7 +102,7 @@
 				<div class="map">
 					<div class="map_1"></div>
 				</div>
-				<button class="button button_section-2">{{ trans('base.registry') }}</button>
+				<button class="button button_section-2 show-popup">{{ trans('base.registry') }}</button>
 		@endforeach
 		<div class="info_section-2">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</div>
 	</div>
@@ -118,14 +123,14 @@
 		</div>
 		<ul class="news-block clearfix">
 			@foreach($news as $new)
-				<li class="news-block_item">
-					<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news1.jpg') }}');"></div>
-					<div class="news-text-wrap">
-						<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 25, '...') !!}</h3>
-						<p class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 120, '...') !!}</p>
-						<button class="button_red">{{ trans('base.more') }}</button>
-					</div>
-				</li>
+					<li class="news-block_item item">
+						<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news1.jpg') }}');"></div>
+						<div class="news-text-wrap">
+							<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 25, '...') !!}</h3>
+							<p class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 120, '...') !!}</p>
+							<button class="button_red">{{ trans('base.more') }}</button>
+						</div>
+					</li>
 			@endforeach
 		</ul>
 		<div class="subscribe-news">{{ trans('base.subscribe_news') }}</div>
@@ -140,7 +145,7 @@
 		<div class="insurance-block">
 			<h2 class="section-name section-name_insurance">{{ trans('base.insurance') }}</h2>
 			{!! $texts->get('insurance') !!}
-			<button class="button button_section-4">{{ trans('base.order_insurance') }}</button>
+			<button class="button button_section-4 show-popup">{{ trans('base.order_insurance') }}</button>
 		</div>
 		<div class="hands"></div>
 		<div class="info_section info_section-4">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник:</div>
@@ -159,16 +164,36 @@
 		</div>
 		<ul class="news-block clearfix">
 			@foreach($services as $service)
-				<li class="services-block_item">
+				<li id="{{ $service->id }}" class="services-block_item show-popup-services">
 					<div class="services-block_img services-block_img__passport"></div>
 					<h3 class="services-block_title">{{$service->getTranslate('title')}}</h3>
 					<div class="services-block_short-description">{!! str_limit($service->getTranslate('short_description'), 120, '...') !!}</div>
 				</li>
+				{{--Popup-services--}}
+				<div class="popup-services" id="modal_form_service">
+					<div class="popup-services_info-block clearfix">
+						<div class="close close_services"></div>
+						<div class="popup-services_name">
+							<div class="services-block_img services-block_img__house"></div>
+							<h3 class="services-block_title">{{$service->getTranslate('title')}}</h3>
+						</div>
+						<div class="popup-services_text">
+							{!! $service->getTranslate('description') !!}
+						</div>
+					</div>
+					<form action="post" id="popup-services" class="popup-services_form-block">
+						<div class="popup-services_form-block_name">{{ trans('base.callback') }}</div>
+						<input type="hidden" name="type">
+						<input type="text" required="1" name="name" id="name" class="popup-services-input" placeholder="{{ trans('base.put_name') }}">
+						<input type="number" required="1" name="phone"  id="phone" class="popup-services-input" placeholder="{{ trans('base.put_phone') }}">
+						<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+						<button class="button button_callback-section show-popup-services" id="submit-send-service" data-title="{{ $service->getTranslate('title') }}">{{ trans('base.send') }}</button>
+					</form>
+				</div>
 			@endforeach
-
 		</ul>
 		<div class="info_section info_section-5">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник:</div>
-		<button class="button button_section-5">{{ trans('base.callback') }}</button>
+		<button class="button button_section-5 show-popup">{{ trans('base.callback') }}</button>
 	</div>
 	<div class="arrow-top"></div>
 </div>
@@ -212,7 +237,7 @@
 					{{ $texts->get('header.address_2') }}
 				</div>
 			</div>
-			<form action="POST" class="callback">
+			<form action="post" class="callback">
 				<div class="section-name_contact-title">{{ trans('base.callback') }}</div>
 				<input class="callback-item" type="text" name="name" placeholder="{{ trans('base.put_name') }}">
 				<input class="callback-item" type="text" name="e-mail" placeholder="{{ trans('base.put_email') }}">
@@ -224,12 +249,35 @@
 </div>
 
 <footer class="footer">© ООО "IP-home", 2017 г. Все права защищены.</footer>
+{{--Popup--}}
+<div class="popup-callback" id="modal_form">
+	<div class="close" id="modal_close"></div>
+	<form id="popup" method="post">
+		<div class="popup-callback_name">{{ trans('base.callback') }}</div>
+		<input type="hidden" name="type">
+		<input type="text" required="1" name="name" id="name"  class="popup-callback-input" placeholder="{{ trans('base.put_name') }}">
+		<input type="number" required="1" name="phone"  id="phone" class="popup-callback-input" placeholder="{{ trans('base.put_phone') }}">
+		<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+		<button class="button button_callback-section" id="submit-send">{{ trans('base.send') }}</button>
+	</form>
+</div>
 
+{{--/Popup--}}
+
+<div id="overlay"></div><!-- Пoдлoжкa -->
+{{--Файл переводов--}}
+<script>
+	var trans = {
+		'base.success': '{{ trans('base.success_send_contact') }}',
+		'base.error': '{{ trans('base.error_send_contact') }}',
+	};
+</script>
+{{--Файл переводов--}}
 {{-- JS --}}
 <script src="{{ asset('/libs/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('/js/plugins/sweetalert.min.js') }}"></script>
 <script src="{{ asset('/js/common.js') }}"></script>
-
+<script src="{{ asset('/js/plugins/sweetalert.min.js') }}"></script>
+<script src="{{ asset('/libs/owlcarousel/dist/owl.carousel.min.js') }}"></script>
 <!--<script src="http://azmind.com/demo/andia-agency/v2-1/assets/js/wow.min.js" type="application/javascript"></script>
 <link href="http://azmind.com/demo/andia-agency/v2-1/assets/css/animate.css" rel="stylesheet">-->
 
