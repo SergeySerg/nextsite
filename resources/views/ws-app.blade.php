@@ -121,7 +121,7 @@
 				<li class="news-block_item">
 					<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news1.jpg') }}');"></div>
 					<div class="news-text-wrap">
-						<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 30, '...') !!}</h3>
+						<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 25, '...') !!}</h3>
 						<p class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 120, '...') !!}</p>
 						<button class="button_red">{{ trans('base.more') }}</button>
 					</div>
@@ -158,26 +158,14 @@
 			<div class="info-phone">{{ $texts->get('header.tel1') }}</div>
 		</div>
 		<ul class="news-block clearfix">
-			<li class="services-block_item">
-				<div class="services-block_img services-block_img__passport"></div>
-				<h3 class="services-block_title">Термінові Загран Паспорта</h3>
-				<p class="services-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
-			</li>
-			<li class="services-block_item">
-				<div class="services-block_img services-block_img__map"></div>
-				<h3 class="services-block_title">Карта Поляка</h3>
-				<p class="services-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
-			</li>
-			<li class="services-block_item">
-				<div class="services-block_img services-block_img__education"></div>
-				<h3 class="services-block_title">Освіта в Польщі</h3>
-				<p class="services-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник: http://censor.net.ua/n420629</p>
-			</li>
-			<li class="services-block_item">
-				<div class="services-block_img services-block_img__house"></div>
-				<h3 class="services-block_title">Реєстрація	Фірми в	Польщі</h3>
-				<p class="services-block_short-description">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссыл- кой на "112 Украина". Источник:</p>
-			</li>
+			@foreach($services as $service)
+				<li class="services-block_item">
+					<div class="services-block_img services-block_img__passport"></div>
+					<h3 class="services-block_title">{{$service->getTranslate('title')}}</h3>
+					<div class="services-block_short-description">{!! str_limit($service->getTranslate('short_description'), 120, '...') !!}</div>
+				</li>
+			@endforeach
+
 		</ul>
 		<div class="info_section info_section-5">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник:</div>
 		<button class="button button_section-5">{{ trans('base.callback') }}</button>
@@ -195,7 +183,7 @@
 				@for($i = 0; $i < count($advices); $i++)
 					<li class="advice-list_item clearfix">
 						<div class="advice-list_item-number">{{  $i+1 }}</div>
-						<p class="advice-list_item-text">{!! $advices[$i]->getTranslate('short_description') !!}</p>
+						<div class="advice-list_item-text">{!! $advices[$i]->getTranslate('short_description') !!}</div>
 					</li>
 				@endfor
 			</ul>
