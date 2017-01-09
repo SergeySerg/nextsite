@@ -81,6 +81,27 @@ $('.arrow-top').click(function () {
             }
         );
     });
+//Popup news
+$('.show-popup-news').click(function(event){
+   var new_id = $(this).attr('data-new-id');
+   $('#overlay').fadeIn(400,
+        function(){
+            // console.log(service_id);
+            $('[data-id='+new_id+']')
+                .css('display', 'block')
+                .animate({opacity: 1, top: '45%'}, 200);
+        });
+   //Popup services ClOSE
+   $('.close_new, #overlay').click( function(){
+       $('[data-id='+new_id+']')
+           .animate({opacity: 0, top: '45%'}, 200,
+           function(){
+                $(this).css('display', 'none');
+                $('#overlay').fadeOut(400);
+            }
+       );
+   });
+})
 //Popup services
 $('.show-popup-services').click( function(event){
     var service_id = $(this).attr('data-service-id');
@@ -173,4 +194,5 @@ $('#submit-send-callback').on('click', function(event){
         }
     },"json");
 });
+
 //

@@ -123,14 +123,22 @@
 		</div>
 		<ul class="news-block clearfix">
 			@foreach($news as $new)
-					<li class="news-block_item item">
-						<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news1.jpg') }}');"></div>
-						<div class="news-text-wrap">
-							<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 25, '...') !!}</h3>
-							<p class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 120, '...') !!}</p>
-							<button class="button_red">{{ trans('base.more') }}</button>
-						</div>
-					</li>
+				<li class="news-block_item item">
+					<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news1.jpg') }}');"></div>
+					<div class="news-text-wrap">
+						<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 25, '...') !!}</h3>
+						<p class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 120, '...') !!}</p>
+						<button class="button_red show-popup-news" data-new-id="{{ $new->id }}">{{ trans('base.more') }}</button>
+					</div>
+				</li>
+			{{--Popup--}}
+				<div class="popup-news" id="modal_form_new" data-id="{{ $new->id }}">
+					<div class="close close_news"></div>
+					<div class="news-block_img" style="background-image: url('{{ asset('/img/frontend/imgForSprite/news4.jpg') }}');"></div>
+					<h3 class="popup-news_title">{!! str_limit($new->getTranslate('title'), 25, '...') !!}</h3>
+					{!! $new->getTranslate('description') !!}
+					<div class="popup-news_return close_new">повернутись назад</div>
+				</div>
 			@endforeach
 		</ul>
 		<div class="subscribe-news show-popup">{{ trans('base.subscribe_news') }}</div>

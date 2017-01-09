@@ -1159,6 +1159,20 @@ textarea.callback-item {
   background-color: #ffffff;
 }
 /* /pop-up services */
+/* pop-up services */
+#modal_form_new {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  margin-top: -150px;
+  margin-left: -150px;
+  display: none;
+  opacity: 0;
+  z-index: 15;
+  padding: 20px 10px;
+  background-color: #ffffff;
+}
+/* /pop-up services */
 /*==========  Desktop First Method  ========== */
 /* Small Devices, Tablets */
 /* Extra Small Devices, Phones */
