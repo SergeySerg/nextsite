@@ -43,6 +43,7 @@ body {
   margin: 0 auto; }
 
 .button {
+  position: relative;
   width: 350px;
   height: 80px;
   border: none;
@@ -125,13 +126,15 @@ body {
 .wrapper_header-line {
   padding: 7px 5%; }
 
+.logo-wrap {
+  float: left; }
+
 .logo {
   float: left;
   margin-right: 10px; }
 
 .logo-text {
   float: left;
-  width: 31%;
   padding-top: 5px;
   text-align: center;
   font-size: 1.125em;
@@ -168,12 +171,12 @@ body {
   text-align: center; }
 
 .women {
-  position: relative;
-  float: left;
+  position: absolute;
   width: 508px;
   height: 768px;
-  top: -25px;
-  left: 21%;
+  top: -30px;
+  left: 50%;
+  margin-left: -335px;
   background: url("../../img/frontend/imgForSprite/women.png") center no-repeat;
   background-size: 100%; }
 
@@ -182,6 +185,7 @@ body {
   padding-top: 10px; }
 
 .section-1_text {
+  position: relative;
   width: 403px;
   height: 404px;
   margin-left: -12%;
@@ -229,12 +233,13 @@ body {
 .visa-type {
   position: relative;
   display: inline-block;
-  margin-top: -80px;
+  width: 95%;
+  margin-top: 75px;
   z-index: 5; }
 
 .visa-type_item {
   float: left;
-  width: 280px;
+  width: 24.65%;
   height: 420px;
   margin-left: 5px;
   background-color: #ffffff;
@@ -247,43 +252,21 @@ body {
   background-color: #e6e6e6;
   cursor: pointer; }
 
-.visa-type_item:hover .visa-type_img__1 {
-  background-image: url("../../img/frontend/imgForSprite/flag_pl_grey.png"); }
-
-.visa-type_item:hover .visa-type_img__2 {
-  background-image: url("../../img/frontend/imgForSprite/bag_grey.png"); }
-
-.visa-type_item:hover .visa-type_img__3 {
-  background-image: url("../../img/frontend/imgForSprite/diplom_grey.png"); }
-
-.visa-type_item:hover .visa-type_img__4 {
-  background-image: url("../../img/frontend/imgForSprite/plane_grey.png"); }
-
-.visa-type_item:hover .visa-type_price {
-  border-top: 2px solid #ffffff; }
+.visa-type_item:hover .visa-type_img {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1); }
 
 .visa-type_item:first-child {
   margin-left: 0; }
 
-.visa-type_img__1 {
-  background-image: url("../../img/frontend/imgForSprite/flag_pl.png"); }
-
-.visa-type_img__2 {
-  background-image: url("../../img/frontend/imgForSprite/bag.png"); }
-
-.visa-type_img__3 {
-  background-image: url("../../img/frontend/imgForSprite/diplom.png"); }
-
-.visa-type_img__4 {
-  background-image: url("../../img/frontend/imgForSprite/plane.png"); }
+.visa-type_img img {
+  max-width: 100%;
+  max-height: 100%; }
 
 .visa-type_img {
   width: 83px;
   height: 90px;
-  margin: 0 auto;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%; }
+  margin: 0 auto;}
 
 .visa-type_name {
   font-family: "MagistralBlack", sans-serif;
@@ -343,7 +326,7 @@ body {
 /*END section-1*/
 /*section-2*/
 .section_2 {
-  min-height: 790px;
+  min-height: 890px;
   position: relative; }
 
 .wrapper_section-2 {
@@ -352,24 +335,33 @@ body {
 .section-2_bg {
   position: relative;
   z-index: -1;
-  margin-top: -810px;
+  margin-top: -890px;
   width: 100%;
-  height: 760px;
-  background: #ebebeb url("../../img/frontend/imgForSprite/section_2_bg.jpg") center no-repeat;
-  background-size: cover;
+  height: 800px;
+  background: #ebebeb url("../../img/frontend/imgForSprite/section_2_bg.jpg") no-repeat;
   -webkit-transform: skewY(-5deg);
       -ms-transform: skewY(-5deg);
           transform: skewY(-5deg);
   -webkit-box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.75);
-          box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.75); }
+          box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.75);
+  background-position-y: 0; }
 
 .section-name_registration {
   background: url("../../img/frontend/imgForSprite/pencil.png") center left no-repeat;
   background-size: 43px 59px; }
 
-.region-block {
+.wrapper_region-block {
+  position: relative;
   float: left;
   width: 28%;
+  height: 400px; }
+
+.region-block {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   margin-top: 80px;
   color: #ffffff;
   padding-left: 30px; }
@@ -419,19 +411,128 @@ body {
   float: right;
   width: 72%;
   height: 532px;
-  margin-top: 65px;
-  /*
-  background: url("../img/frontend/imgForSprite/maps.png") center no-repeat;
-  background-size: 100%;
-  */ }
+  margin-top: 40px; }
 
-.map_1 {
+.west {
+  position: absolute;
+  width: 165px;
+  height: 213px;
+  top: 93px;
+  background: url("../../img/frontend/imgForSprite/west.png") center no-repeat;
+  background-size: 100%; }
+
+.west_red {
+  display: none;
+  position: absolute;
+  width: 165px;
+  height: 213px;
+  top: 93px;
+  background: url("../../img/frontend/imgForSprite/west_red.png") center no-repeat;
+  background-size: 100%; }
+
+.north-west {
+  position: absolute;
+  width: 182px;
+  height: 247px;
+  left: 91px;
+  top: 13px;
+  background: url("../../img/frontend/imgForSprite/north_west.png") center no-repeat;
+  background-size: 100%; }
+
+.north-west_red {
+  display: none;
+  position: absolute;
+  width: 182px;
+  height: 247px;
+  left: 91px;
+  top: 13px;
+  background: url("../../img/frontend/imgForSprite/north_west_red.png") center no-repeat;
+  background-size: 100%; }
+
+.center {
+  position: absolute;
+  width: 242px;
+  height: 265px;
+  left: 123px;
+  top: 43px;
+  background: url("../../img/frontend/imgForSprite/center.png") center no-repeat;
+  background-size: 100%; }
+
+.center_red {
+  display: none;
+  position: absolute;
+  width: 242px;
+  height: 265px;
+  left: 123px;
+  top: 43px;
+  background: url("../../img/frontend/imgForSprite/center_red.png") center no-repeat;
+  background-size: 100%; }
+
+.north {
+  position: absolute;
+  width: 208px;
+  height: 324px;
+  top: -1px;
+  left: 334px;
+  background: url("../../img/frontend/imgForSprite/north.png") center no-repeat;
+  background-size: 100%; }
+
+.north_red {
+  display: none;
+  position: absolute;
+  width: 208px;
+  height: 324px;
+  top: -1px;
+  left: 334px;
+  background: url("../../img/frontend/imgForSprite/north_red.png") center no-repeat;
+  background-size: 100%; }
+
+.south {
   position: absolute;
   width: 341px;
   height: 210px;
-  background: url("../../img/frontend/imgForSprite/map_1.png") center no-repeat;
-  -webkit-shape-outside: polygon(127px, 109px, 126px);
-          shape-outside: polygon(127px, 109px, 126px); }
+  top: 284px;
+  left: 270px;
+  background: url("../../img/frontend/imgForSprite/south.png") center no-repeat;
+  background-size: 100%; }
+
+.south_red {
+  display: none;
+  position: absolute;
+  width: 341px;
+  height: 210px;
+  top: 284px;
+  left: 270px;
+  background: url("../../img/frontend/imgForSprite/south_red.png") center no-repeat;
+  background-size: 100%; }
+
+.east {
+  position: absolute;
+  width: 369px;
+  height: 424px;
+  top: 0;
+  left: 457px;
+  background: url("../../img/frontend/imgForSprite/east.png") center no-repeat;
+  background-size: 100%; }
+
+.east_red {
+  display: none;
+  position: absolute;
+  width: 369px;
+  height: 424px;
+  top: 0;
+  left: 457px;
+  background: url("../../img/frontend/imgForSprite/east_red.png") center no-repeat;
+  background-size: 100%; }
+
+.crimea {
+  position: absolute;
+  width: 205px;
+  height: 130px;
+  bottom: -22px;
+  left: 475px;
+  background: url("../../img/frontend/imgForSprite/crimea.png") center no-repeat;
+  background-size: 100%; }
 
 .info_section {
   position: relative;
@@ -446,7 +547,7 @@ body {
   font-size: 1.0625em; }
 
 .arrow-top_section-2 {
-  bottom: 45px;
+  bottom: 90px;
   left: 70%;
   right: 30%; }
 
@@ -932,14 +1033,18 @@ textarea.callback-item {
 /*END footer*/
 /*pop-up callback*/
 .popup-callback {
+  position: fixed;
   width: 420px;
   height: 420px;
-  margin: 0 auto;
+  left: 50%;
+  margin-left: -210px;
+  margin-top: -15%;
   padding: 35px;
   -webkit-border-radius: 30px;
           border-radius: 30px;
   text-align: center;
-  background-color: #c6c6c6; }
+  background-color: #c6c6c6;
+  z-index: 15;}
 
 .popup-callback_name {
   width: 80%;
@@ -988,14 +1093,18 @@ textarea.callback-item {
 /*END pop-up callback*/
 /*pop-up question*/
 .popup-question {
+  position: fixed;
+  display: none;
   width: 690px;
-  height: 220px;
-  background-color: #ccc;
+  left: 50%;
+  margin-top: -15%;
+  margin-left: -345px;
+  background-color: #ffffff;
   text-align: left;
-  margin: 0 auto;
   padding: 35px;
   -webkit-border-radius: 30px;
-          border-radius: 30px; }
+          border-radius: 30px;
+  z-index: 15;}
 
 .popup-question_name {
   padding-top: 8px;
@@ -1007,6 +1116,10 @@ textarea.callback-item {
 
 .popup-question .advice-list_item-text {
   padding-left: 35px; }
+
+.close_question{
+  background: url("../../img/frontend/imgForSprite/close_grey.png") center no-repeat;
+  background-size: 17px; }
 
 /*END pop-up question*/
 /*pop-up services*/
@@ -1071,13 +1184,15 @@ textarea.callback-item {
 /*END pop-up services*/
 /*pop-up news*/
 .popup-news {
+  position: fixed;
   width: 1160px;
-  margin: 0 auto;
+  margin-top: -15%;
+  background-color: #ffffff;
   padding: 50px 65px 30px 30px;
   -webkit-border-radius: 30px;
           border-radius: 30px;
   overflow: hidden;
-  border: 1px solid #000; }
+  z-index: 15;}
 
 .popup-news_title {
   width: 57%;
@@ -1119,17 +1234,17 @@ textarea.callback-item {
 
 /*END pop-up news*/
 /* pop-up */
-#modal_form {
+/*#modal_form {
   position: fixed;
   top: 45%;
   left: 45%;
   margin-top: -150px;
- margin-left: -150px;
+  margin-left: -150px;
   display: none;
   opacity: 0;
   z-index: 15;
   padding: 20px 10px;
-}
+}*/
 #overlay {
   z-index:13;
   position:fixed;
@@ -1159,22 +1274,7 @@ textarea.callback-item {
   background-color: #ffffff;
 }
 /* /pop-up services */
-/* pop-up services */
-#modal_form_new {
-  position: fixed;
-  top: 45%;
-  left: 35%;
-  margin-top: -150px;
-  margin-left: -150px;
-  display: none;
-  opacity: 0;
-  z-index: 15;
-  padding: 20px 10px;
-
-}
-/* /pop-up services */
-/* pop-up news */
-#modal_form {
+/*#modal_form {
   position: fixed;
   top: 45%;
   left: 45%;
@@ -1184,8 +1284,7 @@ textarea.callback-item {
   opacity: 0;
   z-index: 15;
   padding: 20px 10px;
-}
-/* /pop-up news */
+}*/
 /*==========  Desktop First Method  ========== */
 /* Small Devices, Tablets */
 /* Extra Small Devices, Phones */

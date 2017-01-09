@@ -46,12 +46,14 @@ $('#submit-send').on('click', function(event){
     event.preventDefault();
 });
 // scroll body to 0px on click
+/*
 $('.arrow-top').click(function () {
     $('body,html').animate({
         scrollTop: 0
     }, 800);
     return false;
 });
+*/
 //Popup OPEN
     $('.show-popup').click( function(event){
         var title = $(this).attr('data-title');
@@ -66,14 +68,14 @@ $('.arrow-top').click(function () {
 
         $('#overlay').fadeIn(400,
             function(){
-                $('#modal_form')
+                $('.popup-callback')
                     .css('display', 'block')
                     .animate({opacity: 1, top: '50%'}, 200);
             });
     });
 //Popup ClOSE
     $('#modal_close, #overlay').click( function(){
-        $('#modal_form')
+        $('.popup-callback')
             .animate({opacity: 0, top: '45%'}, 200,
             function(){
                 $(this).css('display', 'none');
@@ -92,7 +94,7 @@ $('.show-popup-news').click(function(event){
                 .animate({opacity: 1, top: '45%'}, 200);
         });
    //Popup news ClOSE
-   $('.close_new, #overlay').click( function(){
+   $('.close_news, #overlay').click( function(){
        $('[data-id='+new_id+']')
            .animate({opacity: 0, top: '45%'}, 200,
            function(){
@@ -114,7 +116,7 @@ $('.show-popup-advices').click(function(event){
                 .animate({opacity: 1, top: '45%'}, 200);
         });
     //Popup advice ClOSE
-    $('.close_advice, #overlay').click( function(){
+    $('.close_question, #overlay').click( function(){
         $('[data-id='+advice_id+']')
             .animate({opacity: 0, top: '45%'}, 200,
             function(){
