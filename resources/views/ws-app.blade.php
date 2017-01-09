@@ -133,7 +133,7 @@
 					</li>
 			@endforeach
 		</ul>
-		<div class="subscribe-news">{{ trans('base.subscribe_news') }}</div>
+		<div class="subscribe-news show-popup">{{ trans('base.subscribe_news') }}</div>
 	</div>
 	<div class="arrow-top arrow-top_section-3"></div>
 </div>
@@ -164,13 +164,13 @@
 		</div>
 		<ul class="news-block clearfix">
 			@foreach($services as $service)
-				<li id="{{ $service->id }}" class="services-block_item show-popup-services">
+				<li data-service-id="{{ $service->id }}" class="services-block_item show-popup-services">
 					<div class="services-block_img services-block_img__passport"></div>
 					<h3 class="services-block_title">{{$service->getTranslate('title')}}</h3>
 					<div class="services-block_short-description">{!! str_limit($service->getTranslate('short_description'), 120, '...') !!}</div>
 				</li>
 				{{--Popup-services--}}
-				<div class="popup-services" id="modal_form_service">
+				<div class="popup-services" id="modal_form_service" data-id="{{ $service->id }}" >
 					<div class="popup-services_info-block clearfix">
 						<div class="close close_services"></div>
 						<div class="popup-services_name">
@@ -181,13 +181,13 @@
 							{!! $service->getTranslate('description') !!}
 						</div>
 					</div>
-					<form action="post" id="popup-services" class="popup-services_form-block">
+					<form action="post" id="popup-services-{{ $service->id }}" class="popup-services_form-block">
 						<div class="popup-services_form-block_name">{{ trans('base.callback') }}</div>
 						<input type="hidden" name="type">
 						<input type="text" required="1" name="name" id="name" class="popup-services-input" placeholder="{{ trans('base.put_name') }}">
 						<input type="number" required="1" name="phone"  id="phone" class="popup-services-input" placeholder="{{ trans('base.put_phone') }}">
 						<input type="hidden" name="_token" value="{{csrf_token()}}"/>
-						<button class="button button_callback-section show-popup-services" id="submit-send-service" data-title="{{ $service->getTranslate('title') }}">{{ trans('base.send') }}</button>
+						<button class="button button_callback-section" id="{{ $service->id }}" data-title="{{ $service->getTranslate('title') }}">{{ trans('base.send') }}</button>
 					</form>
 				</div>
 			@endforeach
@@ -212,7 +212,7 @@
 					</li>
 				@endfor
 			</ul>
-			<button class="button_red button_section-6">{{ trans('base.learn_more') }}</button>
+			<button class="button_red button_section-6 show-popup">{{ trans('base.learn_more') }}</button>
 		</div>
 		<div class="men"></div>
 	</div>
@@ -237,12 +237,13 @@
 					{{ $texts->get('header.address_2') }}
 				</div>
 			</div>
-			<form action="post" class="callback">
+			<form action="POST" class="callback">
 				<div class="section-name_contact-title">{{ trans('base.callback') }}</div>
-				<input class="callback-item" type="text" name="name" placeholder="{{ trans('base.put_name') }}">
-				<input class="callback-item" type="text" name="e-mail" placeholder="{{ trans('base.put_email') }}">
-				<textarea class="callback-item" name="text" cols="30" rows="10" placeholder="{{ trans('base.message') }}"></textarea>
-				<button class="button button_callback-section">{{ trans('base.send') }}</button>
+				<input class="callback-item" required="1" type="text" name="name" placeholder="{{ trans('base.put_name') }}">
+				<input class="callback-item" required="1" type="email" name="email" placeholder="{{ trans('base.put_email') }}">
+				<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+				<textarea class="callback-item" required="1" name="text" cols="30" rows="10" placeholder="{{ trans('base.message') }}"></textarea>
+				<button class="button button_callback-section" id="submit-send-callback">{{ trans('base.send') }}</button>
 			</form>
 		</div>
 	</div>

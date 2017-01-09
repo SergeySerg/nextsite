@@ -21,6 +21,7 @@ Route::controllers([
 
 Route::get('/', 'Frontend\HomeController@index');
 Route::post('/contact', ['uses' => 'Frontend\ArticleController@contact','as' => 'contact']);//Обработчик Обратной связи
+Route::post('/callback', ['uses' => 'Frontend\ArticleController@callback','as' => 'contact']);//Обработчик Обратной связи
 Route::group(['prefix'=>'adminSha4', 'middleware' => ['auth', 'backend.init']], function(){
 	Route::get('/','Backend\AdminDashboardController@index');
 

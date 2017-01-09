@@ -1149,7 +1149,7 @@ textarea.callback-item {
 #modal_form_service {
   position: fixed;
   top: 25%;
-  left: 20%;
+  left: 25%;
   margin-top: -150px;
   margin-left: -150px;
   display: none;

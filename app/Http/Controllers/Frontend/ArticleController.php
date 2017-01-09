@@ -162,6 +162,39 @@ class ArticleController extends Controller {
 			]);
 		}
 	}
+	public function callback(Request $request)
+	{
+		if ($request->isMethod('post')) {
+			/*get [] from request*/
+			$all = $request->all();
+
+			/*make rules for validation*/
+			$rules = [
+				'name' => 'required|max:50',
+				'email' => 'required|email',
+				'text' => 'required|max:350',
+			];
+
+			/*validation [] according to rules*/
+			$validator = Validator::make($all, $rules);
+
+			/*send error message after validation*/
+			if ($validator->fails()) {
+				return response()->json(array(
+					'success' => false,
+					'message' => $validator->messages()->first()
+				));
+			}
+			//Send item on admin email address
+			Mail::send('emails.callback', $all, function ($message) {
+				$email = $this->getEmail();
+				$message->to($email, 'Example')->subject('Повідомлення про зворотній зв\'язок з сайту "Візи в Польщу" ');
+			});
+			return response()->json([
+				'success' => 'true'
+			]);
+		}
+	}
 	/*get  var email from DB TEXT for send email*/
 	private function getEmail(){
 		$email = Text::where("name","=","config.email")->first();
