@@ -81,7 +81,7 @@ $('.arrow-top').click(function () {
             }
         );
     });
-//Popup news
+//Popup news OPEN
 $('.show-popup-news').click(function(event){
    var new_id = $(this).attr('data-new-id');
    $('#overlay').fadeIn(400,
@@ -91,7 +91,7 @@ $('.show-popup-news').click(function(event){
                 .css('display', 'block')
                 .animate({opacity: 1, top: '45%'}, 200);
         });
-   //Popup services ClOSE
+   //Popup news ClOSE
    $('.close_new, #overlay').click( function(){
        $('[data-id='+new_id+']')
            .animate({opacity: 0, top: '45%'}, 200,
@@ -102,6 +102,28 @@ $('.show-popup-news').click(function(event){
        );
    });
 })
+//Popup advice
+//Popup advice OPEN
+$('.show-popup-advices').click(function(event){
+    var advice_id = $(this).attr('data-advice-id');
+    $('#overlay').fadeIn(400,
+        function(){
+            // console.log(service_id);
+            $('[data-id='+advice_id+']')
+                .css('display', 'block')
+                .animate({opacity: 1, top: '45%'}, 200);
+        });
+    //Popup advice ClOSE
+    $('.close_advice, #overlay').click( function(){
+        $('[data-id='+advice_id+']')
+            .animate({opacity: 0, top: '45%'}, 200,
+            function(){
+                $(this).css('display', 'none');
+                $('#overlay').fadeOut(400);
+            }
+        );
+    });
+})
 //Popup services
 $('.show-popup-services').click( function(event){
     var service_id = $(this).attr('data-service-id');
@@ -111,7 +133,7 @@ $('.show-popup-services').click( function(event){
            // console.log(service_id);
             $('[data-id='+service_id+']')
                 .css('display', 'block')
-                .animate({opacity: 1, top: '45%'}, 200);
+                .animate({opacity: 1, top: '25%'}, 200);
         });
     //Отправка формы для services
     $('button#'+service_id+'').on('click', function(event){

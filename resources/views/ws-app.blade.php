@@ -214,10 +214,16 @@
 			<h2 class="section-name section-name_advice">{{ trans('base.advices') }}</h2>
 			<ul class="advice-list">
 				@for($i = 0; $i < count($advices); $i++)
-					<li class="advice-list_item clearfix">
-						<div class="advice-list_item-number">{{  $i+1 }}</div>
+					<li class="advice-list_item clearfix show-popup-advices" data-advice-id="{{ $advices[$i]->id }}" >
+						<div class="advice-list_item-number">{{ $i+1 }}</div>
 						<div class="advice-list_item-text">{!! $advices[$i]->getTranslate('short_description') !!}</div>
 					</li>
+					<div class="popup-question" id="modal_form_new" data-id="{{ $advices[$i]->id }}">
+						<div class="close close_advice"></div>
+						<div class="advice-list_item-number">{{ $i+1 }}</div>
+						<div class="popup-question_name">{{ $advices[$i]->getTranslate('title') }}</div>
+						<div class="advice-list_item-text">{!! str_limit($advices[$i]->getTranslate('description'), 700, '...') !!}</div>
+					</div>
 				@endfor
 			</ul>
 			<button class="button_red button_section-6 show-popup">{{ trans('base.learn_more') }}</button>

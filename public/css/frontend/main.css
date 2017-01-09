@@ -1149,7 +1149,7 @@ textarea.callback-item {
 #modal_form_service {
   position: fixed;
   top: 25%;
-  left: 25%;
+  left: 18%;
   margin-top: -150px;
   margin-left: -150px;
   display: none;
@@ -1162,17 +1162,30 @@ textarea.callback-item {
 /* pop-up services */
 #modal_form_new {
   position: fixed;
-  top: 25%;
-  left: 25%;
+  top: 45%;
+  left: 35%;
   margin-top: -150px;
   margin-left: -150px;
   display: none;
   opacity: 0;
   z-index: 15;
   padding: 20px 10px;
-  background-color: #ffffff;
+
 }
 /* /pop-up services */
+/* pop-up news */
+#modal_form {
+  position: fixed;
+  top: 45%;
+  left: 45%;
+  margin-top: -150px;
+  margin-left: -150px;
+  display: none;
+  opacity: 0;
+  z-index: 15;
+  padding: 20px 10px;
+}
+/* /pop-up news */
 /*==========  Desktop First Method  ========== */
 /* Small Devices, Tablets */
 /* Extra Small Devices, Phones */
