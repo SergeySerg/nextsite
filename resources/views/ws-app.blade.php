@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="{{ asset('/libs/normalize.css/normalize.css') }}">
 	<link rel="stylesheet" href="{{ asset('/libs/bootstrap-grid-only/css/grid12.css') }}">
 	<link rel="stylesheet" href="{{ asset('/css/frontend/fonts.css') }}">
-	<link href="{{ asset('/css/frontend/main.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/frontend/main.css') }}?ver={{ $version }}" rel="stylesheet">
 
 	<link href="{{ asset('/css/plugins/sweetalert.css') }}" rel="stylesheet">
 	<link href="{{ asset('/libs/owlcarousel/dist/assets/owl.carousel.min.css') }}" rel="stylesheet">
@@ -349,8 +349,8 @@
 {{--Файл переводов--}}
 {{-- JS --}}
 <script src="{{ asset('/libs/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('/js/common.js') }}"></script>
-<script src="{{ asset('/js/frontend/common.js') }}"></script>
+<script src="{{ asset('/js/common.js') }}?ver={{ $version }}"></script>
+<script src="{{ asset('/js/frontend/common.js')}}?ver={{ $version }}"></script>
 <script src="{{ asset('/js/plugins/sweetalert.min.js') }}"></script>
 <script src="{{ asset('/libs/owlcarousel/dist/owl.carousel.min.js') }}"></script>
 <script src="http://azmind.com/demo/andia-agency/v2-1/assets/js/wow.min.js" type="application/javascript"></script>
