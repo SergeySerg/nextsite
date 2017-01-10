@@ -693,29 +693,29 @@ body {
   background-size: 60px;
   color: #737373; }
 
-.insurance-table {
+.insurance-block table {
   margin: 0 auto;
   margin-top: 25px;
   font-family: "MagistralBold", sans-serif;
   font-size: 1.875em;
   border-collapse: collapse; }
 
-.insurance-term {
+.insurance-block table td:nth-child(odd) {
   border-right: 2px solid #cbcbcb;
   padding-right: 10px; }
 
-.insurance-price {
+.insurance-block table td:nth-child(even) {
   padding-left: 10px; }
 
-.insurance-term,
-.insurance-price {
+.insurance-block table td:nth-child(odd),
+.insurance-block table td:nth-child(even) {
   padding-top: 5px;
   padding-bottom: 5px;
   text-align: center;
   border-bottom: 2px solid #cbcbcb; }
 
-tr:last-child .insurance-term,
-tr:last-child .insurance-price {
+.insurance-block table tr:last-child td:nth-child(odd),
+.insurance-block table tr:last-child td:nth-child(even) {
   border-bottom: none;
   padding-bottom: 10px; }
 
