@@ -80,7 +80,7 @@
             <a href="#" class="brand">
                 <img style="display: block;
     position: absolute;
-    margin-top: -3px;" width="30px" src="{{ asset('/img/backend/logo.png') }}" alt="{{$_SERVER['HTTP_HOST']}}" />
+    margin-top: -3px;" width="30px" src="{{ asset('/img/frontend/flags.jpg') }}" alt="{{$_SERVER['HTTP_HOST']}}" />
                 <small style="margin-left: 40px;">
                     {{$_SERVER['HTTP_HOST']}}
                 </small>
@@ -159,7 +159,7 @@
             </li>
             <li @if(Request::is('*/visas'))class="active"@endif>
                 <a href="{{ $url }}/articles/visas">
-                    <i class="icon-envelope"></i>
+                    <i class="icon-fighter-jet"></i>
                     <span class="menu-text"> Візи </span>
                 </a>
             </li>
@@ -194,8 +194,8 @@
 
             <li @if(Request::is('*/orders'))class="active"@endif>
                 <a href="{{ $url }}/orders">
-                    <i class="icon-bullhorn"></i>
-                    <span class="menu-text"> Повідомлення зворотнього зв'язку </span>
+                    <i class="icon-envelope-alt"></i>
+                    <span class="menu-text"> Повідомлення </span>
                 </a>
             </li>
 

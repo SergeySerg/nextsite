@@ -87,8 +87,12 @@
 								No Image
 							@endif
 						</div>
-						{!! $visa -> getTranslate('title') !!}
-						<div class="visa-type_price">{{ $visa -> price }}<span class="visa-type_price-value">{{ $texts->get('symbol-price') }}</span></div>
+						<h3 class="visa-type_name">{{ $visa->getTranslate('title') }}</h3>
+						<h4 class="visa-type_name-description">
+							{{ $visa->getTranslate('specification') }}
+							<span class="visa-type_name-number">{{ $visa->code }}</span>
+						</h4>
+						<div class="visa-type_price">{{ $visa->price }}<span class="visa-type_price-value">{{ $texts->get('symbol-price') }}</span></div>
 						<button class="button_red show-popup" data-title="{{ $visa->getTranslate('title') }}">{{ trans('base.check_visa') }}</button>
 					</li>
 				@endforeach
