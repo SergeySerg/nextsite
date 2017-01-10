@@ -195,27 +195,31 @@
 				<li class="soc-item"><a class="soc-item_fb" href="{{ $texts->get('social_fb') }}"></a></li>
 			</ul>
 		</div>
-		<ul class="news-block clearfix">
-			@foreach($news as $new)
-				<li class="news-block_item item wow zoomIn">
-					<div class="news-block_img" style="background-image: url('{{ $new->getImages()[0]['min'] }}');"></div>
-					<div class="news-text-wrap">
-						<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 32, '...') !!}</h3>
-						<div class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 150, '...') !!}</div>
-						<button class="button_red show-popup-news" data-new-id="{{ $new->id }}">{{ trans('base.more') }}</button>
-					</div>
-				</li>
-			{{--News Popup--}}
-				<div class="popup-news" data-id="{{ $new->id }}">
-					<div class="close close_news"></div>
-					<div class="news-block_img" style="background-image: url('{{ $new->getImages()[0]['min'] }}');"></div>
-					<h3 class="popup-news_title">{!! str_limit($new->getTranslate('title'), 70, '...') !!}</h3>
-					{!! $new->getTranslate('description') !!}
-					<div class="popup-news_return close_news">повернутись назад</div>
-				</div>
-			{{--END News Popup--}}
-			@endforeach
-		</ul>
+		<div class="wrapper-news">
+			<ul class="news-block owl-carousel clearfix">
+				@foreach($news as $new)
+					<li class="news-block_item item wow zoomIn">
+						<div class="news-block_img" style="background-image: url('{{ $new->getImages()[0]['min'] }}');"></div>
+						<div class="news-text-wrap">
+							<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 32, '...') !!}</h3>
+							<div class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 150, '...') !!}</div>
+							<button class="button_red show-popup-news" data-new-id="{{ $new->id }}">{{ trans('base.more') }}</button>
+						</div>
+					</li>
+				@endforeach
+			</ul>
+		</div>
+		{{--News Popup--}}
+		@foreach($news as $new)
+			<div class="popup-news" data-id="{{ $new->id }}">
+				<div class="close close_news"></div>
+				<div class="news-block_img" style="background-image: url('{{ $new->getImages()[0]['min'] }}');"></div>
+				<h3 class="popup-news_title">{!! str_limit($new->getTranslate('title'), 70, '...') !!}</h3>
+				{!! $new->getTranslate('description') !!}
+				<div class="popup-news_return close_news">повернутись назад</div>
+			</div>
+		@endforeach
+		{{--END News Popup--}}
 		<div class="subscribe-news show-popup">{{ trans('base.subscribe_news') }}</div>
 	</div>
 	<div class="arrow-top arrow-top_section-3"></div>

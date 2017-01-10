@@ -1,13 +1,12 @@
 $(function(){
 
 	$(".owl-carousel").owlCarousel({
-		loop:false,
-		autoWidth:false,
+		loop:true,
+		autoWidth:true,
 		items:4,
 		nav:true,
 		autoplay:true,
-		autoplayTimeout: 3000,
-		itemElement: 'li'
+		navText : ["",""]
 	});
 	// scroll body to 0px on click
 	$('.arrow-top').click(function () {

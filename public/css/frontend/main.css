@@ -590,13 +590,18 @@ body {
   font-family: "MagistralBold", sans-serif;
   font-size: 1.125em; }
 
+.wrapper-news{
+  width: 1140px;
+  margin: 0 auto;}
+
 .news-block {
+  width: 1200px;
   margin: 0 auto;
   margin-top: 25px; }
 
 .news-block_item {
   float: left;
-  width: 24%;
+  width: 280px;
   height: 420px;
   margin-left: 5px;
   background-color: #ffffff;
@@ -1244,6 +1249,48 @@ textarea.callback-item {
   padding: 20px 10px;
   background-color: #ffffff;
 }
+/* owl-carousel next and preview */
+.owl-carousel .owl-nav .owl-next,
+.owl-carousel .owl-nav .owl-prev{
+  position: absolute;
+  top: 125px;
+  display: block;
+  width: 47px;
+  height: 47px;}
+
+.owl-carousel .owl-nav .owl-next{
+  right: 115px;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  background: url("../../img/frontend/imgForSprite/arrow_raund_grey.png") center top no-repeat;
+  -webkit-background-size: 47px;
+  background-size: 47px;}
+
+.owl-carousel .owl-nav .owl-prev{
+  left: 115px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  background: url("../../img/frontend/imgForSprite/arrow_raund_grey.png") center top no-repeat;
+  -webkit-background-size: 47px;
+  background-size: 47px;}
+
+.owl-carousel .owl-nav .owl-prev:hover,
+.owl-carousel .owl-nav .owl-next:hover{
+  background: url("../../img/frontend/imgForSprite/arrow_raund_red.png") center top no-repeat;
+  -webkit-background-size: 47px;
+  background-size: 47px;}
+
+.owl-carousel .owl-nav .owl-prev.disabled,
+.owl-carousel .owl-nav .owl-next.disabled{
+  display: none;
+}
+/* END owl-carousel next and preview */
 /*==========  Desktop First Method  ========== */
 /* Small Devices, Tablets */
 /* Extra Small Devices, Phones */
