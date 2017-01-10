@@ -6,6 +6,8 @@ $(function(){
 		items:4,
 		nav:true,
 		autoplay:true,
+		autoplayTimeout: 3000,
+		autoplaySpeed: 1000,
 		navText : ["",""]
 	});
 	// scroll body to 0px on click

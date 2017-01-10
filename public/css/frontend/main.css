@@ -1116,6 +1116,7 @@ textarea.callback-item {
   width: 1160px;
   left: 50%;
   margin-left: -580px;
+  margin-top: -10%;
   padding-top: 35px;
   -webkit-border-radius: 30px;
           border-radius: 30px;
