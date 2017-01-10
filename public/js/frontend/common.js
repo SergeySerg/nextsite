@@ -16,6 +16,7 @@ $(function(){
 		return false;
 	});
 	//make interactive map
+	$('.region-block[data-region-type=north]').addClass('active');
 	$("map area").hover(function () {
 		var img = $(this).attr('data-hover-img');
 		$('.map-part_red').fadeOut(0);

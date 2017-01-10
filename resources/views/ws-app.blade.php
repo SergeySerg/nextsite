@@ -111,51 +111,14 @@
 		<div class="wrapper wrapper_section-2 clearfix">
 			<h2 class="section-name section-name_registration wow wobble">{{ trans('base.registry_visa_center') }}</h2>
 			<div class="wrapper_region-block wow slideInLeft">
-{{--
 				@foreach($visas_center as $visa_center)
-					<div class="region-block" data-region-type="{{ $visa_center -> priority }}">
+					<div class="region-block" data-region-type="{{ $visa_center -> code }}">
 						<div class="region-name">{{ $visa_center->getTranslate('title') }}</div>
 						<div class="region-include">{!! $visa_center->getTranslate('short_description') !!}</div>
 						<div class="region-term"><span class="number">{{ $visa_center->term }}</span> {{ trans('base.days') }}</div>
 						<div class="region-price">{{ trans('base.from') }} <span class="number">{{ $visa_center->price }}</span> грн.</div>
 					</div>
 				@endforeach
---}}			<div class="region-block" data-region-type="west">
-					<div class="region-name">Закарпатский</div>
-					<div class="region-include">Области: Закарпатская, Львовская, Ивано-Франковская </div>
-					<div class="region-term"><span class="number">10-30</span> днів</div>
-					<div class="region-price">від <span class="number">300</span> грн.</div>
-				</div>
-				<div class="region-block" data-region-type="north-west">
-					<div class="region-name">Волынский</div>
-					<div class="region-include">Области: Волынская, Ровенская, Тернопольская</div>
-					<div class="region-term"><span class="number">10-30</span> днів</div>
-					<div class="region-price">від <span class="number">300</span> грн.</div>
-				</div>
-				<div class="region-block" data-region-type="center">
-					<div class="region-name">Житомирский</div>
-					<div class="region-include">Области: Житомирская, Хмельницкая, Винницкая, Черновецкая</div>
-					<div class="region-term"><span class="number">10-30</span> днів</div>
-					<div class="region-price">від <span class="number">300</span> грн.</div>
-				</div>
-				<div class="region-block" style="display: block;" data-region-type="north">
-					<div class="region-name">Киевский</div>
-					<div class="region-include">Области: Киевская, Черкаская, Черниговская, Кировоградская</div>
-					<div class="region-term"><span class="number">10-30</span> днів</div>
-					<div class="region-price">від <span class="number">300</span> грн.</div>
-				</div>
-				<div class="region-block" data-region-type="south">
-					<div class="region-name">Южный</div>
-					<div class="region-include">Области: Одесская, Николаевская, Херсонская</div>
-					<div class="region-term"><span class="number">10-30</span> днів</div>
-					<div class="region-price">від <span class="number">300</span> грн.</div>
-				</div>
-				<div class="region-block" data-region-type="east">
-					<div class="region-name">Восточный</div>
-					<div class="region-include">Области: Сумская, Полтавская, Днепропетровская, Запорожская, Харьковская, Донецкая, Луганская</div>
-					<div class="region-term"><span class="number">10-30</span> днів</div>
-					<div class="region-price">від <span class="number">300</span> грн.</div>
-				</div>
 			</div>
 			<div class="map wow slideInRight">
 				<div class="map-part west"></div>
