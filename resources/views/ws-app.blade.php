@@ -43,9 +43,10 @@
 				<img src="{{ asset('/img/frontend/flags.jpg') }}" alt="" class="logo" width="42" height="48">
 				<div class="logo-text">
 					{!! $texts->get('header.name') !!}
+					<span class="logo-text_pl">{!! $texts->get('header.describe') !!}</span>
 				</div>
 			</div>
-			<ul class="phones">
+			<ul class="phones wow slideInRight">
 				<li class="phones_item">{{ $texts->get('header.tel1') }}</li>
 				<li class="phones_item phones_item__bg">{{ $texts->get('header.tel2') }}</li>
 			</ul>
@@ -57,8 +58,8 @@
 
 	<div class="section_1">
 		<div class="wrapper wrapper_section-1 clearfix">
-			<div class="women wow zoomIn"></div>
-			<div class="section-1_wrapper-text wow slideInLeft">
+			<div class="women"></div>
+			<div class="section-1_wrapper-text wow zoomIn">
 				<div class="social">
 					<span class="soc-name">{{ trans('base.social') }}</span>
 					<ul class="soc-list clearfix">
@@ -71,9 +72,9 @@
 			</div>
 		</div>
 		<div class="wrapper wrapper_section-1 clearfix">
-			<ul class="visa-type wow rubberBand clearfix">
+			<ul class="visa-type clearfix">
 				@foreach($visas as $visa)
-					<li class="visa-type_item">
+					<li class="visa-type_item wow zoomIn">
 						<div class="visa-type_img">
 							@if(count($visa -> getImages()) > 0)
 								<img src="/{{ $visa->getImages()[0]['min'] }}" alt="">
@@ -100,7 +101,7 @@
 	<div class="section_2">
 		<div class="wrapper wrapper_section-2 clearfix">
 			<h2 class="section-name section-name_registration wow wobble">{{ trans('base.registry_visa_center') }}</h2>
-			<div class="wrapper_region-block wow rollIn">
+			<div class="wrapper_region-block wow slideInLeft">
 {{--
 				@foreach($visas_center as $visa_center)
 					<div class="region-block" data-region-type="{{ $visa_center -> priority }}">
@@ -147,7 +148,7 @@
 					<div class="region-price">від <span class="number">300</span> грн.</div>
 				</div>
 			</div>
-			<div class="map wow rollIn">
+			<div class="map wow slideInRight">
 				<div class="map-part west"></div>
 				<div class="map-part_red west_red"></div>
 				<div class="map-part north-west"></div>
@@ -172,7 +173,7 @@
 				</map>
 			</div>
 			<button class="button button_section-2 show-popup">{{ trans('base.registry') }}</button>
-			<div class="info_section">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник: http://censor.net.ua/n420629</div>
+			<div class="info_section wow rotateIn">{!! $texts->get('section_2.info') !!}</div>
 		</div>
 		<div class="arrow-top arrow-top_section-2"></div>
 	</div>
@@ -181,8 +182,8 @@
 
 <div class="section_3">
 	<div class="wrapper wrapper_section-3 clearfix">
-		<h2 class="section-name section-name_news">{{ trans('base.news') }}</h2>
-		<div class="social_section-3">
+		<h2 class="section-name section-name_news wow wobble">{{ trans('base.news') }}</h2>
+		<div class="social_section-3 wow rotateIn">
 			<div class="soc-name_section-3">{{ trans('base.news_soc') }}</div>
 			<ul class="left clearfix">
 				<li class="soc-item"><a class="soc-item_vk" href="{{ $texts->get('social_vk') }}"></a></li>
@@ -191,10 +192,10 @@
 		</div>
 		<ul class="news-block clearfix">
 			@foreach($news as $new)
-				<li class="news-block_item item">
+				<li class="news-block_item item wow zoomIn">
 					<div class="news-block_img" style="background-image: url('{{ $new->getImages()[0]['min'] }}');"></div>
 					<div class="news-text-wrap">
-						<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 30, '...') !!}</h3>
+						<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 32, '...') !!}</h3>
 						<div class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 150, '...') !!}</div>
 						<button class="button_red show-popup-news" data-new-id="{{ $new->id }}">{{ trans('base.more') }}</button>
 					</div>
@@ -203,7 +204,7 @@
 				<div class="popup-news" data-id="{{ $new->id }}">
 					<div class="close close_news"></div>
 					<div class="news-block_img" style="background-image: url('{{ $new->getImages()[0]['min'] }}');"></div>
-					<h3 class="popup-news_title">{!! str_limit($new->getTranslate('title'), 25, '...') !!}</h3>
+					<h3 class="popup-news_title">{!! str_limit($new->getTranslate('title'), 70, '...') !!}</h3>
 					{!! $new->getTranslate('description') !!}
 					<div class="popup-news_return close_news">повернутись назад</div>
 				</div>
@@ -219,13 +220,13 @@
 
 <div class="section_4">
 	<div class="wrapper wrapper_section-4 clearfix">
-		<div class="insurance-block">
+		<div class="insurance-block wow slideInRight">
 			<h2 class="section-name section-name_insurance">{{ trans('base.insurance') }}</h2>
 			{!! $texts->get('insurance') !!}
 			<button class="button button_section-4 show-popup">{{ trans('base.order_insurance') }}</button>
 		</div>
 		<div class="hands"></div>
-		<div class="info_section info_section-4">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник:</div>
+		<div class="info_section info_section-4 wow rotateIn">{!! $texts->get('section_4.info') !!}</div>
 	</div>
 	<div class="arrow-top"></div>
 </div>
@@ -234,24 +235,36 @@
 
 <div class="section_5">
 	<div class="wrapper wrapper_section-5 clearfix">
-		<h2 class="section-name section-name_services">{{ trans('base.services') }}</h2>
-		<div class="info info_services">
+		<h2 class="section-name section-name_services wow wobble">{{ trans('base.services') }}</h2>
+		<div class="info info_services wow rotateIn">
 			<div class="info-text">{{ trans('base.info') }}</div>
 			<div class="info-phone">{{ $texts->get('header.tel1') }}</div>
 		</div>
 		<ul class="news-block clearfix">
 			@foreach($services as $service)
-				<li data-service-id="{{ $service->id }}" class="services-block_item show-popup-services">
-					<div class="services-block_img services-block_img__passport"></div>
+				<li data-service-id="{{ $service->id }}" class="services-block_item wow zoomIn">
+					<div class="services-block_img">
+						@if(count($service -> getImages()) > 0)
+							<img src="/{{ $service->getImages()[0]['min'] }}" alt="">
+						@else
+							No Image
+						@endif
+					</div>
 					<h3 class="services-block_title">{{$service->getTranslate('title')}}</h3>
-					<div class="services-block_short-description">{!! str_limit($service->getTranslate('short_description'), 120, '...') !!}</div>
+					<div class="services-block_short-description">{!! str_limit($service->getTranslate('short_description'), 150, '...') !!}</div>
 				</li>
 				{{--Popup-services--}}
-				<div class="popup-services" id="modal_form_service" data-id="{{ $service->id }}" >
+				<div class="popup-services" data-id="{{ $service->id }}" >
 					<div class="popup-services_info-block clearfix">
 						<div class="close close_services"></div>
 						<div class="popup-services_name">
-							<div class="services-block_img services-block_img__house"></div>
+							<div class="services-block_img">
+								@if(count($service -> getImages()) > 0)
+									<img src="/{{ $service->getImages()[0]['min'] }}" alt="">
+								@else
+									No Image
+								@endif
+							</div>
 							<h3 class="services-block_title">{{$service->getTranslate('title')}}</h3>
 						</div>
 						<div class="popup-services_text">
@@ -267,9 +280,10 @@
 						<button class="button button_callback-section" id="{{ $service->id }}" data-title="{{ $service->getTranslate('title') }}">{{ trans('base.send') }}</button>
 					</form>
 				</div>
+				{{--Popup-services--}}
 			@endforeach
 		</ul>
-		<div class="info_section info_section-5">Об этом заявил руководитель фракции НФ Максим Бурбак во время общения с журналистами, сообщает Цензор.НЕТ со ссылкой на "112 Украина". Источник:</div>
+		<div class="info_section info_section-5 wow rotateIn">{!! $texts->get('section_5.info') !!}</div>
 		<button class="button button_section-5 show-popup">{{ trans('base.callback') }}</button>
 	</div>
 	<div class="arrow-top"></div>
@@ -280,10 +294,10 @@
 <div class="section_6">
 	<div class="wrapper wrapper_section-6 clearfix">
 		<div class="advice-block">
-			<h2 class="section-name section-name_advice">{{ trans('base.advices') }}</h2>
+			<h2 class="section-name section-name_advice wow wobble">{{ trans('base.advices') }}</h2>
 			<ul class="advice-list">
 				@for($i = 0; $i < count($advices); $i++)
-					<li class="advice-list_item clearfix show-popup-advices" data-advice-id="{{ $advices[$i]->id }}" >
+					<li class="advice-list_item wow slideInLeft clearfix show-popup-advices" data-advice-id="{{ $advices[$i]->id }}" >
 						<div class="advice-list_item-number">{{ $i+1 }}</div>
 						<div class="advice-list_item-text">{!! $advices[$i]->getTranslate('short_description') !!}</div>
 					</li>
@@ -306,11 +320,11 @@
 
 <div class="section_7">
 	<div class="wrapper wrapper_section-7 clearfix">
-		<h2 class="section-name section-name_contact">{{ trans('base.want') }}</h2>
-		<div class="contact-map">
+		<h2 class="section-name section-name_contact wow wobble">{{ trans('base.want') }}</h2>
+		<div class="contact-map wow slideInRight">
 			{!! $texts->get('footer.maps') !!}}
 		</div>
-		<div class="contact-data">
+		<div class="contact-data wow slideInLeft">
 			<div class="contact-data_address">
 				<div class="section-name_contact-title">{{ trans('base.contact') }}</div>
 				<div class="contact-data_text">Маіл: {{ $texts->get('header.mail') }} <br>

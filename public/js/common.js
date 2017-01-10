@@ -127,8 +127,8 @@ $('.show-popup-advices').click(function(event){
     });
 })
 //Popup services
-$('.show-popup-services').click( function(event){
-    var service_id = $(this).attr('data-service-id');
+$('.services-block_short-description').click( function(event){
+    var service_id = $(this).parent('li').attr('data-service-id');
     //Popup services OPEN
     $('#overlay').fadeIn(400,
         function(){
