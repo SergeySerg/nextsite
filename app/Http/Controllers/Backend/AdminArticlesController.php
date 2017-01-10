@@ -233,6 +233,7 @@ class AdminArticlesController extends Controller {
 	private function prepareArticleData($all){
 		$langs = Lang::all();
 		$all['title'] = '';
+		$all['type'] = '';
 		$all['short_description'] = '';
 		$all['description'] = '';
 		$all['meta_title'] = '';
@@ -247,6 +248,7 @@ class AdminArticlesController extends Controller {
 		//Формирование массива типа (ua|ru|en)
 		foreach($langs as $lang){
 			$all['title'] .= $all["title_{$lang['lang']}"] .'@|;';
+			$all['type'] .= $all["type_{$lang['lang']}"] .'@|;';
 			$all['short_description'] .= (isset($all["short_description_{$lang['lang']}"]) ? $all["short_description_{$lang['lang']}"] : '') .'@|;';
 			$all['description'] .= (isset($all["description_{$lang['lang']}"]) ? $all["description_{$lang['lang']}"] : '') .'@|;';
 			$all['meta_title'] .= (isset($all["meta_title_{$lang['lang']}"]) ? $all["meta_title_{$lang['lang']}"] : '') .'@|;';
@@ -254,6 +256,7 @@ class AdminArticlesController extends Controller {
 			$all['meta_keywords'] .= (isset($all["meta_keywords_{$lang['lang']}"]) ? $all["meta_keywords_{$lang['lang']}"] : '') .'@|;';
 			//Удаление переменных типа title_ua,title_ru,title_en и т. д.
 			unset($all["title_{$lang['lang']}"]);
+			unset($all["type_{$lang['lang']}"]);
 			unset($all["short_description_{$lang['lang']}"]);
 			unset($all["description_{$lang['lang']}"]);
 			unset($all["meta_title_{$lang['lang']}"]);

@@ -50,6 +50,14 @@
                         </div>
                     </div>
                 @endif
+                @if($admin_category->hasField('code'))
+                    <div class="control-group">
+                        <label class="control-label" for="form-field-11">Код візи</label>
+                        <div class="controls">
+                            <input type="text" id="form-field-11" name="code" @if(isset($admin_article)) value='{{$admin_article->code}}'@endif  />
+                        </div>
+                    </div>
+                @endif
                 @if($admin_category->hasField('term'))
                     <div class="control-group">
                         <label class="control-label" for="form-field-1">Термін виконання</label>
@@ -121,15 +129,24 @@
                             <div class="tab-content">
                                 @foreach($langs as $lang)
                                     <div id="{{$lang->lang}}" @if(($lang->lang) == 'ua') class="tab-pane in active" @else class="tab-pane" @endif>
-                                    @if($admin_category->hasField('title'))
-                                        <div class="control-group">
-                                            <label class="control-label" for="form-field-3">Назва</label>
+                                        @if($admin_category->hasField('title'))
+                                            <div class="control-group">
+                                                <label class="control-label" for="form-field-3">Назва</label>
 
-                                            <div class="controls">
-                                                <input type="text" name="title_{{$lang->lang}}" value='@if(isset($admin_article)){{ $admin_article->getTranslate('title', $lang->lang) }}@endif' id="form-field-3" placeholder="Назва номеру,події,послуги" />
+                                                <div class="controls">
+                                                    <input type="text" name="title_{{$lang->lang}}" value='@if(isset($admin_article)){{ $admin_article->getTranslate('title', $lang->lang) }}@endif' id="form-field-3" placeholder="Назва номеру,події,послуги" />
+                                                </div>
                                             </div>
-                                        </div>
-                                    @endif
+                                        @endif
+                                        @if($admin_category->hasField('type'))
+                                            <div class="control-group">
+                                                <label class="control-label" for="form-field-10">Тип</label>
+
+                                                <div class="controls">
+                                                    <input type="text" name="type_{{$lang->lang}}" value='@if(isset($admin_article)){{ $admin_article->getTranslate('type', $lang->lang) }}@endif' id="form-field-10" placeholder="Тип" />
+                                                </div>
+                                            </div>
+                                        @endif
                                         @if($admin_category->hasField('meta_title'))
                                             <h4 class="header blue clearfix">SEO</h4>
 
