@@ -7,7 +7,7 @@ class Article extends Translate {
     protected $fillable=[
         'category_id',
         'title',
-        'type',
+        'specification',
         'code',
         'short_description',
         'description',

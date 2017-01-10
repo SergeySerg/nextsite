@@ -15,7 +15,7 @@ class ChangeArticleTableFullTiitle extends Migration {
 		Schema::table('articles', function(Blueprint $table)
 		{
 			$table->text('code');
-			$table->text('type');
+			$table->text('specification');
 		});
 	}
 
