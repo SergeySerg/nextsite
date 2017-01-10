@@ -159,7 +159,7 @@ $('.services-block_short-description').click( function(event){
                 //console.info('Server response: ', data);
                 if(data.success){
                     swal(trans['base.success'], "", "success");
-                    jQuery("#popup-services").trigger("reset");
+                    $('#popup-services-'+service_id+'').trigger("reset");
                     $('.popup-services, #overlay').hide();
                     $('button#'+service_id+'').attr('disabled', false);
                 }
