@@ -171,6 +171,11 @@
     
     
                                     </div>
+                                @elseif ($admin_text->type == 'textarea-no-wysiwyg' )
+                                    <h4 class="header blue clearfix">{{$admin_text->title}}</h4>
+                                    <div class="control-group">
+                                        <textarea name="description_{{$lang->lang}}" class="span12 no-wysiwyg" id="description_{{$lang->lang}}" placeholder="Опис">{{ $admin_text->getTranslate('description',$lang->lang) }}</textarea>
+                                    </div>
                                 @endif
 
                             </div>
