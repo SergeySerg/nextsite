@@ -46,13 +46,18 @@
 					<span class="logo-text_pl">{!! $texts->get('header.describe') !!}</span>
 				</div>
 			</div>
+{{--
+			<ul class="lang">
+				@foreach($langs as $lang)
+					<li><a style="color: black;" href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a></li>
+				@endforeach
+			</ul>
+--}}
+
 			<ul class="phones wow slideInRight">
 				<li class="phones_item">{{ $texts->get('header.tel1') }}</li>
 				<li class="phones_item phones_item__bg">{{ $texts->get('header.tel2') }}</li>
 			</ul>
-			@foreach($langs as $lang)
-				<a style="color: black;" href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a>
-			@endforeach
 		</div>
 	</div>
 

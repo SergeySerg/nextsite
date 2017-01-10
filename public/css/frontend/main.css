@@ -249,8 +249,7 @@ body {
   text-align: center; }
 
 .visa-type_item:hover {
-  background-color: #e6e6e6;
-  cursor: pointer; }
+  background-color: #e6e6e6; }
 
 .visa-type_item:hover .visa-type_img {
   -webkit-filter: grayscale(1);
@@ -271,7 +270,8 @@ body {
 .visa-type_name {
   font-family: "MagistralBlack", sans-serif;
   font-size: 1.625em;
-  line-height: 1.1875em; }
+  line-height: 1.1875em;
+  text-transform: uppercase;}
 
 .visa-type_name-description {
   margin-top: -5px;
@@ -606,8 +606,7 @@ body {
   overflow: hidden; }
 
 .news-block_item:hover {
-  background-color: #e6e6e6;
-  cursor: pointer; }
+  background-color: #e6e6e6;}
 
 .news-block_item:hover .news-block_title {
   border-bottom: 2px solid #ffffff; }
@@ -800,8 +799,7 @@ tr:last-child .insurance-price {
   margin-left: 15px; }
 
 .services-block_item:hover {
-  background-color: #e6e6e6;
-  cursor: pointer; }
+  background-color: #e6e6e6;}
 
 .services-block_item:hover .services-block_img {
   -webkit-filter: grayscale(1);
@@ -837,7 +835,8 @@ tr:last-child .insurance-price {
   color: #ff0000;
   text-decoration: underline;
   -webkit-text-decoration-color: rgba(255, 0, 0, 0.2);
-          text-decoration-color: rgba(255, 0, 0, 0.2); }
+          text-decoration-color: rgba(255, 0, 0, 0.2);
+  cursor: pointer;}
 
 .info_section-5 {
   float: left;
@@ -927,7 +926,7 @@ tr:last-child .insurance-price {
 
 .men {
   position: absolute;
-  top: -129px;
+  top: -123px;
   right: 0;
   width: 511px;
   height: 729px;
