@@ -155,9 +155,9 @@
 <div class="section_3">
 	<div class="wrapper wrapper_section-3 clearfix">
 		<h2 class="section-name section-name_news">{{ trans('base.news') }}</h2>
-		<div class="social_section-3 wow rotateIn">
+		<div class="social_section-3 clearfix wow rotateIn">
 			<div class="soc-name_section-3">{{ trans('base.news_soc') }}</div>
-			<ul class="left clearfix">
+			<ul class="news-soc clearfix">
 				<li class="soc-item"><a class="soc-item_vk" href="{{ $texts->get('social_vk') }}"></a></li>
 				<li class="soc-item"><a class="soc-item_fb" href="{{ $texts->get('social_fb') }}"></a></li>
 			</ul>
