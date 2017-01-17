@@ -1300,6 +1300,45 @@ textarea.callback-item {
 }
 /* END owl-carousel next and preview */
 /*==========  Desktop First Method  ========== */
+@media only screen and (max-width: 1235px) {
+  .hands{
+    left: 50%;
+    top: 33px;
+    margin-left: -376px;
+    opacity: .7;
+  }
+  .insurance-block {
+    position: relative;
+    float: none;
+    margin-top: 30px;
+    width: inherit;
+    text-align: center;
+    z-index: 5;
+  }
+  .section-name_insurance{
+    color: #383737;
+  }
+  .insurance-block table td:nth-child(odd),
+  .insurance-block table td:nth-child(even){
+    text-shadow: 0 0 4px #fff;
+  }
+  .insurance-block table td:nth-child(odd),
+  .insurance-block table td:nth-child(even){
+    border-bottom: 2px solid #524848;
+  }
+  .insurance-block table td:nth-child(odd) {
+    border-right: 2px solid #524848;
+  }
+  .info_section-4{
+    margin: 50px auto;
+  }
+  .section-4_bg{
+    margin-top: -745px;
+    width: 100%;
+    height: 745px;
+    background: #d8d5d5  url(../../img/frontend/imgForSprite/section_4_footer_bg.png) center 390px no-repeat;
+  }
+}
 @media only screen and (max-width: 1220px) {
   .wrapper-news{
     width: 860px;
@@ -1350,6 +1389,11 @@ textarea.callback-item {
 @media only screen and (max-width: 928px) {
   .wrapper-news{
     width: 572px;
+  }
+}
+@media only screen and (max-width: 774px) {
+  .hands{
+    display: none;
   }
 }
 @media only screen and (max-width: 720px) {
@@ -1418,7 +1462,25 @@ textarea.callback-item {
     float: none; }
   .phones_item__bg {
     padding-left: 0;
-    background: none; } }
+    background: none; }
+  .info_section-4{
+    width: 300px;
+  }
+  .wrapper_section-3{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .insurance-block table{
+    font-size: 1.4em;
+  }
+  .section-4_bg{
+    margin-top: -732px;
+    height: 732px;
+  }
+  .women{
+    display: none;
+  }
+}
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 400px) {
@@ -1444,6 +1506,19 @@ textarea.callback-item {
      margin-top: -755px;
      height: 755px;
    }
+  .insurance-block table{
+    font-size: 1.4em;
+  }
 }
 
 /* Custom, iPhone Retina */
+.section_2,
+.section_5,
+.section_6,
+.section_7,
+.section-2_bg,
+.section-5_bg,
+.section-6_bg,
+.section-7_bg{
+  display: none;
+}
