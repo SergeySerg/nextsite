@@ -1296,6 +1296,103 @@ textarea.callback-item {
 }
 /* END owl-carousel next and preview */
 /*==========  Desktop First Method  ========== */
+@media only screen and (max-width: 1200px) {
+  .wrapper {
+    width: 100%;
+  }
+  .visa-type{
+    text-align: center;
+  }
+  .visa-type_item{
+    float: none;
+    display: inherit;
+    width: 41.65%;
+    margin-bottom: 20px;
+  }
+  .visa-type_item:nth-child(2n+1){
+    margin-left: 0;
+    margin-right: 3%;
+  }
+  .visa-type_item:nth-child(2n){
+    margin-left: 0;
+  }
+  .section-1_bg{
+    margin-top: -900px;
+    height: 900px;
+    background: #ebebeb url("../../img/frontend/imgForSprite/section_1_footer_bg.png") center bottom no-repeat;
+    background-size: 200%;
+  }
+}
 /* Small Devices, Tablets */
+@media only screen and (max-width: 992px) {
+  .logo-wrap, .phones {
+    float: none;
+    margin: 0 auto; } }
+
+@media only screen and (max-width: 720px) {
+  .visa-type_item {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .visa-type_item:nth-child(2n+1) {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .visa-type_item:nth-child(2n) {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .section-1_bg {
+    margin-top: -1800px;
+    height: 1800px;
+    background: #ebebeb url("../../img/frontend/imgForSprite/section_1_footer_bg.png") center bottom no-repeat;
+    background-size: 200%;
+  }
+  .info {
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  .section-1_wrapper-text{
+    float: none;
+  }
+  .social {
+    left: 0;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .section-1_text {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: -3%;
+    margin-bottom: 50px;
+  }
+  button{
+    width: 300px;
+  }
+  .button_section-1{
+    margin-left: 0;
+  }
+
+}
+@media only screen and (max-width: 600px) {
+  .phones_item {
+    float: none; }
+  .phones_item__bg {
+    padding-left: 0;
+    background: none; } }
+
 /* Extra Small Devices, Phones */
+@media only screen and (max-width: 400px) {
+  .logo {
+    float: none;
+    margin-right: 0; }
+  .logo-wrap {
+    text-align: center; } }
+
 /* Custom, iPhone Retina */

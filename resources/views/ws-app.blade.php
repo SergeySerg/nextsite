@@ -54,7 +54,7 @@
 			</ul>
 --}}
 
-			<ul class="phones wow slideInRight">
+			<ul class="phones clearfix wow slideInRight">
 				<li class="phones_item">{{ $texts->get('header.tel1') }}</li>
 				<li class="phones_item phones_item__bg">{{ $texts->get('header.tel2') }}</li>
 			</ul>
@@ -109,7 +109,7 @@
 
 	<div class="section_2">
 		<div class="wrapper wrapper_section-2 clearfix">
-			<h2 class="section-name section-name_registration wow wobble">{{ trans('base.registry_visa_center') }}</h2>
+			<h2 class="section-name section-name_registration">{{ trans('base.registry_visa_center') }}</h2>
 			<div class="wrapper_region-block wow slideInLeft">
 				@foreach($visas_center as $visa_center)
 					<div class="region-block" data-region-type="{{ $visa_center -> code }}">
@@ -145,7 +145,7 @@
 				</map>
 			</div>
 			<button class="button button_section-2 show-popup">{{ trans('base.registry') }}</button>
-			<div class="info_section wow rotateIn">{!! $texts->get('section_2.info') !!}</div>
+			<div class="info_section">{!! $texts->get('section_2.info') !!}</div>
 		</div>
 		<div class="arrow-top arrow-top_section-2"></div>
 	</div>
@@ -154,7 +154,7 @@
 
 <div class="section_3">
 	<div class="wrapper wrapper_section-3 clearfix">
-		<h2 class="section-name section-name_news wow wobble">{{ trans('base.news') }}</h2>
+		<h2 class="section-name section-name_news">{{ trans('base.news') }}</h2>
 		<div class="social_section-3 wow rotateIn">
 			<div class="soc-name_section-3">{{ trans('base.news_soc') }}</div>
 			<ul class="left clearfix">
@@ -202,7 +202,7 @@
 			<button class="button button_section-4 show-popup">{{ trans('base.order_insurance') }}</button>
 		</div>
 		<div class="hands"></div>
-		<div class="info_section info_section-4 wow rotateIn">{!! $texts->get('section_4.info') !!}</div>
+		<div class="info_section info_section-4">{!! $texts->get('section_4.info') !!}</div>
 	</div>
 	<div class="arrow-top"></div>
 </div>
@@ -211,7 +211,7 @@
 
 <div class="section_5">
 	<div class="wrapper wrapper_section-5 clearfix">
-		<h2 class="section-name section-name_services wow wobble">{{ trans('base.services') }}</h2>
+		<h2 class="section-name section-name_services">{{ trans('base.services') }}</h2>
 		<div class="info info_services wow rotateIn">
 			<div class="info-text">{{ trans('base.info') }}</div>
 			<div class="info-phone">{{ $texts->get('header.tel1') }}</div>
@@ -259,7 +259,7 @@
 				{{--Popup-services--}}
 			@endforeach
 		</ul>
-		<div class="info_section info_section-5 wow rotateIn">{!! $texts->get('section_5.info') !!}</div>
+		<div class="info_section info_section-5">{!! $texts->get('section_5.info') !!}</div>
 		<button class="button button_section-5 show-popup">{{ trans('base.callback') }}</button>
 	</div>
 	<div class="arrow-top"></div>
@@ -270,7 +270,7 @@
 <div class="section_6">
 	<div class="wrapper wrapper_section-6 clearfix">
 		<div class="advice-block">
-			<h2 class="section-name section-name_advice wow wobble">{{ trans('base.advices') }}</h2>
+			<h2 class="section-name section-name_advice">{{ trans('base.advices') }}</h2>
 			<ul class="advice-list">
 				@for($i = 0; $i < count($advices); $i++)
 					<li class="advice-list_item wow slideInLeft clearfix show-popup-advices" data-advice-id="{{ $advices[$i]->id }}" >
@@ -296,7 +296,7 @@
 
 <div class="section_7">
 	<div class="wrapper wrapper_section-7 clearfix">
-		<h2 class="section-name section-name_contact wow wobble">{{ trans('base.want') }}</h2>
+		<h2 class="section-name section-name_contact">{{ trans('base.want') }}</h2>
 		<div class="contact-map wow slideInRight">
 			{!! $texts->get('footer.maps') !!}}
 		</div>
