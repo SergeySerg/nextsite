@@ -204,7 +204,7 @@
 		<div class="hands"></div>
 		<div class="info_section info_section-4">{!! $texts->get('section_4.info') !!}</div>
 	</div>
-	<div class="arrow-top"></div>
+	<div class="arrow-top arrow-top_section-4"></div>
 </div>
 
 <div class="section-4_bg"></div>
@@ -229,6 +229,8 @@
 					<h3 class="services-block_title">{{$service->getTranslate('title')}}</h3>
 					<div class="services-block_short-description">{!! str_limit($service->getTranslate('short_description'), 150, '...') !!}</div>
 				</li>
+			@endforeach
+			@foreach($services as $service)
 				{{--Popup-services--}}
 				<div class="popup-services" data-id="{{ $service->id }}" >
 					<div class="popup-services_info-block clearfix">
@@ -262,7 +264,7 @@
 		<div class="info_section info_section-5">{!! $texts->get('section_5.info') !!}</div>
 		<button class="button button_section-5 show-popup">{{ trans('base.callback') }}</button>
 	</div>
-	<div class="arrow-top"></div>
+	<div class="arrow-top arrow-top_section-5"></div>
 </div>
 
 <div class="section-5_bg"></div>
