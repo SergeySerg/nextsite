@@ -965,7 +965,9 @@ body {
   background-size: 31px 54px; }
 
 .contact-map {
-  float: left; }
+  float: left;
+  width: 550px;
+  height: 550px;}
 
 .contact-data {
   float: right;
@@ -1336,7 +1338,7 @@ textarea.callback-item {
     margin-top: -745px;
     width: 100%;
     height: 745px;
-    background: #d8d5d5  url(../../img/frontend/imgForSprite/section_4_footer_bg.png) center 390px no-repeat;
+    background: #d8d5d5  url("../../img/frontend/imgForSprite/section_4_footer_bg.png") center 390px no-repeat;
   }
 }
 @media only screen and (max-width: 1240px) {
@@ -1423,6 +1425,18 @@ textarea.callback-item {
   .advice-list_item-text{
     color: #ffffff;
   }
+  .contact-map {
+    float: left;
+    display: block;
+    width: 48%;
+    height: 480px;
+    margin-right: 10%;
+  }
+  .contact-data {
+    float: none;
+    display: inline-block;
+    width: 42%;
+  }
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width: 992px) {
@@ -1460,6 +1474,37 @@ textarea.callback-item {
   .section-5_bg{
     margin-top: -1296px;
     height: 1296px;
+  }
+  .section-name_contact {
+    width: 320px;
+    margin: 30px auto;
+  }
+  .contact-map{
+    float: none;
+    width: 100%;
+  }
+  .contact-data {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+  }
+  .contact-data_text{
+    padding-left: 0;
+  }
+  .callback-item {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  .section-name_contact-title {
+    margin-top: 0;
+  }
+  .button_callback-section{
+    margin-left: 0;
+  }
+  .section_7{
+    -webkit-background-size: cover;
+    background-size: cover;
   }
 }
 @media only screen and (max-width: 928px) {
@@ -1535,6 +1580,9 @@ textarea.callback-item {
   .advice-block{
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .contact-map{
+    height: 380px;
   }
 }
 @media only screen and (max-width: 628px) {
@@ -1622,6 +1670,14 @@ textarea.callback-item {
   .advice-list_item-text{
     color: initial;
   }
+  .wrapper_section-7{
+    width: 82%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-name_contact{
+    width: 100%;
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -1651,10 +1707,18 @@ textarea.callback-item {
   .insurance-block table{
     font-size: 1.4em;
   }
+  .section-name_advice{
+    width: 100%;
+    font-size: 2.8em;
+  }
+  .section-name_contact{
+    font-size: 2.8em;
+  }
+  .callback-item{
+    width: 100%;
+  }
 }
 .section_2,
-.section-2_bg,
-.section_7,
-.section-7_bg{
+.section-2_bg{
   display: none;
 }
