@@ -1402,12 +1402,26 @@ textarea.callback-item {
     top: 100px;
     width: 470px;
     margin: 0 auto;
+    z-index: 1;
   }
   .button_section-5{
     margin-left: 0;
     margin-top: 40px;
     bottom: 110px;
     margin-bottom: 20px;
+  }
+  .advice-block{
+    width: 600px;
+    position: relative;
+    z-index: 1;
+  }
+  .section-6_bg{
+    margin-top: -660px;
+    height: 660px;
+    background: #a1a1a1 url("../../img/frontend/imgForSprite/section_6_footer_bg.png") center no-repeat;
+  }
+  .advice-list_item-text{
+    color: #ffffff;
   }
 }
 /* Small Devices, Tablets */
@@ -1434,7 +1448,8 @@ textarea.callback-item {
     bottom: -18px;
   }
   .arrow-top_section-4,
-  .arrow-top_section-5{
+  .arrow-top_section-5,
+  .arrow-top_section-6{
     bottom: -23px;
   }
   .info_services {
@@ -1513,6 +1528,14 @@ textarea.callback-item {
     margin: 0 auto;
     margin-top: 15px;
   }
+  .wrapper_section-6{
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .advice-block{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 @media only screen and (max-width: 628px) {
   .wrapper-news{
@@ -1582,6 +1605,23 @@ textarea.callback-item {
     margin-top: -2250px;
     height: 2250px;
   }
+  .men{
+    display: none;
+  }
+  .advice-block{
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-6_bg{
+    margin-top: -660px;
+    height: 660px;
+    background: #ffffff url("../../img/frontend/imgForSprite/section_6_footer_bg.png") center no-repeat;
+  }
+  .advice-list_item-text{
+    color: initial;
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -1611,4 +1651,10 @@ textarea.callback-item {
   .insurance-block table{
     font-size: 1.4em;
   }
+}
+.section_2,
+.section-2_bg,
+.section_7,
+.section-7_bg{
+  display: none;
 }

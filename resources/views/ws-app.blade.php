@@ -291,7 +291,7 @@
 		</div>
 		<div class="men"></div>
 	</div>
-	<div class="arrow-top"></div>
+	<div class="arrow-top arrow-top_section-6"></div>
 </div>
 
 <div class="section-6_bg"></div>
