@@ -110,7 +110,7 @@
 	<div class="section_2">
 		<div class="wrapper wrapper_section-2 clearfix">
 			<h2 class="section-name section-name_registration">{{ trans('base.registry_visa_center') }}</h2>
-			<div class="wrapper_region-block wow slideInLeft">
+			<div class="wrapper_region-block clearfix wow slideInLeft">
 				@foreach($visas_center as $visa_center)
 					<div class="region-block" data-region-type="{{ $visa_center -> code }}">
 						<div class="region-name">{{ $visa_center->getTranslate('title') }}</div>

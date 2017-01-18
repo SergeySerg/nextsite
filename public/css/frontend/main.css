@@ -1302,6 +1302,55 @@ textarea.callback-item {
 }
 /* END owl-carousel next and preview */
 /*==========  Desktop First Method  ========== */
+@media only screen and (max-width: 1260px) {
+  .wrapper_section-2{
+    text-align: center;
+  }
+  .map{
+    display: none;
+  }
+  .wrapper_region-block {
+    float: none;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  .region-block {
+    display: inline-block !important;
+    float: none;
+    position: static;
+    width: 33.333%;
+    height: 360px;
+    margin-top: 30px;
+    color: #ffffff;
+    padding-left: 30px;
+    text-align: left;
+  }
+  .region-include {
+    width: 80%;
+    display: table;
+    position: relative;
+    height: 130px;
+  }
+  .region-include p{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .section-2_bg{
+    margin-top: -1196px;
+    height: 1196px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position-y: 0 !important;
+  }
+  .button_section-2{
+    left: 0;
+    margin-top: 45px;
+  }
+  .arrow-top_section-2{
+    bottom: 0;
+  }
+}
 @media only screen and (max-width: 1235px) {
   .hands{
     left: 50%;
@@ -1373,10 +1422,14 @@ textarea.callback-item {
     margin-left: 0;
   }
   .section-1_bg{
-    margin-top: -900px;
-    height: 900px;
+    margin-top: -915px;
+    height: 915px;
     background: #ebebeb url("../../img/frontend/imgForSprite/section_1_footer_bg.png") center bottom no-repeat;
     background-size: 200%;
+  }
+  .wrapper_section-2{
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .news-block{
     width: 100%;
@@ -1439,6 +1492,21 @@ textarea.callback-item {
   }
 }
 /* Small Devices, Tablets */
+@media only screen and (max-width: 1120px) {
+  .region-block{
+    width: 400px;
+  }
+  .section-2_bg {
+    margin-top: -1580px;
+    height: 1580px;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  .section-2_bg {
+    margin-top: -1600px;
+    height: 1600px;
+  }
+}
 @media only screen and (max-width: 992px) {
   .logo-wrap, .phones {
     float: none;
@@ -1456,7 +1524,10 @@ textarea.callback-item {
     margin-bottom: 50px;
   }
   .arrow-top{
-    bottom: 5px;
+    bottom: -25px;
+  }
+  .arrow-top_section-2{
+    bottom: 25px;
   }
   .arrow-top_section-3{
     bottom: -18px;
@@ -1472,8 +1543,8 @@ textarea.callback-item {
     margin-top: 15px;
   }
   .section-5_bg{
-    margin-top: -1296px;
-    height: 1296px;
+    margin-top: -1295px;
+    height: 1295px;
   }
   .section-name_contact {
     width: 320px;
@@ -1511,8 +1582,36 @@ textarea.callback-item {
   .wrapper-news{
     width: 572px;
   }
+  .section-2_bg {
+    margin-top: -1620px;
+    height: 1620px;
+  }
+  .info_section{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .hands{
+    top: 12px;
+  }
+  .section-5_bg {
+    margin-top: -1375px;
+    height: 1375px;
+  }
+  .button_section-5{
+    bottom: 160px;
+  }
+  .section-4_bg {
+    margin-top: -725px;
+    height: 725px;
+  }
 }
 @media only screen and (max-width: 774px) {
+  .section-2_bg {
+    margin-top: -2785px;
+    height: 2785px;
+  }
   .hands{
     display: none;
   }
@@ -1584,6 +1683,14 @@ textarea.callback-item {
   .contact-map{
     height: 380px;
   }
+  .section-name_registration {
+    width: 300px;
+    font-size: 2.8em;
+  }
+  .section-2_bg {
+    margin-top: -2827px;
+    height: 2827px;
+  }
 }
 @media only screen and (max-width: 628px) {
   .wrapper-news{
@@ -1613,6 +1720,9 @@ textarea.callback-item {
   .arrow-top{
     bottom: -23px;
   }
+  .arrow-top_section-2{
+    bottom: -10px;
+  }
   .section-name_news{
        margin-top: 20px;
   }
@@ -1628,8 +1738,8 @@ textarea.callback-item {
     font-size: 1.4em;
   }
   .section-4_bg{
-    margin-top: -732px;
-    height: 732px;
+    margin-top: -691px;
+    height: 691px;
   }
   .women{
     display: none;
@@ -1646,12 +1756,15 @@ textarea.callback-item {
   }
   .button_section-5 {
     margin-top: 0;
-    bottom: 110px;
+    bottom: 150px;
     margin-bottom: 70px;
   }
   .section-5_bg {
-    margin-top: -2250px;
-    height: 2250px;
+    margin-top: -2310px;
+    height: 2310px;
+  }
+  .arrow-top_section-4{
+    bottom: -23px;
   }
   .men{
     display: none;
@@ -1678,9 +1791,36 @@ textarea.callback-item {
   .section-name_contact{
     width: 100%;
   }
+  .wrapper_section-2{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .info_section{
+    width: 290px;
+  }
+  .section-2_bg {
+    margin-top: -2865px;
+    height: 2865px;
+  }
 }
 
 /* Extra Small Devices, Phones */
+@media only screen and (max-width: 450px) {
+  .region-block {
+    width: 290px;
+  }
+  .section-2_bg {
+    margin-top: -2871px;
+    height: 2871px;
+  }
+  .region-name{
+    font-size: 2.2em;
+  }
+  .region-term,
+  .region-price{
+    font-size: 2.7em;
+  }
+}
 @media only screen and (max-width: 400px) {
   .logo {
     float: none;
@@ -1717,8 +1857,15 @@ textarea.callback-item {
   .callback-item{
     width: 100%;
   }
-}
-.section_2,
-.section-2_bg{
-  display: none;
+  .wrapper_section-2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .button_section-2{
+    margin-top: 0;
+  }
+  .section-2_bg {
+    margin-top: -2826px;
+    height: 2826px;
+  }
 }
