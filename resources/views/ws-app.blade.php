@@ -279,14 +279,17 @@
 						<div class="advice-list_item-number">{{ $i+1 }}</div>
 						<div class="advice-list_item-text">{!! $advices[$i]->getTranslate('short_description') !!}</div>
 					</li>
-					<div class="popup-question" data-id="{{ $advices[$i]->id }}">
-						<div class="close close_question"></div>
-						<div class="advice-list_item-number">{{ $i+1 }}</div>
-						<div class="popup-question_name">{{ $advices[$i]->getTranslate('title') }}</div>
-						<div class="advice-list_item-text">{!! str_limit($advices[$i]->getTranslate('description'), 700, '...') !!}</div>
-					</div>
 				@endfor
 			</ul>
+			@for($i = 0; $i < count($advices); $i++)
+				<div class="popup-question" data-id="{{ $advices[$i]->id }}">
+					<div class="close close_question"></div>
+					<div class="advice-list_item-number">{{ $i+1 }}</div>
+					<div class="popup-question_name">{{ $advices[$i]->getTranslate('title') }}</div>
+					<div class="advice-list_item-text">{!! str_limit($advices[$i]->getTranslate('description'), 700, '...') !!}</div>
+				</div>
+			@endfor
+
 			<button class="button_red button_section-6 show-popup">{{ trans('base.learn_more') }}</button>
 		</div>
 		<div class="men"></div>
