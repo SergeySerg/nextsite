@@ -1185,12 +1185,13 @@ textarea.callback-item {
 .popup-news {
   position: fixed;
   width: 1160px;
+  max-height: 90%;
+  overflow-y: auto;
   margin-top: -15%;
   background-color: #ffffff;
   padding: 50px 65px 30px 30px;
   -webkit-border-radius: 30px;
           border-radius: 30px;
-  overflow: hidden;
   z-index: 15;}
 
 .popup-news_title {
@@ -1490,6 +1491,30 @@ textarea.callback-item {
     display: inline-block;
     width: 42%;
   }
+  .popup-callback {
+    display: none;
+    top: 30px !important;
+    margin-top: 0;
+  }
+  .popup-news {
+    display: none;
+    width: 90%;
+    margin-left: 3%;
+    top: 30px !important;
+    margin-top: 0;
+  }
+  .popup-news .news-block_img {
+    width: 40%;
+    height: 230px;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .popup-news_title {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
 }
 /* Small Devices, Tablets */
 @media only screen and (max-width: 1120px) {
@@ -1579,32 +1604,42 @@ textarea.callback-item {
   }
 }
 @media only screen and (max-width: 928px) {
-  .wrapper-news{
+  .wrapper-news {
     width: 572px;
   }
+
   .section-2_bg {
     margin-top: -1620px;
     height: 1620px;
   }
-  .info_section{
+
+  .info_section {
     width: 400px;
     margin: 0 auto;
     margin-top: 40px;
     margin-bottom: 20px;
   }
-  .hands{
+
+  .hands {
     top: 12px;
   }
+
   .section-5_bg {
     margin-top: -1375px;
     height: 1375px;
   }
-  .button_section-5{
+
+  .button_section-5 {
     bottom: 160px;
   }
+
   .section-4_bg {
     margin-top: -725px;
     height: 725px;
+  }
+
+  .popup-news .news-block_img {
+    width: 70%;
   }
 }
 @media only screen and (max-width: 774px) {
@@ -1690,6 +1725,9 @@ textarea.callback-item {
   .section-2_bg {
     margin-top: -2827px;
     height: 2827px;
+  }
+  .popup-news .news-block_img {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 628px) {
@@ -1802,6 +1840,15 @@ textarea.callback-item {
     margin-top: -2865px;
     height: 2865px;
   }
+  .popup-news{
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: left;
+  }
+  .popup-news .close {
+    margin-top: -33px;
+    margin-right: 15px;
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -1819,6 +1866,17 @@ textarea.callback-item {
   .region-term,
   .region-price{
     font-size: 2.7em;
+  }
+  .popup-callback {
+    width: 300px;
+    margin-left: -150px;
+  }
+  .popup-callback{
+    height: 380px;
+    padding: 10px;
+  }
+  .button_callback-section{
+    width: 100%;
   }
 }
 @media only screen and (max-width: 400px) {
