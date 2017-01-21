@@ -56,7 +56,7 @@
 
 			<ul class="phones clearfix wow slideInRight">
 				<li class="phones_item">{{ $texts->get('header.tel1') }}</li>
-				<li class="phones_item phones_item__bg">{{ $texts->get('header.tel2') }}</li>
+				<li class="phones_item phones_item__bg retina">{{ $texts->get('header.tel2') }}</li>
 			</ul>
 		</div>
 	</div>
@@ -68,8 +68,8 @@
 				<div class="social">
 					<span class="soc-name">{{ trans('base.social') }}</span>
 					<ul class="soc-list clearfix">
-						<li class="soc-item"><a class="soc-item_vk" href="{{ $texts->get('social_vk') }}"></a></li>
-						<li class="soc-item"><a class="soc-item_fb" href="{{ $texts->get('social_fb') }}"></a></li>
+						<li class="soc-item"><a class="soc-item_vk retina" href="{{ $texts->get('social_vk') }}"></a></li>
+						<li class="soc-item"><a class="soc-item_fb retina" href="{{ $texts->get('social_fb') }}"></a></li>
 					</ul>
 				</div>
 				<div class="section-1_text"></div>
@@ -97,23 +97,23 @@
 					</li>
 				@endforeach
 			</ul>
-			<div class="info wow rotateIn">
+			<div class="info retina wow rotateIn">
 				<div class="info-text">{{ trans('base.info') }}</div>
 				<div class="info-phone">{{ $texts->get('header.tel1') }}</div>
 			</div>
 		</div>
-		<div class="arrow-top"></div>
+		<div class="arrow-top retina"></div>
 	</div>
 
 	<div class="section-1_bg"></div>
 
 	<div class="section_2">
 		<div class="wrapper wrapper_section-2 clearfix">
-			<h2 class="section-name section-name_registration">{{ trans('base.registry_visa_center') }}</h2>
+			<h2 class="section-name section-name_registration retina">{{ trans('base.registry_visa_center') }}</h2>
 			<div class="wrapper_region-block clearfix wow slideInLeft">
 				@foreach($visas_center as $visa_center)
 					<div class="region-block" data-region-type="{{ $visa_center -> code }}">
-						<div class="region-name">{{ $visa_center->getTranslate('title') }}</div>
+						<div class="region-name retina">{{ $visa_center->getTranslate('title') }}</div>
 						<div class="region-include">{!! $visa_center->getTranslate('short_description') !!}</div>
 						<div class="region-term"><span class="number">{{ $visa_center->term }}</span> {{ trans('base.days') }}</div>
 						<div class="region-price">{{ trans('base.from') }} <span class="number">{{ $visa_center->price }}</span> грн.</div>
@@ -145,21 +145,21 @@
 				</map>
 			</div>
 			<button class="button button_section-2 show-popup">{{ trans('base.registry') }}</button>
-			<div class="info_section">{!! $texts->get('section_2.info') !!}</div>
+			<div class="info_section retina">{!! $texts->get('section_2.info') !!}</div>
 		</div>
-		<div class="arrow-top arrow-top_section-2"></div>
+		<div class="arrow-top arrow-top_section-2 retina"></div>
 	</div>
 
 	<div class="section-2_bg"></div>
 
 	<div class="section_3">
 		<div class="wrapper wrapper_section-3 clearfix">
-			<h2 class="section-name section-name_news">{{ trans('base.news') }}</h2>
+			<h2 class="section-name section-name_news retina">{{ trans('base.news') }}</h2>
 			<div class="social_section-3 clearfix wow rotateIn">
 				<div class="soc-name_section-3">{{ trans('base.news_soc') }}</div>
 				<ul class="news-soc clearfix">
-					<li class="soc-item"><a class="soc-item_vk" href="{{ $texts->get('social_vk') }}"></a></li>
-					<li class="soc-item"><a class="soc-item_fb" href="{{ $texts->get('social_fb') }}"></a></li>
+					<li class="soc-item"><a class="soc-item_vk retina" href="{{ $texts->get('social_vk') }}"></a></li>
+					<li class="soc-item"><a class="soc-item_fb retina" href="{{ $texts->get('social_fb') }}"></a></li>
 				</ul>
 			</div>
 			<div class="wrapper-news">
@@ -179,17 +179,17 @@
 			{{--News Popup--}}
 			@foreach($news as $new)
 				<div class="popup-news" data-id="{{ $new->id }}">
-					<div class="close close_news"></div>
+					<div class="close close_news retina"></div>
 					<div class="news-block_img" style="background-image: url('{{ $new->getImages()[0]['min'] }}');"></div>
 					<h3 class="popup-news_title">{!! str_limit($new->getTranslate('title'), 70, '...') !!}</h3>
 					{!! $new->getTranslate('description') !!}
-					<div class="popup-news_return close_news">повернутись назад</div>
+					<div class="popup-news_return retina close_news">повернутись назад</div>
 				</div>
 			@endforeach
 			{{--END News Popup--}}
-			<div class="subscribe-news show-popup">{{ trans('base.subscribe_news') }}</div>
+			<div class="subscribe-news retina show-popup">{{ trans('base.subscribe_news') }}</div>
 		</div>
-		<div class="arrow-top arrow-top_section-3"></div>
+		<div class="arrow-top retina arrow-top_section-3"></div>
 	</div>
 
 	<div class="section-3_bg"></div>
@@ -197,22 +197,22 @@
 	<div class="section_4">
 		<div class="wrapper wrapper_section-4 clearfix">
 			<div class="insurance-block wow slideInRight">
-				<h2 class="section-name section-name_insurance">{{ trans('base.insurance') }}</h2>
+				<h2 class="section-name section-name_insurance retina">{{ trans('base.insurance') }}</h2>
 				{!! $texts->get('insurance') !!}
 				<button class="button button_section-4 show-popup">{{ trans('base.order_insurance') }}</button>
 			</div>
 			<div class="hands"></div>
-			<div class="info_section info_section-4">{!! $texts->get('section_4.info') !!}</div>
+			<div class="info_section info_section-4 retina">{!! $texts->get('section_4.info') !!}</div>
 		</div>
-		<div class="arrow-top arrow-top_section-4"></div>
+		<div class="arrow-top arrow-top_section-4 retina"></div>
 	</div>
 
 	<div class="section-4_bg"></div>
 
 	<div class="section_5">
 		<div class="wrapper wrapper_section-5 clearfix">
-			<h2 class="section-name section-name_services">{{ trans('base.services') }}</h2>
-			<div class="info info_services wow rotateIn">
+			<h2 class="section-name section-name_services retina">{{ trans('base.services') }}</h2>
+			<div class="info info_services retina wow rotateIn">
 				<div class="info-text">{{ trans('base.info') }}</div>
 				<div class="info-phone">{{ $texts->get('header.tel1') }}</div>
 			</div>
@@ -234,7 +234,7 @@
 					{{--Popup-services--}}
 					<div class="popup-services" data-id="{{ $service->id }}" >
 						<div class="popup-services_info-block clearfix">
-							<div class="close close_services"></div>
+							<div class="close close_services retina"></div>
 							<div class="popup-services_name">
 								<div class="services-block_img">
 									@if(count($service -> getImages()) > 0)
@@ -253,7 +253,7 @@
 							<div class="popup-services_form-block_name">{{ trans('base.callback') }}</div>
 							<input type="hidden" name="type">
 							<input type="text" required="1" name="name" id="name" class="popup-services-input" placeholder="{{ trans('base.put_name') }}">
-							<input type="number" required="1" name="phone"  id="phone" class="popup-services-input" placeholder="{{ trans('base.put_phone') }}">
+							<input type="tel" required="1" name="phone"  id="phone" class="popup-services-input" placeholder="{{ trans('base.put_phone') }}">
 							<input type="hidden" name="_token" value="{{csrf_token()}}"/>
 							<button class="button button_callback-section" id="{{ $service->id }}" data-title="{{ $service->getTranslate('title') }}">{{ trans('base.send') }}</button>
 						</form>
@@ -261,10 +261,10 @@
 					{{--Popup-services--}}
 				@endforeach
 			</ul>
-			<div class="info_section info_section-5">{!! $texts->get('section_5.info') !!}</div>
+			<div class="info_section info_section-5 retina">{!! $texts->get('section_5.info') !!}</div>
 			<button class="button button_section-5 show-popup">{{ trans('base.callback') }}</button>
 		</div>
-		<div class="arrow-top arrow-top_section-5"></div>
+		<div class="arrow-top arrow-top_section-5 retina"></div>
 	</div>
 
 	<div class="section-5_bg"></div>
@@ -272,10 +272,10 @@
 	<div class="section_6">
 		<div class="wrapper wrapper_section-6 clearfix">
 			<div class="advice-block">
-				<h2 class="section-name section-name_advice">{{ trans('base.advices') }}</h2>
+				<h2 class="section-name section-name_advice retina">{{ trans('base.advices') }}</h2>
 				<ul class="advice-list">
 					@for($i = 0; $i < count($advices); $i++)
-						<li class="advice-list_item wow slideInLeft clearfix show-popup-advices" data-advice-id="{{ $advices[$i]->id }}" >
+						<li class="advice-list_item clearfix show-popup-advices wow slideInLeft" data-advice-id="{{ $advices[$i]->id }}" >
 							<div class="advice-list_item-number">{{ $i+1 }}</div>
 							<div class="advice-list_item-text">{!! $advices[$i]->getTranslate('short_description') !!}</div>
 						</li>
@@ -283,7 +283,7 @@
 				</ul>
 				@for($i = 0; $i < count($advices); $i++)
 					<div class="popup-question" data-id="{{ $advices[$i]->id }}">
-						<div class="close close_question"></div>
+						<div class="close close_question retina"></div>
 						<div class="advice-list_item-number">{{ $i+1 }}</div>
 						<div class="popup-question_name">{{ $advices[$i]->getTranslate('title') }}</div>
 						<div class="advice-list_item-text">{!! str_limit($advices[$i]->getTranslate('description'), 700, '...') !!}</div>
@@ -294,14 +294,14 @@
 			</div>
 			<div class="men"></div>
 		</div>
-		<div class="arrow-top arrow-top_section-6"></div>
+		<div class="arrow-top arrow-top_section-6 retina"></div>
 	</div>
 
 	<div class="section-6_bg"></div>
 
 	<div class="section_7">
 		<div class="wrapper wrapper_section-7 clearfix">
-			<h2 class="section-name section-name_contact">{{ trans('base.want') }}</h2>
+			<h2 class="section-name section-name_contact retina">{{ trans('base.want') }}</h2>
 			<div class="contact-map wow slideInRight">
 				{!! $texts->get('footer.maps') !!}}
 			</div>
@@ -330,12 +330,12 @@
 	<footer class="footer">© ООО "IP-home", 2017 г. Все права защищены.</footer>
 	{{--Popup--}}
 	<div class="popup-callback">
-		<div class="close" id="modal_close"></div>
+		<div class="close retina" id="modal_close"></div>
 		<form id="popup" method="post">
-			<div class="popup-callback_name">{{ trans('base.callback') }}</div>
+			<div class="popup-callback_name retina">{{ trans('base.callback') }}</div>
 			<input type="hidden" name="type">
 			<input type="text" required="1" name="name" id="name"  class="popup-callback-input" placeholder="{{ trans('base.put_name') }}">
-			<input type="number" required="1" name="phone"  id="phone" class="popup-callback-input" placeholder="{{ trans('base.put_phone') }}">
+			<input type="tel" required="1" name="phone"  id="phone" class="popup-callback-input" placeholder="{{ trans('base.put_phone') }}">
 			<input type="hidden" name="_token" value="{{csrf_token()}}"/>
 			<button class="button button_callback-section" id="submit-send">{{ trans('base.send') }}</button>
 		</form>
