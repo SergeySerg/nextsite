@@ -1289,7 +1289,7 @@ textarea.callback-item {
   transform: rotate(90deg);
   background: url("../../img/frontend/sprites/sprite.png") no-repeat;
   background-size: 59px 4146px;
-  background-position: 0 -2826px;  }
+  background-position: 0 -2425px !important;  }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
   .owl-carousel .owl-nav .owl-next {
     background: url("../../img/frontend/sprites/sprite@2x.png") no-repeat;
@@ -1312,7 +1312,7 @@ textarea.callback-item {
   transform: rotate(-90deg);
   background: url("../../img/frontend/sprites/sprite.png") no-repeat;
   background-size: 59px 4146px;
-  background-position: 0 -2826px;  }
+  background-position: 0 -2425px !important;  }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
   .owl-carousel .owl-nav .owl-next {
     background: url("../../img/frontend/sprites/sprite@2x.png") no-repeat;
@@ -1328,7 +1328,7 @@ textarea.callback-item {
 
 .owl-carousel .owl-nav .owl-prev:hover,
 .owl-carousel .owl-nav .owl-next:hover{
-  background-position: 0 -2579px;}
+  background-position: 0 -2657px !important;}
 
 .owl-carousel .owl-nav .owl-prev.disabled,
 .owl-carousel .owl-nav .owl-next.disabled{
@@ -1705,11 +1705,13 @@ textarea.callback-item {
     padding: 25px;
   }
 }
-@media only screen and (max-width: 774px) {
+@media only screen and (max-width: 839px) {
   .section-2_bg {
     margin-top: -2785px;
     height: 2785px;
   }
+}
+@media only screen and (max-width: 774px) {
   .hands{
     display: none;
   }
