@@ -1121,7 +1121,8 @@ textarea.callback-item {
   color: #535353; }
 
 .popup-question .advice-list_item-text {
-  padding-left: 35px; }
+  padding-left: 35px;
+  text-align: initial;}
 
 .close_question{
   background-position: 0 0;
@@ -1153,7 +1154,8 @@ textarea.callback-item {
 .popup-services_text {
   width: 75%;
   float: right;
-  padding-right: 70px; }
+  padding-right: 70px;
+  text-align: initial;}
 
 .popup-services .services-block_title {
   border-bottom: none; }
