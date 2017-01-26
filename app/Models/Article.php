@@ -20,7 +20,8 @@ class Article extends Translate {
         'meta_title',
         'public',
         'active',
-        'date'
+        'date',
+        'term'
     ];
 
     public function category(){
