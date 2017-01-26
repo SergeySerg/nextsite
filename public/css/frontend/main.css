@@ -141,6 +141,7 @@ body {
   background-color: #fff; }
 
 .wrapper_header-line {
+  position: relative;
   padding: 7px 5%; }
 
 .logo-wrap {
@@ -176,6 +177,21 @@ body {
   padding-left: 40px;
   background-position: 10px -648px;
 }
+.lang{
+  width: 45px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  padding: 0 10px;
+}
+.lang a{
+  color: #000000;
+}
+.lang a:hover,
+.active-lang a{
+  color: #ff0d0c;
+  font-weight: bold;
+}
 
 /*END header-line*/
 /*section-1*/
@@ -203,12 +219,16 @@ body {
 
 .section-1_text {
   position: relative;
-  width: 403px;
+  width: 455px;
   height: 404px;
-  margin-left: -12%;
+  margin-left: -5%;
   margin-top: -3%;
   margin-bottom: 60px;
   background: url("../../img/frontend/imgForSprite/section_1_text.png") center no-repeat;
+  background-size: 100%; }
+
+.section-1_text_ru {
+  background: url("../../img/frontend/imgForSprite/section_1_text_ru.png") center no-repeat;
   background-size: 100%; }
 
 .button_section-1 {
@@ -264,7 +284,7 @@ body {
   background-color: #ffffff;
   -webkit-border-radius: 30px;
           border-radius: 30px;
-  padding: 32px;
+  padding: 32px 15px;
   text-align: center; }
 
 .visa-type_item:hover {
@@ -644,7 +664,7 @@ body {
   background-size: cover; }
 
 .news-text-wrap {
-  padding: 30px; }
+  padding: 30px 25px; }
 
 .news-block_title {
   border-bottom: 2px solid #cbcbcb;
@@ -905,7 +925,7 @@ body {
 
 .section-name_advice {
   position: relative;
-  width: 340px;
+  width: 375px;
   padding-left: 50px;
   padding-top: 5px;
   background-position: 0 -3065px;
@@ -1786,8 +1806,8 @@ textarea.callback-item {
     height: 380px;
   }
   .section-name_registration {
-    width: 300px;
-    font-size: 2.8em;
+    width: 320px;
+    font-size: 2.7em;
   }
   .section-2_bg {
     margin-top: -2827px;
@@ -2010,5 +2030,9 @@ textarea.callback-item {
   .section-2_bg {
     margin-top: -2826px;
     height: 2826px;
+  }
+  .section-name_services {
+    font-size: 2.9em;
+    padding-top: 5px;
   }
 }

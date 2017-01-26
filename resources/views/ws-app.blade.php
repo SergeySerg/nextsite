@@ -46,17 +46,17 @@
 					<span class="logo-text_pl">{!! $texts->get('header.describe') !!}</span>
 				</div>
 			</div>
-{{--
-			<ul class="lang">
-				@foreach($langs as $lang)
-					<li><a style="color: black;" href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a></li>
-				@endforeach
-			</ul>
---}}
 
 			<ul class="phones clearfix wow slideInRight">
 				<li class="phones_item">{{ $texts->get('header.tel1') }}</li>
 				<li class="phones_item phones_item__bg retina">{{ $texts->get('header.tel2') }}</li>
+			</ul>
+			<ul class="lang">
+				<li @if(App::getLocale() == 'ua') class="active-lang"@endif><a href="{{str_replace(url(App::getLocale()), url('ua'), Request::url())}}">ua</a></li>
+				<li @if(App::getLocale() == 'ru') class="active-lang"@endif><a href="{{str_replace(url(App::getLocale()), url('ru'), Request::url())}}">ru</a></li>
+				{{--
+                                    <li><a class="@if(App::getLocale() == 'ru') section-1_text_ru @endif" style="color: black;" href="{{str_replace(url(App::getLocale()), url($lang->lang), Request::url())}}">{{$lang -> lang}}</a></li>
+                --}}
 			</ul>
 		</div>
 	</div>
@@ -72,7 +72,7 @@
 						<li class="soc-item"><a class="soc-item_fb retina" href="{{ $texts->get('social_fb') }}"></a></li>
 					</ul>
 				</div>
-				<div class="section-1_text"></div>
+				<div class="section-1_text @if(App::getLocale() == 'ru') section-1_text_ru @endif"></div>
 				<button class="button button_section-1 show-popup">{{ trans('base.check_visa') }}</button>
 			</div>
 		</div>
@@ -168,8 +168,8 @@
 						<li class="news-block_item item wow zoomIn">
 							<div class="news-block_img" style="background-image: url('{{ $new->getImages()[0]['min'] }}');"></div>
 							<div class="news-text-wrap">
-								<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 32, '...') !!}</h3>
-								<div class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 150, '...') !!}</div>
+								<h3 class="news-block_title">{!! str_limit($new->getTranslate('title'), 25, '...') !!}</h3>
+								<div class="news-block_short-description">{!! str_limit($new->getTranslate('short_description'), 140, '...') !!}</div>
 								<button class="button_red show-popup-news" data-new-id="{{ $new->id }}">{{ trans('base.more') }}</button>
 							</div>
 						</li>
@@ -183,7 +183,7 @@
 					<div class="news-block_img" style="background-image: url('{{ $new->getImages()[0]['min'] }}');"></div>
 					<h3 class="popup-news_title">{!! str_limit($new->getTranslate('title'), 70, '...') !!}</h3>
 					{!! $new->getTranslate('description') !!}
-					<div class="popup-news_return retina close_news">повернутись назад</div>
+					<div class="popup-news_return retina close_news">{{ trans('base.return_news') }}</div>
 				</div>
 			@endforeach
 			{{--END News Popup--}}
@@ -277,7 +277,7 @@
 					@for($i = 0; $i < count($advices); $i++)
 						<li class="advice-list_item clearfix show-popup-advices wow slideInLeft" data-advice-id="{{ $advices[$i]->id }}" >
 							<div class="advice-list_item-number">{{ $i+1 }}</div>
-							<div class="advice-list_item-text">{!! $advices[$i]->getTranslate('short_description') !!}</div>
+							<div class="advice-list_item-text">{!! str_limit($advices[$i]->getTranslate('short_description'), 180, '...') !!}</div>
 						</li>
 					@endfor
 				</ul>
@@ -286,7 +286,7 @@
 						<div class="close close_question retina"></div>
 						<div class="advice-list_item-number">{{ $i+1 }}</div>
 						<div class="popup-question_name">{{ $advices[$i]->getTranslate('title') }}</div>
-						<div class="advice-list_item-text">{!! str_limit($advices[$i]->getTranslate('description'), 700, '...') !!}</div>
+						<div class="advice-list_item-text">{!! $advices[$i]->getTranslate('description') !!}</div>
 					</div>
 				@endfor
 
@@ -309,8 +309,8 @@
 				<div class="contact-data_address">
 					<div class="section-name_contact-title">{{ trans('base.contact') }}</div>
 					<div class="contact-data_text">Маіл: {{ $texts->get('header.mail') }} <br>
-						Tel {{ $texts->get('header.tel1') }} <br>
-						Tel {{ $texts->get('header.tel2') }} <br>
+						{{ $texts->get('header.tel1') }} <br>
+						{{ $texts->get('header.tel2') }} <br>
 						{{ $texts->get('footer.address_1') }} <br>
 						{{ $texts->get('header.address_2') }}
 					</div>
@@ -327,7 +327,7 @@
 		</div>
 	</div>
 
-	<footer class="footer">© ООО "IP-home", 2017 г. Все права защищены.</footer>
+	<footer class="footer">{{ $texts->get('footer.reserved') }}</footer>
 	{{--Popup--}}
 	<div class="popup-callback">
 		<div class="close retina" id="modal_close"></div>
