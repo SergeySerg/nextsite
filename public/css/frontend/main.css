@@ -212,6 +212,21 @@ body {
   margin-left: -335px;
   background: url("../../img/frontend/imgForSprite/women.png") center no-repeat;
   background-size: 100%; }
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .women {
+    background: url("../../img/frontend/imgForSprite/women@2x.png") center no-repeat;
+    background-size: 100%; }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .women {
+    background: url("../../img/frontend/imgForSprite/women@2x.png") center no-repeat;
+    background-size: 100%; }
+}
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .women {
+    background: url("../../img/frontend/imgForSprite/women@3x.png") center no-repeat;
+    background-size: 100%; }
+}
 
 .section-1_wrapper-text {
   float: right;
@@ -226,10 +241,41 @@ body {
   margin-bottom: 60px;
   background: url("../../img/frontend/imgForSprite/section_1_text.png") center no-repeat;
   background-size: 100%; }
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .section-1_text {
+    background: url("../../img/frontend/imgForSprite/section_1_text@2x.png") center no-repeat;
+    background-size: 100%; }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .section-1_text {
+    background: url("../../img/frontend/imgForSprite/section_1_text@2x.png") center no-repeat;
+    background-size: 100%; }
+}
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .section-1_text {
+    background: url("../../img/frontend/imgForSprite/section_1_text@3x.png") center no-repeat;
+    background-size: 100%; }
+}
 
 .section-1_text_ru {
   background: url("../../img/frontend/imgForSprite/section_1_text_ru.png") center no-repeat;
   background-size: 100%; }
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .section-1_text_ru {
+    background: url("../../img/frontend/imgForSprite/section_1_text_ru@2x.png") center no-repeat;
+    background-size: 100%; }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .section-1_text_ru {
+    background: url("../../img/frontend/imgForSprite/section_1_text_ru@2x.png") center no-repeat;
+    background-size: 100%; }
+}
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .section-1_text_ru {
+    background: url("../../img/frontend/imgForSprite/section_1_text_ru@3x.png") center no-repeat;
+    background-size: 100%; }
+}
+
 
 .button_section-1 {
   margin-left: -25%; }
@@ -785,6 +831,21 @@ body {
   -webkit-transform: skewY(-1deg);
       -ms-transform: skewY(-1deg);
           transform: skewY(-1deg); }
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .hands {
+    background: url("../../img/frontend/imgForSprite/hands@2x.png") center no-repeat;
+    background-size: 100%; }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hands {
+    background: url("../../img/frontend/imgForSprite/hands@2x.png") center no-repeat;
+    background-size: 100%; }
+}
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .hands {
+    background: url("../../img/frontend/imgForSprite/hands@3x.png") center no-repeat;
+    background-size: 100%; }
+}
 
 .info_section-4 {
   width: 470px;
@@ -976,6 +1037,22 @@ body {
   height: 729px;
   background: url("../../img/frontend/imgForSprite/men.png") center no-repeat;
   background-size: 100%; }
+@media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+  .men {
+    background: url("../../img/frontend/imgForSprite/men@2x.png") center no-repeat;
+    background-size: 100%; }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .men {
+    background: url("../../img/frontend/imgForSprite/men@2x.png") center no-repeat;
+    background-size: 100%; }
+}
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .men {
+    background: url("../../img/frontend/imgForSprite/men@3x.png") center no-repeat;
+    background-size: 100%; }
+}
+
 
 /*END section-6*/
 /*section-7*/
