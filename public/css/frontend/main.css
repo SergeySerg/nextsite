@@ -401,7 +401,7 @@ body {
   margin-top: -450px;
   width: 100%;
   height: 450px;
-  background: #ebebeb url("../../img/frontend/imgForSprite/section_1_footer_bg.png") center 15px no-repeat;
+  background: #ebebeb url("../../img/frontend/imgForSprite/section_1_footer_bg.png") center 35px no-repeat;
   background-size: 100%;
   -webkit-transform: skewY(-5deg);
       -ms-transform: skewY(-5deg);
@@ -1470,8 +1470,8 @@ textarea.callback-item {
     vertical-align: middle;
   }
   .section-2_bg{
-    margin-top: -1196px;
-    height: 1196px;
+    margin-top: -1210px;
+    height: 1210px;
     -webkit-background-size: cover;
     background-size: cover;
     background-position-y: 0 !important;
@@ -1487,7 +1487,7 @@ textarea.callback-item {
 @media only screen and (max-width: 1235px) {
   .hands{
     left: 50%;
-    top: 33px;
+    top: 110px;
     margin-left: -376px;
     opacity: .7;
   }
@@ -1514,12 +1514,13 @@ textarea.callback-item {
     border-right: 2px solid #524848;
   }
   .info_section-4{
+    min-height: 132px;
     margin: 50px auto;
   }
   .section-4_bg{
-    margin-top: -745px;
+    margin-top: -820px;
     width: 100%;
-    height: 745px;
+    height: 820px;
     background: #d8d5d5  url("../../img/frontend/imgForSprite/section_4_footer_bg.png") center 390px no-repeat;
   }
 }
@@ -1581,8 +1582,8 @@ textarea.callback-item {
     margin-left: 0;
   }
   .section-5_bg{
-    margin-top: -1234px;
-    height: 1234px;
+    margin-top: -1252px;
+    height: 1252px;
   }
   .info_section-5{
     float: none;
@@ -1666,8 +1667,8 @@ textarea.callback-item {
     width: 400px;
   }
   .section-2_bg {
-    margin-top: -1580px;
-    height: 1580px;
+    margin-top: -1600px;
+    height: 1600px;
   }
   .advice-list{
     position: relative;
@@ -1677,8 +1678,8 @@ textarea.callback-item {
 }
 @media only screen and (max-width: 1080px) {
   .section-2_bg {
-    margin-top: -1600px;
-    height: 1600px;
+    margin-top: -1620px;
+    height: 1620px;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -1717,8 +1718,8 @@ textarea.callback-item {
     margin-top: 15px;
   }
   .section-5_bg{
-    margin-top: -1295px;
-    height: 1295px;
+    margin-top: -1315px;
+    height: 1315px;
   }
   .section-name_contact {
     width: 320px;
@@ -1758,8 +1759,8 @@ textarea.callback-item {
   }
 
   .section-2_bg {
-    margin-top: -1620px;
-    height: 1620px;
+    margin-top: -1638px;
+    height: 1638px;
   }
 
   .info_section {
@@ -1770,12 +1771,12 @@ textarea.callback-item {
   }
 
   .hands {
-    top: 12px;
+    top: 90px;
   }
 
   .section-5_bg {
-    margin-top: -1375px;
-    height: 1375px;
+    margin-top: -1392px;
+    height: 1392px;
   }
 
   .button_section-5 {
@@ -1783,8 +1784,8 @@ textarea.callback-item {
   }
 
   .section-4_bg {
-    margin-top: -725px;
-    height: 725px;
+    margin-top: -800px;
+    height: 800px;
   }
 
   .popup-news .news-block_img {
@@ -1806,8 +1807,8 @@ textarea.callback-item {
 }
 @media only screen and (max-width: 839px) {
   .section-2_bg {
-    margin-top: -2785px;
-    height: 2785px;
+    margin-top: -2805px;
+    height: 2805px;
   }
 }
 @media only screen and (max-width: 774px) {
@@ -1887,8 +1888,8 @@ textarea.callback-item {
     font-size: 2.7em;
   }
   .section-2_bg {
-    margin-top: -2827px;
-    height: 2827px;
+    margin-top: -2845px;
+    height: 2845px;
   }
   .popup-news .news-block_img {
     width: 100%;
@@ -1925,6 +1926,7 @@ textarea.callback-item {
     background: none; }
   .info_section-4{
     width: 300px;
+    min-height: 228px;
   }
   .wrapper_section-3{
     padding-left: 0;
@@ -1952,8 +1954,8 @@ textarea.callback-item {
     font-size: 1.4em;
   }
   .section-4_bg{
-    margin-top: -691px;
-    height: 691px;
+    margin-top: -805px;
+    height: 805px;
   }
   .women{
     display: none;
@@ -1968,15 +1970,21 @@ textarea.callback-item {
     top: 120px;
     width: 300px;
   }
+  .section-5_bg {
+    margin-top: -2330px;
+    height: 2330px;
+  }
   .button_section-5 {
     margin-top: 0;
     bottom: 150px;
     margin-bottom: 70px;
   }
+  /*
   .section-5_bg {
     margin-top: -2310px;
     height: 2310px;
   }
+  */
   .arrow-top_section-4{
     bottom: -23px;
   }
@@ -2010,11 +2018,11 @@ textarea.callback-item {
     padding-right: 15px;
   }
   .info_section{
-    width: 290px;
+    width: 315px;
   }
   .section-2_bg {
-    margin-top: -2865px;
-    height: 2865px;
+    margin-top: -2900px;
+    height: 2900px;
   }
   .popup-news{
     padding-left: 15px;
@@ -2039,8 +2047,8 @@ textarea.callback-item {
     width: 290px;
   }
   .section-2_bg {
-    margin-top: -2871px;
-    height: 2871px;
+    margin-top: -2886px;
+    height: 2886px;
   }
   .region-name{
     font-size: 2.2em;
@@ -2105,8 +2113,8 @@ textarea.callback-item {
     margin-top: 0;
   }
   .section-2_bg {
-    margin-top: -2826px;
-    height: 2826px;
+    margin-top: -2841px;
+    height: 2841px;
   }
   .section-name_services {
     font-size: 2.9em;
